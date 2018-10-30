@@ -1,0 +1,253 @@
+\documentclass[hidelinks,12pt,a4paper,numbers=enddot]{scrartcl}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\title{Inception document fore SA1 group project}
+\author{Group 1 (Team Leader: Claudio Maggioni)}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Team organization}\label{team-organization}
+
+\paragraph{Project leader}
+Claudio Maggioni
+
+\paragraph{SVN admin}
+Joey Bevilacqua
+
+\subsection{Teams}
+
+\paragraph{Front page team {[}front-team{]}}
+Matteo Omenetti (\textbf{Team leader}), \ldots
+
+\paragraph{About and info team {[}info-team{]}}
+Nicola Brunner (\textbf{Team leader}), \ldots
+
+\paragraph{Topics teams}
+\begin{itemize}
+    \item \textbf{File system {[}fs-team{]}}: Ricardo Vivanco (\textbf{Team leader})
+      \begin{itemize}
+      \item \ldots
+      \item \ldots
+      \end{itemize}
+    \item \textbf{Basic commands {[}cmd-basic-team{]}}: Gianmarco De Vita (\textbf{Team leader})
+      \begin{itemize}
+        \item Alessandro Marinelli
+        \item Joy Albertini
+        \item Marzio Lunghi
+      \end{itemize}
+    \item \textbf{Intermediate commands {[}cmd-interm-team{]}}: Joao Tomazoni (\textbf{Team leader})
+      \begin{itemize}
+        \item \ldots
+        \item \ldots
+      \end{itemize}
+    \item \textbf{Advanced commands {[}cmd-advanced-team{]}}: Domenico Votta (\textbf{Team leader})
+      \begin{itemize}
+        \item \ldots
+        \item \ldots
+      \end{itemize}
+    \item \textbf{Scripting {[}scripts-team{]}}: Marco Conterno (\textbf{Team leader})
+      \begin{itemize}
+      \item \ldots
+      \item \ldots
+      \end{itemize}
+\end{itemize}
+
+\paragraph{\emph{CSS} team {[}css-team{]}}
+Andrea Brites, Marco Tereh
+
+\paragraph{Documentation {[}docs-team{]}}
+Ricardo Antonio Vivanco
+
+\subsection{Extra roles}
+
+\paragraph{Team management}
+Claudio Maggioni, Joey Bevilacqua, Matteo Omenetti
+
+\paragraph{Work environment}
+Claudio Maggioni, Joey Bevilacqua
+
+\section{Repository organization}\label{repository-organization}
+
+\begin{itemize}
+\item \texttt{docs/} (for \LaTeX documentation, Access: \texttt{docs-team})
+\item \texttt{site/} (for the actual website)
+	\begin{itemize}
+	\item \texttt{\_include/} (Access: \texttt{css-team})
+	\item \texttt{\_layout/} (Access: \texttt{css-team})
+	\item \texttt{\_pages/}
+		\begin{itemize}
+            \item \texttt{cmd/}
+			\begin{itemize}
+			\item \texttt{basic/} (Access: \texttt{cmd-basic-team})
+			\item \texttt{interm/} (Access: \texttt{cmd-interm-team})
+			\item \texttt{advanced/} (Access: \texttt{cmd-advanced-team})
+			\end{itemize}
+		\item \texttt{fs/} (Access: \texttt{fs-team})
+		\item \texttt{info/} (Access: \texttt{info-team})
+		\item \texttt{scripts/} (Access: \texttt{scripts-team})
+		\end{itemize}
+	\item \texttt{\_sass/} (Access: \texttt{css-team})
+	\item \texttt{assets/}
+		\begin{itemize}
+		\item \texttt{cmd/}
+			\begin{itemize}
+			\item \texttt{basic/} (Access: \texttt{cmd-basic-team})
+			\item \texttt{interm/} (Access: \texttt{cmd-interm-team})
+			\item \texttt{advanced/} (Access: \texttt{cmd-advanced-team})
+			\end{itemize}
+		\item \texttt{fs/} (Access: \texttt{fs-team})
+		\item \texttt{info/} (Access: \texttt{info-team})
+		\item \texttt{scripts/} (Access: \texttt{scripts-team})
+		\item \texttt{style/} (Access: \texttt{css-team})
+		\end{itemize}
+	\item \texttt{css/} (Access: \texttt{css-team})
+	\item \texttt{js/} (Access: \texttt{css-team})
+	\item \texttt{index.html/} (Access: \texttt{front-team})
+	\end{itemize}
+\end{itemize}
+
+\section{Teamwork}\label{teamwork}
+
+Team members will have their channel in \emph{Slack} in which they can discuss
+with their topic leader and mates about the things they're working on.
+
+Team members refer only to the team leader, unless when they want to
+raise issues about the team leader itself, in which case they'll refer to the
+project leader (Claudio Maggioni).
+
+Each team leader refer to the project leader and other team leaders.
+
+Team leaders are responsible for assuring the work of their team is
+committed in time and the coding convections are met.
+
+Each team only has access to directories strictly related to their team.
+For instance, members of \texttt{scripts-team} will have access only to 
+the script pages, but not on the file system pages.
+
+Each content team has a folder available in the \texttt{\_pages/} sand
+\texttt{\_assets/} folder.
+
+In \texttt{\_pages/} there will be \texttt{.html} files only.
+
+In \texttt{\_assets/} there will be pictures, videos and other content used
+in html files.
+
+Images will be subject to review by the \emph{CSS} team that has the right to
+have them changed to meet the website styling rules.
+
+If someone needs to add some \emph{JavaScript} or \emph{CSS} code, they must notify to
+both their team leader and the \emph{CSS} team which is the only capable of
+submitting new \emph{JavaScript} and \emph{CSS} code.
+
+Code may also be sent to the \emph{CSS} team, but it'll be subject to review
+and changes.
+
+\subsection{Work environment}\label{work-environment}
+
+To work on the website you will need to get our work environment.
+
+The website is built using \emph{Jekyll}. \emph{Jekyll} is a magic thing that
+allows us to simplify our work by decoupling content from styling.
+
+You won't need to apply all the styling on your own, as you'll just
+import a base page and then write your html code which will be placed inside it.
+
+\subsubsection{Setup}\label{setup}
+
+To get the repository, please run the following command (make sure you
+replace the \texttt{yourname} with your \emph{USI} email id, 
+E.G.: \texttt{Rossi\ Mario\ (rossm@usi.ch)} uses
+\texttt{rossm} as name):
+
+\begin{verbatim}
+svn checkout svn+ssh://<your_name_here>@atelier.inf.usi.ch/home/bevilj/group-1
+\end{verbatim}
+
+To install Jekyll, run this command (you'll be required to input your
+password):
+
+\begin{verbatim}
+sudo gem install jekyll
+\end{verbatim}
+
+\subsubsection{Test your work locally}\label{test-your-work-locally}
+
+Having Jekyll makes testing your work locally a bit harder, there's a
+script that does all you need to do in order to work.
+
+Once you're done editing the webpage you're working on, execute the
+\texttt{./build.sh} script and visit the following URL on any browser:
+\url{http://localhost:4000} (it should open automatically, but open it
+manuall if it does not work)
+
+Do not close the terminal unless you're done working with the website.
+
+The website will refresh its contents automatically once you save your
+files (there will be a small delay of a few seconds before changes are
+made available in your browser).
+
+\subsection{Coding conventions}\label{coding-conventions}
+
+\begin{itemize}
+\item
+  Uses two spaces for indentation (tab = 2 spaces);
+\item
+  Put one new line for each tag;
+\item
+  Put no more than 100 chars for each line;
+\item
+  Add comments when necessary.
+\end{itemize}
+
+Team leaders are responsible for making sure the code is properly
+formatted.
+
+Code may be reformatted by the repository administrator.
+
+\subsection{Keep up with other people's work}\label{keep-up-with-other-peoples-work}
+
+Please sync your repository every day by running the command:
+
+\begin{verbatim}
+svn update
+\end{verbatim}
+
+\subsection{Committing changes}\label{committing-changes}
+
+Make your commits simple, but not too simple: each commit must be
+dealing with a limited set of changes which are all related.
+
+Commits making unrelated changes are not encouraged.
+
+In case of conflict, talk with your other team members to resolve them
+properly.
+
+Commit messages will have to be properly written and explain in detail
+what is happening in the commit.
+
+\subsubsection{Bad examples of commit messages}
+
+\begin{itemize}
+\item \texttt{Update}
+\item \texttt{Some work}
+\item \texttt{My hands are typing words}
+\item \texttt{Haaaaaaaaaaaands} \footnote{\url{https://xkcd.com/1296}}
+\item \ldots
+\end{itemize}
+
+\subsubsection{Good examples of commit messages}
+
+\begin{itemize}
+\item \texttt{Added section about ``ls''}
+\item \texttt{Work on the header CSS}
+\item \texttt{Updated ``tar'' documentation}
+\item \ldots
+\end{itemize}
+
+\end{document}
