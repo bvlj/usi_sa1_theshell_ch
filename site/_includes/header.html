@@ -1,4 +1,27 @@
-<nav class="navbar">
+<header>
+    <span><a href="" class="title">THE SHELL</a></span>
+    <span id="menuDesktop">
+        <a href="">FILE SYSTEM</a>
+        <a href="">BASIC</a>
+        <a href="">INTERMEDIATE</a>
+        <a href="">ADVANCED</a>
+        <a href="">SCRIPTING</a>
+    </span>
+
+    <span id="menuTriggerMobile" onclick="triggerMenu(this)">
+        <div class="strip1"></div>
+        <div class="strip2"></div>
+        <div class="strip3"></div>
+    </span>
+    <div id="menuMobile" style="margin-left:-100%;">
+        <a class="menuItem selected" href="">FILE SYSTEM</a>
+        <a class="menuItem" href="">BASIC</a>
+        <a class="menuItem" href="">INTERMEDIATE</a>
+        <a class="menuItem" href="">ADVANCED</a>
+        <a class="menuItem" href="">SCRIPTING</a>
+    </div>
+</header>
+<!-- <nav class="navbar">
     <div class="container">
         <ul class="navbar-list">
                 <li class="navbar-item">
@@ -14,4 +37,4 @@
             {% endfor %}
         </ul>
      </div>
-</nav>
+</nav>-->
