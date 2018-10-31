@@ -124,10 +124,10 @@ Team leaders are responsible for assuring the work of their team is
 committed in time and the coding convections are met.
 
 Each team only has access to directories strictly related to their team.
-For instance, members of \texttt{scripts-team} will have access only to 
+For instance, members of \texttt{scripts-team} will have access only to
 the script pages, but not on the file system pages.
 
-Each content team has a folder available in the \texttt{\_pages/} sand
+Each content team has a folder available in the \texttt{\_pages/} and
 \texttt{\_assets/} folder.
 
 In \texttt{\_pages/} there will be \texttt{.html} files only.
@@ -158,7 +158,7 @@ import a base page and then write your html code which will be placed inside it.
 \subsubsection{Setup}\label{setup}
 
 To get the repository, please run the following command (make sure you
-replace the \texttt{yourname} with your \emph{USI} email id, 
+replace the \texttt{yourname} with your \emph{USI} email id,
 E.G.: \texttt{Rossi\ Mario\ (rossm@usi.ch)} uses
 \texttt{rossm} as name):
 
@@ -181,7 +181,7 @@ script that does all you need to do in order to work.
 Once you're done editing the webpage you're working on, execute the
 \texttt{./build.sh} script and visit the following URL on any browser:
 \url{http://localhost:4000} (it should open automatically, but open it
-manuall if it does not work)
+manually if it does not work)
 
 Do not close the terminal unless you're done working with the website.
 
@@ -226,24 +226,33 @@ In case of conflict, talk with your other team members to resolve them
 properly.
 
 Commit messages will have to be properly written and explain in detail
-what is happening in the commit.
+what is happening in the commit. It's important to remember that history of commit messages will be reviewed by the TA/Bavota, so make sure your wording is appropriate.
 
-\subsubsection{Bad examples of commit messages}
+Commit messages should be in the following format:\\
+
+\texttt{team-name}: What you did
+
+\subsubsection{GOOD examples of commit messages}
 
 \begin{itemize}
-\item \texttt{Update}
-\item \texttt{Some work}
-\item \texttt{My hands are typing words}
-\item \texttt{Haaaaaaaaaaaands} \footnote{\url{https://xkcd.com/1296}}
+\item \texttt{basic-team: add section about ``ls''}
+\item \texttt{css-team: work on the header}
+\item \texttt{scripts-team: fix typo in for loops page}
+\item \texttt{scripts: fix typo in for loops page}
 \item \ldots
 \end{itemize}
 
-\subsubsection{Good examples of commit messages}
+\subsubsection{BAD examples of commit messages}
 
 \begin{itemize}
-\item \texttt{Added section about ``ls''}
-\item \texttt{Work on the header CSS}
-\item \texttt{Updated ``tar'' documentation}
+\item \texttt{dragons: add section about ``ls''}
+\item \texttt{mario rossi: work on the css header}
+\item \texttt{css-team: fix this shit}
+\item \texttt{scripts: update}
+\item \texttt{My hands are typing words}
+\item \texttt{Typo sorry won't happen again}
+\item \texttt{How to make billions in 3 days. A method doctors won't tell you}
+\item \texttt{Haaaaaaaaaaaands} \footnote{\url{https://xkcd.com/1296}}
 \item \ldots
 \end{itemize}
 
