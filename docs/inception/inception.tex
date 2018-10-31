@@ -30,8 +30,8 @@ Matteo Omenetti (\textbf{Team leader}), Nicola Brunner
     \item \textbf{File system {[}fs-team{]}}: Riccardo Antonio Vivanco (\textbf{Team leader})
       \begin{itemize}
       \item Mattia Hijman
-	  \item Marwan Announ
-	  \item Mirko Ponzio
+      \item Marwan Announ
+      \item Mirko Ponzio
       \end{itemize}
     \item \textbf{Basic commands {[}cmd-basic-team{]}}: Gianmarco De Vita (\textbf{Team leader})
       \begin{itemize}
@@ -42,7 +42,7 @@ Matteo Omenetti (\textbf{Team leader}), Nicola Brunner
     \item \textbf{Intermediate commands {[}cmd-interm-team{]}}: Joao Tomazoni (\textbf{Team leader})
       \begin{itemize}
       \item Marco Farace
-	  \item Fabiano Fenini
+      \item Fabiano Fenini
       \item Gabriele Giacomelli
    \end{itemize}
     \item \textbf{Advanced commands {[}cmd-advanced-team{]}}: Domenico Votta (\textbf{Team leader})
@@ -80,7 +80,7 @@ Claudio Maggioni, Joey Bevilacqua
 	\begin{itemize}
 	\item \texttt{\_include/} (Access: \texttt{css-team})
 	\item \texttt{\_layout/} (Access: \texttt{css-team})
-	\item \texttt{\_pages/}
+	\item \texttt{pages/}
 		\begin{itemize}
             \item \texttt{cmd/}
 			\begin{itemize}
@@ -106,7 +106,6 @@ Claudio Maggioni, Joey Bevilacqua
 		\item \texttt{scripts/} (Access: \texttt{scripts-team})
 		\item \texttt{style/} (Access: \texttt{css-team})
 		\end{itemize}
-	\item \texttt{css/} (Access: \texttt{css-team})
 	\item \texttt{js/} (Access: \texttt{css-team})
 	\item \texttt{index.html/} (Access: \texttt{front-team})
 	\end{itemize}
@@ -133,7 +132,7 @@ the script pages, but not on the file system pages.
 Each content team has a folder available in the \texttt{\_pages/} and
 \texttt{\_assets/} folder.
 
-In \texttt{\_pages/} there will be \texttt{.html} files only.
+In \texttt{pages/} there will be \texttt{.html} files only.
 
 In \texttt{\_assets/} there will be pictures, videos and other content used
 in html files.
@@ -169,28 +168,25 @@ E.G.: \texttt{Rossi\ Mario\ (rossm@usi.ch)} uses
 svn checkout svn+ssh://<your_name_here>@atelier.inf.usi.ch/home/bevilj/group-1
 \end{verbatim}
 
-To install Jekyll, run this command (you'll be required to input your
-password):
-
-\begin{verbatim}
-sudo gem install jekyll
-\end{verbatim}
-
 \subsubsection{Test your work locally}\label{test-your-work-locally}
 
 Having Jekyll makes testing your work locally a bit harder, there's a
 script that does all you need to do in order to work.
 
-Once you're done editing the webpage you're working on, execute the
-\texttt{./build.sh} script and visit the following URL on any browser:
+Once you're done editing the webpage you're working on, execute
+\texttt{./build.sh} script that will start a webserver that will allow you
+to visit the website at the following URL on any browser:
 \url{http://localhost:4000} (it should open automatically, but open it
-manually if it does not work)
+manually if it does not work).
 
-Do not close the terminal unless you're done working with the website.
+The first time you will be required to insert your computer's password.
 
 The website will refresh its contents automatically once you save your
 files (there will be a small delay of a few seconds before changes are
 made available in your browser).
+
+To stop the webserver once you're done working with the website,
+run \texttt{./stop.sh}
 
 \section{Deadlines}\label{deadlines}
 
@@ -198,11 +194,11 @@ We have deadlines available on \emph{Slack} we planned to make sure the
 project can be delivered without delays.
 
 Project managers are responsible for communicating the deadlines
-and eventual changes to them to everyone.
+and eventual changes to them to everyone.\\
 
 Team leaders are responsible for making sure their team members
 meet the deadlines and eventually communicating failures in meeting
-them to the project leaders.
+them to the project leaders.\\
 
 2 or more failures in meeting the deadlines will result from the removal
 of the inclusion of the name on the about page of the website, which
