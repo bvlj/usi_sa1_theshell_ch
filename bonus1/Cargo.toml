@@ -1,0 +1,9 @@
+[package]
+name = "bonus1"
+version = "0.1.0"
+authors = ["Claudio Maggioni <claudio@maggioni.xyz>"]
+
+[dependencies]
+reqwest = "0.9.4"
+regex = "1"
+lazy_static = "1.1.0"
