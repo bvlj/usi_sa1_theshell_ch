@@ -1,0 +1,37 @@
+/* Author: Marco Tereh */
+/* this file only concerns elements which are children of the <footer> */
+
+footer{
+  background-color: grey; /* TODO: replace placeholder color and add text color */
+  overflow: auto;
+}
+
+footer > div {
+  float: left;
+  margin: 10px;
+  width: CALC(33% - 20px);
+}
+
+footer .head {
+  text-decoration: underline;
+}
+
+footer .child {
+  margin-left: 5px;
+}
+
+footer > div:nth-child(2){
+  text-align: center;
+
+  .child{
+    text-align: left;
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+footer div img {
+  height: 50px;
+  width: 50px;
+  margin-left: CALC(100% - 50px);
+}
