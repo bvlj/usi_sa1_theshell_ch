@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2018-10-29" view-index="0" gantt-divider-location="360" resource-divider-location="300" version="2.8.9" locale="it">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2018-10-30" view-index="0" gantt-divider-location="383" resource-divider-location="300" version="2.8.9" locale="it">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Nome" width="211" order="0"/>
-        <field id="tpd4" name="Data d'inizio" width="55" order="1"/>
+        <field id="tpd3" name="Nome" width="212" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="77" order="1"/>
         <field id="tpd5" name="Data di fine" width="88" order="2"/>
         <option id="color.recent"><![CDATA[#ff0000 #000000 #eeeeee #00cc33 #ffff00 #3333ff]]></option>
     </view>
@@ -35,7 +35,7 @@
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
         <task id="0" name="Team Members" color="#00cc33" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2018-10-31" duration="1" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="2" expand="true"/>
-        <task id="7" name="Presentation Go\No-Go" color="#ff0000" meeting="false" start="2018-11-01" duration="1" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" expand="true">
+        <task id="94" name="Go/No-go Presentation" color="#ff0000" meeting="false" start="2018-11-01" duration="4" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" expand="true">
             <notes><![CDATA[Only for:
 
 Domenico Votta
@@ -43,30 +43,42 @@ Domenico Votta
 Joey Bevilacqua
 
 Speaker: Marco Conterno or Claudio Maggioni]]></notes>
+            <task id="7" name="Presentation creation" color="#ff0000" meeting="false" start="2018-11-01" duration="1" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[Only for:
+
+Domenico Votta
+
+Joey Bevilacqua
+
+Speaker: Marco Conterno or Claudio Maggioni]]></notes>
+            </task>
+            <task id="85" name="Speaker preparation" color="#ff0000" meeting="false" start="2018-11-02" duration="3" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" expand="true">
+                <notes><![CDATA[The speaker must prepare the speech for Go\No-Go day.]]></notes>
+            </task>
         </task>
-        <task id="85" name="Speaker Go\No-Go" color="#ff0000" meeting="false" start="2018-11-02" duration="4" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" expand="true">
-            <notes><![CDATA[The speaker must prepare the speech for Go\No-Go day.]]></notes>
-        </task>
-        <task id="9" name="Inception Document" color="#ff0000" meeting="false" start="2018-10-31" duration="3" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="4" expand="true">
+        <task id="9" name="Inception Document" color="#ff0000" meeting="false" start="2018-11-02" duration="1" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="4" expand="true">
             <notes><![CDATA[Claudio Maggioni - Create Inception Document in Latex ]]></notes>
+            <task id="62" name="UPLOAD INCEPTION DOCUMENT" color="#000000" meeting="true" start="2018-11-02" duration="0" complete="0" thirdDate="2018-11-02" thirdDate-constraint="0" priority="4" expand="true">
+                <notes><![CDATA[Upload before 23:55 the document]]></notes>
+            </task>
         </task>
-        <task id="62" name="UPLOAD INCEPTION DOCUMENT" color="#000000" meeting="false" start="2018-11-02" duration="1" complete="0" thirdDate="2018-11-02" thirdDate-constraint="0" priority="4" expand="true">
-            <notes><![CDATA[Upload before 23:55 the document]]></notes>
-        </task>
-        <task id="11" name="Topics for WebSite" color="#00cc33" meeting="false" start="2018-11-02" duration="4" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="2" expand="true">
+        <task id="11" name="Topics for Website" color="#00cc33" meeting="false" start="2018-11-02" duration="4" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="2" expand="true">
             <notes><![CDATA[Each Team have to present their topics ]]></notes>
         </task>
-        <task id="13" name="Team CSS" color="#ff0000" meeting="false" start="2018-10-31" duration="6" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="4" expand="true">
+        <task id="59" name="Go/No-go" color="#000000" meeting="true" start="2018-11-05" duration="0" complete="0" thirdDate="2018-10-21" thirdDate-constraint="0" priority="4" expand="true">
+            <notes><![CDATA[13:30 Presentation of the current status of the project]]></notes>
+        </task>
+        <task id="13" name="Base work for css-team" color="#ff0000" meeting="false" start="2018-11-01" duration="7" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="4" expand="true">
             <notes><![CDATA[This task is only for the CSS Team.
 
 The CSS team must finish the main CSS for Monday, before 1pm.]]></notes>
-        </task>
-        <task id="59" name="DAY GO\NO-GO" color="#000000" meeting="false" start="2018-11-05" duration="1" complete="0" thirdDate="2018-10-21" thirdDate-constraint="0" priority="4" expand="true">
-            <notes><![CDATA[13:30 Presentation of the current status of the project]]></notes>
+            <task id="95" name="Define Jekyll layouts" color="#8cb6ce" meeting="false" start="2018-11-01" duration="7" complete="0" thirdDate="2018-11-04" thirdDate-constraint="0" expand="true"/>
+            <task id="96" name="Define CSS for header, footer and layouts" color="#8cb6ce" meeting="false" start="2018-11-01" duration="7" complete="0" thirdDate="2018-11-01" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="27" name="The First Three Pages" color="#00cc33" meeting="false" start="2018-11-05" duration="5" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" expand="true">
             <notes><![CDATA[Each team must send the first three pages by the midnight on the same day.]]></notes>
         </task>
+        <task id="103" name="First internal review" color="#8cb6ce" meeting="false" start="2018-11-08" duration="4" complete="0" thirdDate="2018-11-08" thirdDate-constraint="0" expand="true"/>
         <task id="88" name="Speaker Midway Milestone" color="#ff0000" meeting="false" start="2018-11-09" duration="4" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" expand="true">
             <notes><![CDATA[The speaker must prepare the speech for the Midway Milestone day.]]></notes>
         </task>
@@ -83,13 +95,13 @@ Marco Tereh
 
 They control if the websites have the problem and will do some tests.]]></notes>
         </task>
-        <task id="67" name="MIDWAY MILESTONE" color="#000000" meeting="false" start="2018-11-12" duration="1" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" priority="4" expand="true">
+        <task id="67" name="MIDWAY MILESTONE" color="#000000" meeting="true" start="2018-11-12" duration="0" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" priority="4" expand="true">
             <notes><![CDATA[On this day the speaker will present the current status of the project.]]></notes>
         </task>
-        <task id="33" name="Delivery of Pages Left" color="#00cc33" meeting="false" start="2018-11-09" duration="6" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="4" expand="true">
+        <task id="33" name="Final pages delivery" color="#00cc33" meeting="false" start="2018-11-10" duration="5" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="4" expand="true">
             <notes><![CDATA[Each Team must deliver the pages left]]></notes>
         </task>
-        <task id="35" name="Final Review" color="#ff0000" meeting="false" start="2018-11-14" duration="5" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="2" expand="true">
+        <task id="35" name="Final Review" color="#ff0000" meeting="false" start="2018-11-15" duration="4" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" priority="2" expand="true">
             <notes><![CDATA[Only for:
 
 Claudio Maggioni
@@ -103,13 +115,13 @@ Marco Tereh
 They control if the websites have the problem and will do some tests.]]></notes>
         </task>
         <task id="89" name="Teamwork report" color="#8cb6ce" meeting="false" start="2018-11-15" duration="4" complete="0" thirdDate="2018-10-15" thirdDate-constraint="0" expand="true"/>
-        <task id="70" name="FINAL MILESTONE" color="#000000" meeting="false" start="2018-11-19" duration="1" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" priority="4" expand="true">
+        <task id="70" name="FINAL MILESTONE" color="#000000" meeting="true" start="2018-11-19" duration="0" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" priority="4" expand="true">
             <notes><![CDATA[Deliver the final website]]></notes>
         </task>
         <task id="77" name="Speaker Final Presentation" color="#ff0000" meeting="false" start="2018-11-19" duration="4" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" priority="4" expand="true">
             <notes><![CDATA[The speaker must prepare the presentation for the Final Presentation day.]]></notes>
         </task>
-        <task id="72" name="FINAL PRESENTATION" color="#000000" meeting="false" start="2018-11-23" duration="1" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" priority="4" expand="true">
+        <task id="72" name="FINAL PRESENTATION" color="#000000" meeting="true" start="2018-11-23" duration="0" complete="0" thirdDate="2018-10-19" thirdDate-constraint="0" priority="4" expand="true">
             <notes><![CDATA[The speaker will present the website to the class.]]></notes>
         </task>
     </tasks>
