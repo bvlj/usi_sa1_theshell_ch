@@ -1,21 +1,19 @@
 <footer>
-  <div>
-    <div class="head">INFO</div>
-      <div class="child">
-        Author: {{page.author}}<br>
-        <a href="/credits.html">Credits</a> <!-- TODO: talk about link formatting in footer -->
-      </div>
-    </div>
-
-  <div>
-    <div class="head">What was it again?</div>
-      <div class="child">
-        something<br>
-        something else
-      </div>
+  <div class="footer container">
+    <section class="author">
+      <h3>INFO</h3>
+      <strong>Author:</strong> {{ page.author }}<br>
+      <!-- TODO: talk about link formatting in footer -->
+      <a href="/credits.html">Credits</a>
+    </section>
+    <section>
+      <h3>Other section</h3>
+      <a href="www.malusa.it">Other link</a>
+    </section>
   </div>
-
-  <div>
-    <img src="test"> <!-- TODO: replace with actual image and add metadata attr -->
+  <div class="copyright">
+    <div class="container">
+      <i class="far fa-copyright"></i> Group 1, all rights reserved.
+    </div>
   </div>
 </footer>

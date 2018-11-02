@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-    <body>
-        <header class="header">
-            <section class="head container">
-                <h1 class="title">{{ site.title }}</h1>
-            </section>
-            {% include header.html %}
-        </header>
-        <main class="container">
-        {{ content }}
-        </main>
-        {% include footer.html %}
-    </body>
+  <body>
+    <header class="header">
+      {% include header.html %}
+    </header>
+    <main class="container">
+    {{ content }}
+    </main>
+    {% include footer.html %}
+  </body>
 </html>

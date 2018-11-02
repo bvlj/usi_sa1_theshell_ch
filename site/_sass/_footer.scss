@@ -1,38 +1,39 @@
-/* Author: Marco Tereh */
-/* this file only concerns elements which are children of the <footer> */
+/**
+ * Author: Marco Tereh and Claudio Maggioni
+ * this file only concerns elements which are children of the <footer>
+ */
 
-footer{
-  background-color: grey; /* TODO: replace placeholder color and add text color */
-  overflow: auto;
-  text-align: left;
-}
+footer {
+  background-color: #333; 
+  color: white;
 
-footer > div {
-  float: left;
-  margin: 10px;
-  width: CALC(33% - 20px);
-}
-
-footer .head {
-  text-decoration: underline;
-}
-
-footer .child {
-  margin-left: 5px;
-}
-
-footer > div:nth-child(2){
-  text-align: center;
-
-  .child{
-    text-align: left;
-    width: fit-content;
-    margin: auto;
+  .footer.container {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
   }
-}
 
-footer div img {
-  height: 50px;
-  width: 50px;
-  margin-left: CALC(100% - 50px);
+  section {
+    flex-grow: 1;
+    padding: .5rem;
+
+    h3 {
+      text-transform: uppercase;
+      padding-bottom: .5em;
+    }
+  }
+
+  .copyright {
+    background: #111;
+    width: 100%;
+    
+    .container {
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+  
+  section.author {
+    width: 30%;
+  }
 }

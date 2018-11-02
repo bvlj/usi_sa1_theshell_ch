@@ -1,18 +1,22 @@
 <header>
-    <span><a href="" class="title">THE SHELL</a></span>
-    <span id="menuDesktop">
-        <a href="">FILE SYSTEM</a>
-        <a href="">BASIC</a>
-        <a href="">INTERMEDIATE</a>
-        <a href="">ADVANCED</a>
-        <a href="">SCRIPTING</a>
-    </span>
+  <section class="desktop grow">
+    <h1 class="title">{{ site.title }}</h1>
+  </section> 
+
+  <section class="menu desktop">
+    <a href="">FILE SYSTEM</a>
+    <a href="">BASIC</a>
+    <a href="">INTERMEDIATE</a>
+    <a href="">ADVANCED</a>
+    <a href="">SCRIPTING</a>
+  </section>
 
     <span id="menuTriggerMobile" onclick="triggerMenu(this)">
         <div class="strip1"></div>
         <div class="strip2"></div>
         <div class="strip3"></div>
     </span>
+
     <div id="menuMobile" style="margin-left:-100%;">
         <a class="menuItem selected" href="">FILE SYSTEM</a>
         <a class="menuItem" href="">BASIC</a>

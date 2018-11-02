@@ -1,36 +1,21 @@
 /*------- GLOBAL ------*/
 
-*{
-	margin:0;
-	padding:0;
-	z-index:0;
+header {
+  color: white;
+	background-color: #000;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  section.grow {
+    flex-grow: 1;
+  }
 }
 
-body{
-	font-size:16px;
-	text-align:center;
-}
-
-a{
-	display:inline-block;
-	text-decoration:none;
-	color:#fff;
-}
-
-header{
-	background-color:#000;
-}
-
-span{
-	display:inline-block;
-}
-
-/* ------ HEADER -----*/
-
-.title{
-	color:green;
-	padding: 20px 55px 20px 0;
-}
+header .title {
+  padding: 1em;
+  text-transform: uppercase;
+} 
 
 /*------- MENU ------*/
 
@@ -42,34 +27,34 @@ span{
 		display:none;
 	}
 
-	#menuDesktop{
-		float:right;
-		text-align:right;
-		padding:20px;
-    	font-size:2vh;
-	}
+header .menu.desktop {
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	.menuItem{
-		padding:10px 20px;
-		background-color:#000;
-		transition:500ms;
-	}
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 100%;
+    font-size: 1.15em;
+    padding: 0 1em;
+  }
 
-	.menuItem:hover{
-		background-color:#d2cfcf;
-		color:#000;
-	}
+  a:hover {
+    color: #8e8;
+  }
 
-	#menuDesktop .menuItem:hover{
-		transform:translateY(10px);
-		-webkit-transform:translateY(10px);
-	}
-
+  a:visited {
+    color: #6a6;
+  }
+}
 
 @media screen and (max-width: 800px) {
 
-	#menuDesktop{
-		display:none;
+	header .desktop, header .main.desktop {
+		display: none;
 	}
 
 	#menuTriggerMobile{
