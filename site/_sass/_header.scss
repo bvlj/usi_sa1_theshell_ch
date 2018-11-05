@@ -1,21 +1,8 @@
 /*------- GLOBAL ------*/
 
 header {
-  color: white;
-	background-color: #000;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-
-  section.grow {
-    flex-grow: 1;
-  }
+	background-color: #333;
 }
-
-header .title {
-  padding: 1em;
-  text-transform: uppercase;
-} 
 
 /*------- MENU ------*/
 
@@ -27,7 +14,26 @@ header .title {
 		display:none;
 	}
 
-header .menu.desktop {
+  .boxTitle{
+    background: #000;
+    width: 30%;
+  }
+
+  .boxItem{
+    width: 69%;
+  }
+
+  .boxItem  a{
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    color: #6a6;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 2.3vh;
+    padding: 0 5px;
+  }
+
+/*header .menu.desktop {
   background: #333;
   display: flex;
   justify-content: center;
@@ -49,11 +55,11 @@ header .menu.desktop {
   a:visited {
     color: #6a6;
   }
-}
+}*/
 
 @media screen and (max-width: 800px) {
 
-	header .desktop, header .main.desktop {
+	.menuDesktop {
 		display: none;
 	}
 
