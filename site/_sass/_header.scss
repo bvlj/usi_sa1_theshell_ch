@@ -2,8 +2,12 @@
 
 header {
 	background-color: #333;
+  text-align:center;
 }
 
+span {
+  display:inline-block;
+}
 /*------- MENU ------*/
 
 	#menuMobile{
@@ -25,7 +29,7 @@ header {
 
   .title {
     color: green;
-    padding: 20px 55px 20px 0;
+    padding: 20px 0px;
   }
 
   .boxItem  a{
