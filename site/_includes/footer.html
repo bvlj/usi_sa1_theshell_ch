@@ -1,13 +1,10 @@
 <footer>
   <div class="footer container">
     <section class="author">
-      <h3>INFO</h3>
-      <strong>Author:</strong> {{ page.author }}<br>
-      <a href="/credits.html">Credits</a>
-    </section>
-    <section>
-      <h3>Other section</h3>
-      <a href="http://www.malusa.it">Other link</a>
+      <h4>Page by:</h4>
+      {% assign author = site.authors | where: 'name', page.author | first %}
+      <h2 class="{% if author %}margin{% endif %}">{{ page.author }}</h2>
+      {% if author %}<h3>{{ author.position }}</h3>{% endif %}
     </section>
   </div>
   <div class="copyright">

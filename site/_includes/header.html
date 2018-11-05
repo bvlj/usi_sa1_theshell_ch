@@ -1,43 +1,11 @@
-  <div class="menuDesktop">
-	  <span class="boxTitle">
-	    <h1 class="title">THE SHELL</h1>
-	  </span> 
-	  <span class="boxItem">
-	    <a href="">FILE SYSTEM</a>
-	    <a href="">BASIC</a>
-	    <a href="">INTERMEDIATE</a>
-	    <a href="">ADVANCED</a>
-	    <a href="">SCRIPTING</a>
-	   </span>
- </div>
+<div class="menuDesktop">
+  <span class="boxTitle">
+    <a href="/index.html"><img src="/assets/style/logo_white.png" height="50"></a>
+  </span> 
+  <span class="boxItem">
+    <a href="">Learn</a>
+    <code>|</code>
+    <a href="">About</a>
+  </span>
+</div>
 
-   <span id="menuTriggerMobile" onclick="triggerMenu(this)">
-       <div class="strip1"></div>
-       <div class="strip2"></div>
-       <div class="strip3"></div>
-   </span>
-
-   <div id="menuMobile" style="margin-left:-100%;">
-        <a class="menuItem" href="">FILE SYSTEM</a>
-        <a class="menuItem" href="">BASIC</a>
-        <a class="menuItem" href="">INTERMEDIATE</a>
-        <a class="menuItem" href="">ADVANCED</a>
-        <a class="menuItem" href="">SCRIPTING</a>
-   </div>
-<!-- <nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-                <li class="navbar-item">
-                  <a href="{{ "/" | prepend: site.baseurl | prepend: site.url }}">home</a>
-                </li>
-            {% for my_page in site.pages %}
-            {% if my_page.title %}
-                <li class="navbar-item">
-                    <a href="{{ my_page.url | prepend: site.baseurl | prepend: site.url }}">
-                      {{ my_page.title }}</a>
-                </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-     </div>
-</nav>-->

@@ -7,117 +7,38 @@ header {
 span {
   display:inline-block;
 }
+
 /*------- MENU ------*/
 
-	#menuMobile{
-		display:none;
-	}
+.menuDesktop {
+  background-color: #131313;
+  position: relative;
+  text-align: justify;
+}
 
-	#menuTrigger{
-		display:none;
-	}
+.boxTitle {
+  padding: .5em;
+}
 
-  .menuDesktop{
-    background-color: #333;
-  }
+.title {
+  color: green;
+  padding: 20px 0px;
+}
 
-  .boxTitle{
-    background: #000;
-    width: 30%;
-  }
+.boxItem {
+  position: absolute;
+  right: 1em;
+  top: 0;
+  height: calc(50px + 1em);
+  display: inline-table;
+}
 
-  .boxItem{
-    width: 69%;
-  }
-
-  .title {
-    color: green;
-    padding: 20px 0px;
-  }
-
-  .boxItem  a{
-    font-family: "Lato", sans-serif;
-    display: inline-block;
-    color: #6a6;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 2.3vh;
-    padding: 0 5px;
-  }
-
-/*header .menu.desktop {
-  background: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 100%;
-    font-size: 1.15em;
-    padding: 0 1em;
-  }
-
-  a:hover {
-    color: #8e8;
-  }
-
-  a:visited {
-    color: #6a6;
-  }
-}*/
-
-@media screen and (max-width: 800px) {
-
-	.menuDesktop {
-		display: none;
-	}
-
-	#menuTriggerMobile{
-		cursor:pointer;
-		padding: 10px 20px;
-		transition:1000ms;
-		float: left;
-	}
-
-	#menuMobile{
-		z-index:1;
-		display:block;
-		height:100%;
-		position:fixed;
-		transition:1000ms;
-		background-color:#000;
-		text-align:center;
-	}
-
-	.strip1, .strip2, .strip3 {
-	    width:35px;
-	    height:5px;
-	    background-color:#4d0000;
-	    transition:400ms;
-	    margin:6px 0;
-	}
-
-	.cross .strip1 {
-	    -webkit-transform:rotate(-45deg) translate(-9px, 6px);
-	    transform:rotate(-45deg) translate(-9px, 6px);
-	}
-
-	.cross .strip2 {
-	    opacity:0;
-	}
-
-	.cross .strip3 {
-	    -webkit-transform:rotate(45deg) translate(-8px, -8px);
-	    transform:rotate(45deg) translate(-8px, -8px);
-	}
-
-	.menuItem{
-		padding:40px 20px;
-		width:calc(100% - 40px);
-		transition:500ms;
-		font-size:4.5vh;
-	}
+.boxItem a, .boxItem code {
+  display: table-cell;
+  vertical-align: middle;
+  color: #6a6;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2.3vh;
+  padding: 0 5px;
 }

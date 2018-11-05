@@ -2,10 +2,11 @@
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff;
+  background: #bdbdbd;
+  color: #212121;
 
   .highlighter-rouge & {
-    background: #eef;
+    background: #bdbdbd;
   }
 
   .c     { color: #998; font-style: italic } // Comment

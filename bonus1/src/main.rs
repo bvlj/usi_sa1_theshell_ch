@@ -3,16 +3,19 @@
 /// *Authors:* Claudio Maggioni, Joey Bevilacqua
 ///
 /// Group 1
-
 extern crate reqwest;
 extern crate regex;
 #[macro_use]
 extern crate lazy_static;
+extern crate walkdir;
 
 use std::fs::File;
 use std::io;
+use std::env;
+use std::process;
 use std::io::prelude::*;
 use regex::Regex;
+use walkdir::WalkDir;
 
 fn read_file(path: &str) -> io::Result<String> {
     let mut file = File::open(path)?;
@@ -53,5 +56,35 @@ fn test_is_url_working() {
 }
 
 fn main() {
-    
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() != 2 {
+        println!("Please provide directory with HTML files as 1st argument."); 
+        process::exit(127);
+    } else {
+        let dir = &args[1];
+        for entry in WalkDir::new(dir) {
+            match entry {
+                Ok(en) => {
+                    let md: std::fs::Metadata = en.metadata().unwrap();
+                    
+                    if md.is_dir() {
+                        continue;
+                    }
+                    
+                    lazy_static! {
+                        static ref RE: Regex = Regex::new(".html$").unwrap();
+                    }
+                    
+                    if RE.is_match(en.file_name().to_str().unwrap()) {
+                        println!("{}", en.path().display());
+                    }
+                }
+                Err(e) => {
+                    println!("{}", e);
+                    process::exit(2);
+                }
+            }
+        }
+    }
 }

@@ -7,3 +7,4 @@ authors = ["Claudio Maggioni <claudio@maggioni.xyz>"]
 reqwest = "0.9.4"
 regex = "1"
 lazy_static = "1.1.0"
+walkdir = "2"
