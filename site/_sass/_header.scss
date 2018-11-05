@@ -1,7 +1,6 @@
 /*------- GLOBAL ------*/
 
 header {
-	background-color: #333;
   text-align:center;
 }
 
@@ -17,6 +16,10 @@ span {
 	#menuTrigger{
 		display:none;
 	}
+
+  .menuDesktop{
+    background-color: #333;
+  }
 
   .boxTitle{
     background: #000;
