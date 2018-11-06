@@ -85,3 +85,36 @@ span {
     }
   }
 }
+
+.box-search{
+  width: 350px;
+  height: calc(50px + 1em);
+  float:right;
+  left: 60%;
+}
+
+.box-search input{
+background-color: #131313;
+    border: none;
+    height: 20px;
+    transition: 500ms;
+    border-bottom: 2px solid white;
+    position: absolute;
+    top: calc(50% - 12px);
+    margin-left:calc(18% + 22px);
+    opacity:0;
+}
+
+.box-search img{
+vertical-align: middle;
+    cursor: pointer;
+    width: 22px;
+    position: absolute;
+    left: calc(100% - 210px);
+    top: calc(50% - 12px);
+}
+
+.anim-search{
+  margin-left:0;
+  opacity:1;
+}
