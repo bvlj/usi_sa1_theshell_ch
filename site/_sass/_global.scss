@@ -74,3 +74,23 @@ main {
 ul, dl, ol {
   margin-left: 2em;
 }
+
+/* ------- HOMEPAGE --------*/
+
+video{
+  width:70%;
+  margin:auto;
+  display:block;
+}
+
+.cont3step{
+  width: calc(70% + 50px);
+  margin: 50px auto;
+}
+
+.cont3step span{
+  width: calc(33% - 50px);
+  background-color: white;
+  height: 300px;
+  margin: 0 25px;
+}
