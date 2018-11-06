@@ -33,12 +33,55 @@ span {
   display: inline-table;
 }
 
-.boxItem a, .boxItem code {
-  display: table-cell;
-  vertical-align: middle;
-  color: #6a6;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 2.3vh;
-  padding: 0 5px;
+.boxItem {
+  div, code {
+    display: table-cell;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 5px;
+
+    ul {
+      /* TODO: if possible, insert a padding-top to move the submenu down such that
+         the text of the first element starts at the bottom border of the .menuDesktop
+      */
+      display: none;
+      position: absolute;
+      list-style: none;
+      margin-left: -10px;
+      background-color: #131313;
+      width: CALC(100% + 20px);
+
+      li {
+        color: #FFFFFF;
+        margin: 10px;
+      }
+
+      li:hover {
+        color: #66aa66;
+      }
+    }
+
+    ul:hover {
+      display: block;
+    }
+  }
+
+  code{
+    cursor: default;
+  }
+
+  div{
+    cursor: pointer;
+  }
+
+  div:hover{
+    color: #66aa66;
+
+    ul {
+      display: block;
+    }
+  }
 }
