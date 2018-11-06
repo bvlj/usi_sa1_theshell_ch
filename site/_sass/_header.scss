@@ -1,11 +1,3 @@
-/*------- GLOBAL ------*/
-
-span {
-  display:inline-block;
-}
-
-/*------- MENU ------*/
-
 .menuDesktop {
   background-color: #131313;
   display: flex;
@@ -13,29 +5,21 @@ span {
   align-items: center;
   *{
     flex-grow: 0;
-    flex-shrink: 0;
   }
   .fill-space{
     flex-grow: 1;
   }
 }
 
-.boxTitle {
+.logo {
   padding: .5em;
 }
 
-.title {
-  color: green;
-  padding: 20px 0;
-}
-
-.boxItem {
+.nav-menu {
   margin-right: 10px;
   margin-left: 10px;
   display: inline-table;
-}
 
-.boxItem {
   div, code {
     display: table-cell;
     vertical-align: middle;
