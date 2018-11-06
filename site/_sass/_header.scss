@@ -1,9 +1,5 @@
 /*------- GLOBAL ------*/
 
-header {
-  text-align:center;
-}
-
 span {
   display:inline-block;
 }
@@ -12,8 +8,16 @@ span {
 
 .menuDesktop {
   background-color: #131313;
-  position: relative;
-  text-align: justify;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  *{
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .fill-space{
+    flex-grow: 1;
+  }
 }
 
 .boxTitle {
@@ -22,14 +26,12 @@ span {
 
 .title {
   color: green;
-  padding: 20px 0px;
+  padding: 20px 0;
 }
 
 .boxItem {
-  position: absolute;
-  right: 1em;
-  top: 0;
-  height: calc(50px + 1em);
+  margin-right: 10px;
+  margin-left: 10px;
   display: inline-table;
 }
 
@@ -45,14 +47,12 @@ span {
 
     ul {
       /* TODO: if possible, insert a padding-top to move the submenu down such that
-         the text of the first element starts at the bottom border of the .menuDesktop
-      */
+         the text of the first element starts at the bottom border of the .menuDesktop */
       display: none;
       position: absolute;
       list-style: none;
       margin-left: -10px;
       background-color: #131313;
-      width: CALC(100% + 20px);
 
       li {
         color: #FFFFFF;
@@ -86,35 +86,29 @@ span {
   }
 }
 
-.box-search{
-  width: 350px;
-  height: calc(50px + 1em);
-  float:right;
-  left: 60%;
-}
+.search-box{
+  margin-left: 10px;
+  margin-right: 10px;
 
-.box-search input{
-background-color: #131313;
+  input{
+    background-color: #131313;
     border: none;
-    height: 20px;
     transition: 500ms;
     border-bottom: 2px solid white;
-    position: absolute;
-    top: calc(50% - 12px);
-    margin-left:calc(18% + 22px);
     opacity:0;
-}
+    color: #FFFFFF;
+  }
 
-.box-search img{
-vertical-align: middle;
+  img{
+    vertical-align: middle;
     cursor: pointer;
     width: 22px;
-    position: absolute;
-    left: calc(100% - 210px);
-    top: calc(50% - 12px);
+  }
 }
 
-.anim-search{
-  margin-left:0;
-  opacity:1;
+.search-box:focus-within {
+  input {
+    margin-left: 0;
+    opacity: 1;
+  }
 }
