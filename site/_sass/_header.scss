@@ -29,6 +29,11 @@
     font-size: 20px;
     padding: 0 5px;
 
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
     ul {
       /* TODO: if possible, insert a padding-top to move the submenu down such that
          the text of the first element starts at the bottom border of the .menuDesktop */
