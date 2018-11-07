@@ -94,3 +94,45 @@ video{
   height: 300px;
   margin: 0 25px;
 }
+
+/* ------- PAGE LAYOUT --------*/
+
+.box-arrows {
+
+  position: fixed;
+  bottom: 275px;
+
+  a{
+    text-decoration:none;
+    cursor:pointer;
+    color:#fff;
+  }
+
+  #back img{
+    content:url("assets/style/l-arrow-black.png");
+  }
+
+  #next img{
+    content:url("assets/style/r-arrow-black.png");
+  }
+
+  #back:hover{
+    color:#6a6;
+
+    img{
+      content:url("assets/style/l-arrow-green.png");
+    }
+  }
+
+  #next:hover{
+    color:#6a6;
+    img{
+      content:url("assets/style/r-arrow-green.png");
+    }
+  }
+
+  img{
+    vertical-align:middle;
+  }
+}
+
