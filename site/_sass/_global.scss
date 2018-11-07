@@ -108,6 +108,17 @@ video{
     color:#fff;
   }
 
+  span{
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  i{
+    font-size: 6vh;
+  }
+
   #back img{
     content:url("assets/style/l-arrow-black.png");
   }
@@ -118,17 +129,10 @@ video{
 
   #back:hover{
     color:#6a6;
-
-    img{
-      content:url("assets/style/l-arrow-green.png");
-    }
   }
 
   #next:hover{
     color:#6a6;
-    img{
-      content:url("assets/style/r-arrow-green.png");
-    }
   }
 
   img{
