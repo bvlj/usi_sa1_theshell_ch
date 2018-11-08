@@ -1,0 +1,129 @@
+\documentclass[hidelinks,12pt,a4paper,numbers=enddot]{scrartcl}
+
+\usepackage[margin=2cm,bottom=3cm]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{lmodern}
+
+\title{How to make a content page with Jekyll}
+\author{Joey Bevilacqua}
+
+% listings configuration
+\lstset{
+	basicstyle=\small\ttfamily,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	columns=fullflexible,
+	commentstyle=\color{gray},
+	keywordstyle=\bfseries\color{red},
+	escapeinside={\%*}{*)},
+  aboveskip=2em,
+  captionpos=b,
+  abovecaptionskip=1em,
+  belowcaptionskip=1em
+}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\listoffigures
+\newpage
+
+\section{Introduction}
+We are using Jekyll to build our website: we've told you this allows us to split
+styling from contents, but what does this actually mean?
+The CSS team has worked to provide you templates to build your page upon.
+Using a template is easy once you get familiar with \textit{Jekyll}.
+
+\section{The template header}
+
+The template header consist in a series of variables defined at the very beginning
+of the web page. These variables have values associated that will be used
+to generate a proper styling.
+
+\paragraph{}
+This is an example for a page with the following stuff:
+
+\begin{table}[h]
+\centering{
+\begin{tabular}{l l p{9cm}}
+\textbf{Variable} & \textbf{Example value} & \textbf{Explaination}\\\hline
+\texttt{layout} & page & The general style of the page. Use "page"\\
+\texttt{topic} & The \textbf{ls} command & What the page is about\\
+\texttt{author} & Claudio Maggioni & The main author of the page\\
+\texttt{category\_title} & Basic commands & Name of the category (Your team full name)\\
+\texttt{category} & basic & The name of the directory this file is in\\
+\texttt{tags} & list file directory find & List of words separated by spaces that are relevant to this (Think of these as hashtags without the \#)\\
+\end{tabular}
+}
+\end{table}
+
+\begin{figure}[h]
+\begin{lstlisting}[language=html]
+---
+layout: page
+category_title: Basic commands
+category: basic
+tags: directory list
+author: Claudio Maggioni
+title: ls
+---
+\end{lstlisting}
+\caption{An example of a template header}
+\end{figure}
+
+\section{Content}
+
+\paragraph{}
+The content comes right after the template header.
+Keep your content as simple as possible, also don't worry about having a long page.
+
+\subsection{Don'ts}
+\textbf{DO NOT} insert screenshots of your terminal or any other kind of screenshot
+unless you are a member of the Basic team trying to show how to open the shell. Use
+the code tags and eventually describe the results using text.
+
+\paragraph{}
+\textbf{DO NOT} use \texttt{div} and \texttt{span}s, nor use \texttt{class=}, \texttt{id=}
+or other styling attributes or options before talking with the CSS team. 
+
+\subsection{File placement}
+Place the \texttt{html} files straight inside the team folder: the creation of subfolders is not
+allowed. Name the \texttt{html} file using the command or topic you're talking about name.
+
+\begin{figure}[h]
+\begin{lstlisting}[language=html]
+<p>The <code>ls</code> command is used to list a directory content or a file.<br>
+The name stands for <i>LiSt</i>.
+
+<h2>Usage</h2>
+
+<p>The default ls command syntax is:
+
+<pre>
+ls [flags] [path]
+</pre>
+
+Where [flags] are the ls flags, read below for more info,
+and [path] is the (optional) path (absolute or relative).
+If no path is provided the current directory is listed.
+</p>
+ 
+<h2>Flags<h2>
+
+<p>Here are some of the most common ls flags:
+
+<ul>
+  <li> <b>-a</b>: Includes the hidden files (those which name starts with ".") </li>
+  <li> <b>-l</b>: Lists with more information about the list file(s) </li>
+  <li> %*\ldots*) </li>
+</ul>
+
+</p>
+\end{lstlisting}
+\caption{An example for the content of a page}
+\end{figure}
+
+\end{document}
