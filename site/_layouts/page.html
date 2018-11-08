@@ -13,6 +13,11 @@ layout: main
 
 </article>
 <div class="box-arrows">
-	<a id="back" href="{{ site.baseurl }}/{{ page.previous-page }}" style="position:fixed;left:3em;"><i class="fas fa-angle-left"></i><span>Back</span></a>
-	<a id="next" href="{{ site.baseurl }}/{{ page.next-page }}" style="position:fixed;right:3em;"><span>Next</span><i class="fas fa-angle-right"></i></a>
+	{% if page.previous-page %}
+		<a id="back" href="{{ site.baseurl }}/{{ page.previous-page }}" style="position:fixed;left:3em;"><i class="fas fa-angle-left"></i><span>Back</span></a>
+	{% endif%}
+
+	{% if page.next-page %}
+		<a id="next" href="{{ site.baseurl }}/{{ page.next-page }}" style="position:fixed;right:3em;"><span>Next</span><i class="fas fa-angle-right"></i></a>
+	{% endif%}
 </div>
