@@ -8,7 +8,12 @@ layout: main
   </header>
 
   <div class="post-content">
-    {{ content }}
+  	<ol>
+    {% for item in site.pages %}
+    	{% if item.category == page.category and item.layout != "topic" %}
+    		<li>{{ item.title }}</li>
+    	{% endif  %}
+    {% endfor %}
+    </ol>
   </div>
-
 </article>

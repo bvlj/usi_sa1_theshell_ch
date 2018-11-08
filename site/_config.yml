@@ -12,3 +12,4 @@ url: "" # the base hostname & protocol for your site
 future: true
 collections:
   authors:
+  

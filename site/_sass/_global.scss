@@ -99,11 +99,7 @@ video{
 
 .box-arrows {
 
-  position: fixed;
-  bottom: 275px;
-
   a{
-  	position:fixed;
   	transition:300ms;
     text-decoration:none;
     cursor:pointer;
@@ -116,10 +112,12 @@ video{
   }
 
   #back {
+    float:left;
     left:3em;
   }
 
   #next {
+    float:right;
     right:3em;
   }
 
