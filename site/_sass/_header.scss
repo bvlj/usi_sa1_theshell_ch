@@ -1,3 +1,7 @@
+header{
+  z-index:1;
+}
+
 .menuDesktop {
   background-color: #131313;
   display: flex;
@@ -58,7 +62,7 @@
       text-decoration: none;
       color: inherit;
     }
-    
+
     ul:hover {
       display: block;
     }

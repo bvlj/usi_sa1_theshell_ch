@@ -1,0 +1,41 @@
+ol {
+   list-style: none;
+   counter-reset: command;
+   background-color: #bdbdbd;
+   border-radius: 50px;
+   width: 50%;
+ }
+
+ .list-commands {
+   counter-increment: command;
+   margin-bottom: 5px;
+
+   a{
+   	height:29px;
+   	width:calc(100% - 2em - 20px);
+   	text-decoration: none;
+    font-size: 2.5vh;
+    font-weight: bold;
+    display: inline-block;
+    margin-left:20px;
+   }
+ }
+
+ .list-commands:before {
+   content: counter(command);
+    background: #6a6;
+    border-radius: 100%;
+    height: 33px;
+    width: 33px;
+    font-size: 3vh;
+    text-align: center;
+    display: inline-block;
+ }
+
+ ol:hover{
+ 	background-color: #646464;
+ }
+
+
+
+
