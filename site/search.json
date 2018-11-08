@@ -1,0 +1,19 @@
+---
+layout: null
+category: nosearch
+author: Claudio Maggioni
+---
+[
+  {% for page in site.pages %}
+		{% if page.category != "nosearch" %}
+    {
+			"title"    : "{{ page.title | escape }}",
+			"category" : "{{ page.category }}",
+			"tags"     : "{{ page.tags | join: ', ' }}",
+			"url"      : "{{ page.baseurl }}{{ page.url }}",
+			"date"     : "{{ page.date }}"
+		},
+		{% endif %}
+  {% endfor %}
+	null
+]
