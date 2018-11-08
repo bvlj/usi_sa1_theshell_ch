@@ -11,7 +11,7 @@ layout: main
     {{ content }}
   	<ol>
     {% for item in site.pages %}
-    	{% if item.category == page.category and item.layout != "topic" %}
+    	{% if item.category-page == page.category-page and item.layout != "topic" %}
     		<li class="list-commands"><a href="{{ item.url }}">{{ item.title }}</a></li>
     	{% endif %}
     {% endfor %}

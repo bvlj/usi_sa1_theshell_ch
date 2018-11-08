@@ -1,12 +1,12 @@
 ol {
    list-style: none;
    counter-reset: command;
-   background-color: #bdbdbd;
-   border-radius: 50px;
    width: 50%;
  }
 
  .list-commands {
+   border-radius: 50px;
+   background-color: #bdbdbd;
    counter-increment: command;
    margin-bottom: 5px;
 
@@ -32,7 +32,7 @@ ol {
     display: inline-block;
  }
 
- ol:hover{
+ .list-commands:hover{
  	background-color: #646464;
  }
 
