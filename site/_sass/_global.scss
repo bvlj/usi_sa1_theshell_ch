@@ -47,6 +47,11 @@ main {
 
   pre {
     overflow-x: auto;
+    padding: .5em;
+  }
+
+  td pre {
+    padding: 0;
   }
   
   pre, code {
