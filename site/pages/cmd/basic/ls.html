@@ -3,24 +3,71 @@ layout: page
 category_title: Basic commands
 category-page: basic
 tags: directory list
-author: Claudio Maggioni
+author: Marinelli Alessandro
 title: LS
-next-page: pages/cmd/basic/cd.html
+previous-page: pages/cmd/basic/cd.html
 ---
 
-<p>The ls command is used to list files</p>
-<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Hello</li>
-</ul>
-{% highlight ruby linenos %}
-def show
-puts "Outputting a very lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong line"
-@widget = Widget(params[:id])
-respond_to do |format|
-format.html # show.html.erb
-format.json { render json: @widget }
-end
-end
-{% endhighlight %}
+<p>The <code>ls</code> command is used to list a directory content or a file.<br>
+  The name stands for <i>LiSt</i>.
+  <h2>Syntax</h2>
+  <p>The default ls command syntax is:
+    <pre>ls [flags] [path]</pre>
+    Where [flags] are the ls flags, read below for more info,and [path] is the
+    (optional) path (absolute or relative).If no path is provided the current
+    directory is listed.</p>
+  <h2>Usage</h2> <br>
+  <h3> List the elements on the current working directory </h3>
+  <p> Let's see how to show a list containing the elements included in the
+    current working directory</p>
+  <pre>
+  Device-name:Multimedia.Folder YourName$ ls
+  Other Multimedia		This is a file,not a folder.jpg
+  Photos				Videos
+</pre>
+  <p> As you can see, typing <code> ls</code> in the Unix Shell, will give as output
+    the list of elements contained in the actual working directory,which,in our case, is a folder named <u><code>Multimedia.folder</code></u>.<br>
+    Elements listed can be files (look for exemple at the element<u><code> This is a file,not a folder.jpg</code></u>),
+    such as other directories
+    (look for example at the folder <u> <code> Photos</code></u> ).
+    <h3> List  the elements contained in a directory </h3>
+    <pre>
+    Device-name:Multimedia.Folder YourName$ ls Photos
+    01.jpg		02.jpg
+    03.jpg		04.jpg
+  </pre>
+  <p> As you can see, now the Unix Shell is showing us the elements contained
+    in the folder <u> <code> Photos</code></u>. </p>
+    <p> <storng> Notice: </strong> <u> <code> Photos</code></u> is a valid path
+      because it is actually the relative path of a folder contained in the current working directory.<br>
+      You have to put the absolute path if you want to list elements which are not contained in the
+      current working directory </p>
+
+  <h3> Show hidden files </h3>
+  <p> You can include hidden files (those  which name starts with ".") in  the displayed list using the <u><code>-a</code></u> flag </p>
+  <pre>
+Device-name:Multimedia.Folder YourName$ ls -a Photos
+.				01.png
+..				02.png
+.DS_Store			03.png
+.secret.png			04.jpg
+  </pre>
+  <p>As you can see, now the SHELL shows more files for the same directory</p>
+
+  <h3> Show list in long format </h3>
+  <pre>
+Device-Name:Photos YourName$ ls -l
+total 10816
+-rw-r--r--@ 1 YourName  YourGroup  3143706  4 Ott 13:28 01.png
+-rw-r--r--@ 1 YourName  YourGroup  2269193 28 Ott 18:58 02.png
+-rw-r--r--@ 1 YourName  YourGroup  37900   28 Ott 22:07 03.png
+-rw-r--r--@ 1 YourName  YourGroup  75924   20 Ott 16:01 04.jpg
+</pre>
+    <p>     If the <u><code>-l</code></u> flag is given, the following information will be displayed for
+     each file: file mode, number of links, owner name, group name, number of
+     bytes in the file, abbreviated month, day-of-month file was last modi-
+     fied, hour file last modified, minute file last modified, and the path-
+     name.  In addition, for each directory whose contents are displayed, the
+     total number of 512-byte blocks used by the files in the directory is
+     displayed on a line by itself, immediately before the information for the
+     files in the directory. </p>
