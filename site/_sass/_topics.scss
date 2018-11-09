@@ -1,14 +1,12 @@
-ol {
+ul {
    list-style: none;
-   counter-reset: command;
    width: 50%;
  }
 
  .list-commands {
    border-radius: 50px;
-   background-color: #bdbdbd;
-   counter-increment: command;
    margin-bottom: 5px;
+   transition:500ms;
 
    a{
    	height:29px;
@@ -22,11 +20,11 @@ ol {
  }
 
  .list-commands:before {
-   content: counter(command);
+   content: '>';
     background: #6a6;
     border-radius: 100%;
-    padding: 7px 11px;
-    font-size: 1.8vh;
+    padding: 4px 11px;
+    font-size: 2.8vh;
     text-align: center;
     display: inline-block;
  }

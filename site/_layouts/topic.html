@@ -9,13 +9,13 @@ layout: main
 
   <div class="post-content">
     {{ content }}
-  	<ol>
+  	<ul>
     {% for item in site.pages %}
-    	{% if item.category-page == page.category-page and item.layout != "topic" %}
-    		<li class="list-commands"><a href="{{ item.url }}"><span>{{ item.title }}</span></a></li>
+    	{% if item.category-page == page.category-page and item.layout == "page" %}
+    		<li class="list-commands"><a href="{{ item.url }}">{{ item.title }}</a></li>
     	{% endif %}
     {% endfor %}
-    </ol>
+    </ul>
   </div>
 
 </article>
