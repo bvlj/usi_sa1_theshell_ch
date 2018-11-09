@@ -1,0 +1,34 @@
+---
+layout: page
+category_title: Basic commands
+category-page: basic
+tags: manual
+author: De Vita Gianmarco
+title: man
+---
+<p>The <code>man</code> tool allows you to explore the various utilities
+  of the Shell. To search for more information about a command, just write</p>
+
+<pre>
+Device-name:Current-position username$ man command-name
+</pre>
+
+<p>As result, a new session will be opened with information about the command
+you have typed (and more specifically about its functions and flags).</p>
+
+<p>Using some flags, you can obtain with this command the same results you get
+  when you use other commands. For istance:</p>
+
+<h3>The <code>-k</code> flag</h3>
+<p>Using the <code>-k</code> flag, you obtain an equivalent result to
+  <code>apropos</code>.</p>
+<pre>
+Device-name:Current-position username$ man -k command-name
+</pre>
+
+<h3>The <code>-f</code> flag</h3>
+<p>Using the <code>-f</code> flag, you obtain an equivalent result to
+  <code>whatis</code>.</p>
+<pre>
+Device-name:Current-position username$ man -f command-name
+</pre>
