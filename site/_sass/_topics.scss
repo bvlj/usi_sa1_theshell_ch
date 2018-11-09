@@ -25,9 +25,8 @@ ol {
    content: counter(command);
     background: #6a6;
     border-radius: 100%;
-    height: 33px;
-    width: 33px;
-    font-size: 3vh;
+    padding: 7px 11px;
+    font-size: 1.8vh;
     text-align: center;
     display: inline-block;
  }
@@ -35,7 +34,3 @@ ol {
  .list-commands:hover{
  	background-color: #646464;
  }
-
-
-
-
