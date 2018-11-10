@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+
+
+  <body>
+    <h3>Redirecting Outputs</h3>
+    <p>First of all, to redirect a certain output of the command-line we have to use the symbol ">".</p>
+    <p>Even in this case, we will use a file named "Hello", in which we want to move a certain output, like "Sun".</p>
+    <hr>
+    <p>$ echo Sun > Hello </p>
+    <p>So if we copy the the file on our command-line, the output will be the following:</p>
+    <p>$ cat Hello<br>
+      Sun</p>
+    <hr>
+    <br>
+    <p>If we want to move a certain output to an existing file, we just have to use twice the ">" symbol.</p>
+    <hr>
+    <p>$ echo Bright >> Hello</p>
+    <p>$ cat Hello<br>
+      Sun<br>
+      Bright</p>
+    <hr>
+    <br>
+    <h3>Redirecting Inputs</h3>
+    <p>To redirect an input from a file for a command, you have to use symbol "<".<br>
+      In fact, it's not useful, as the result that obtain is just the content of the file.</p>
+    <p>Redirecting inputs becomes useful when it comes to chaining, so let's see it.<p/>
+    <h3>Chaining</h3>    
