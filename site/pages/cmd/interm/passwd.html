@@ -1,0 +1,40 @@
+---
+layout: page
+category: Intermediate commands
+category-page: intermediate
+tags: password change pwd user
+author: Fabiano Fenini
+title: passwd
+previous-page: ""
+---
+<p>The <code>passwd</code> command allows us to change or to assign a password of authentication
+of an user currently in the system.<br>
+When the user doesn’t have particular privileges, he is only able to change is password,
+while the root user has the possibility to change also other users’ passwords.<br>
+The command name stands for <i>password</i>.
+
+<h2>Usage</h2>
+
+The default passwd command syntax is:
+
+<pre>
+passwd [flags]  [user]
+</pre>
+
+Where [flags] are the passwd flags, read below for more info, the parameter [user] can only be
+specified by the root user. If no user is provided, passwd proceed to set the password of the
+user who uses this command. You will first be asked to enter the current user password.
+
+<h2>Flags</h2>
+
+Here are some of the most common passwd flags:
+
+<ul>
+   <li> <b>-d</b>: Delete the user password </li>
+   <li> <b>-h</b>: Get information about how to use this command </li>
+   <li> <b>-l</b>: Lock the password </li>
+   <li> <b>-u</b>: Unlock the password </li>
+   <li> <b>-S</b>: See the account status information </li>
+</ul>
+
+</p>

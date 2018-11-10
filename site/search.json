@@ -11,7 +11,7 @@ author: Claudio Maggioni
 			"tags"     : "{{ page.tags | join: ', ' }}",
 			"url"      : "{{ page.baseurl }}{{ page.url }}",
 			"date"     : "{{ page.date }}",
-     "category": "{{ page.category_title }}"
+     "category": "{{ page.category-title }}"
 		},
 		{% endif %}
   {% endfor %}
