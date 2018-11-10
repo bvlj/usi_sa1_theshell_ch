@@ -6,8 +6,42 @@
 
 
   <body>
-    <h3>:</h3>
-
+    <!-- Echo command text -->
+    <h3>Echo</h3>
+    <p>This command print as output its entire argument on the command-line.<br>
+    It could be used with variables, like in the following example:</p>
+    <hr>
+    <p>$ example:"this is an example"</p>
+    <br>
+    <p>$ <b>echo</b> $example</p>
+    <p>this is an example</p>
+    <hr>
+    <br>
+    <!-- Cat command text -->
+    <h3>Cat</h3>
+    <p>This command prints the content of a certain file as an output on the command-line.</p>
+    <p>As example, we could imagine a simple text file in pages named "Hello", which contains the line "Hello World".<br>
+      So, our command example will look like this:</p>
+    <hr>
+    <p>$ pages Hello</p>
+    <p>$ <b>cat</b> Hello<br>
+      Hello World</p>
+    <hr>
+    <br>
+    <!-- NOTE: Grep command text -->
+    <h3>Grep</h3>
+    <p>This one behaves very similarly to the previus one, but in this case it prints only the lines matching a certain pattern.<br>
+      In this we could imagine a certain text file "animals", which contains a list of animal-names.</p>
+    <p>If we want to select only the animals whose name begins with the letter "d", we will write this:<br>
+    <hr>
+    <p>$ grep d animals<br>
+      Deer<br>
+      Dog<br>
+      Dolphin<br>
+      ...
+      <br>
+    <hr>
+    <br>
 
 
 
