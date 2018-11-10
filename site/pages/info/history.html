@@ -1,0 +1,80 @@
+---
+layout: page
+category_title: frontpage
+category-page: About
+tags: History shell shells command-line interpreter Ken Thompson V6 PWD John Mashey Bourne C Korn Bourne-Again Brian Fox David Korn Bill Joy Stephen Bourne
+author: Nicola Brunner
+title: History of shells
+---
+
+<p>A shell is a command-line interpreter and like for the editors: Everyone has his favourite.
+Several version, each with its own features got introduced in the last 50 years. In this section
+we are going to briefly explain the history of the UNIX shell and to highlight the key
+differences between the main ones, but don&#39;t forget: the core ideas about shells are
+the same in everyone.</p>
+
+<p>In 1971, <i>Ken Thompson</i> (of Bell Labs) developed the <b>V6 shell</b> (/bin/sh), the first shell for
+UNIX. This independent user program was inspired by Multics (an operating system developed
+by the American software engineer <i>Glenda Schroeder</i>, in 1965) and introduced a compact syntax
+for piping (concept of a sequence of chained processes where the output of a process feeds as
+input to the next one) and for redirection (stays for the deviation of outputs to user-specified
+locations), that has survived into all modern shells. This shell was only capable of acting as an
+interactive shell (command interpreter), to invoke commands and view results, it was not able
+to script.</p>
+
+<p>After this first shell, the next one was the <b>PWD shell</b> created in 1975 by <i>John Mashey</i>.
+This upward-compatible version of the Thompson shell focused on making shell programming practical.
+Comparing it to his predecessor, new features were added such as variables, user-executable shell
+scripts, interrupt-handling and an extension of control structures (that were integrated to the shell
+itself, in fact in the older versions they were &#34;outside&#34; the shell).</p>
+
+<p>A couple of years later the development of new and more capable shells got at its maximum
+and several shells, all with different characteristics, were introduced. In the next section
+the most influential ones are briefly presented.</p>
+
+<p>The <b>Bourne shell</b> (sh), introduced in 1977 by <i>Stephen Bourne</i> (also at Bell Labs),
+is a complete redesign of the &#34;original&#34; shell. It was backward compatible since it shared
+with its predecessor all the basics functions, but it introduced a more functional language capable
+of better interacting with the operating system. Its language was influenced by ALGOL 68
+(Algorithmic Language 1968), an imperative computer programming language.
+This shell is known by users because of its characteristic default command line prompt character
+and the use of the dollar sign. It still remains a useful and popular shell today.
+There are many alternatives to this shell, here are listened only some of them: <b>Almquist
+shell</b> (ash), <b>Debian Almquist shell</b> (dash), <b>Z shell</b> (zsh), <b>Bourne-Again shell</b> (bash) and
+<b>Korn shell</b> (ksh). To the last two we come back later.</p>
+
+<p>Another important shell that was developed in this period is the <b>C shell</b> (csh).
+It was developed by <i>Bill Joy</i> at the University of California around 1978. This shell,
+that has strong resemblances to C commands, introduced for the first time a large number of
+features for interactive work, job control (the ability to stop, start, and pause commands)
+and command history. It was upgraded 5 years later by the <b>Tenex C shell</b> (tcsh), which is
+an improved version of the original C shell which includes many functions from the Tenex system.
+
+<p>The <b>Korn shell</b>, that was mentioned above, designed by <i>David Korn</i>, is a commercial product
+that incorporates the best features of the Bourne and the C shells. One of its most distinguishing
+feature is its predisposition to be used as scripting language. Besides it is
+also backward-compatible with the original Bourne shell.</p>
+
+<p>The <b>Bourne-Again shell</b> is very similar to the Korn shell, with the key difference that
+it is free. It was developed for the GNU project, by <i>Brian Fox</i> around
+1988, with the idea to replace all the commercial UNIX utilities on the market with
+free ones. Over the years, this shell has become the most popular Bourne shell derivate,
+because of two main reasons: it is backward-compatible for scripting and it was heavily
+supported by the developer team that performed several improvements and bug fixes over the years
+(a second version - bash 2.0 - was released in 1996, which shows many new features like the
+command-line editing modes, which let you fix mistakes or modify previous commands).</p>
+
+<p>Throughout the last 50 years, the independence of the shell from the UNIX operating system has led
+to the development of several shells, each with different features, but not all achieved the same success
+and distribution. Bourne shell derivatives continue to be the primary
+shells in use, in fact the Bourne shell is still known as the &#34;standard&#34; shell, and also the
+Bourne-Again shell is becoming increasingly popular, because it includes the best features of
+the C and Korn shells as well as several advantages of its own. Even though, several shells were
+introduced in the last few decades the main concepts and ideas of the early shells remain the same
+even several years later, showing that the shell has been improved but not substantially changed.</p>
+
+<p>Sorces:<br>
+<a href="https://www.oreilly.com/library/view/learning-the-bash/1565923472/ch01s03.html">www.oreilly.com</a> <br>
+<a href="https://en.wikipedia.org/wiki/Unix_shell">www.wikipedia.org</a> <br>
+<a href="https://www.ibm.com/developerworks/library/l-linux-shells/index.html">www.ibm.com</a>
+</p>
