@@ -1,0 +1,81 @@
+---
+layout: page
+topic: The grep command
+author: Domenico Votta
+category_title: Advanced Commands
+category_page: Advanced
+tags: search for occurences
+title: grep
+---
+<p>The <code>grep</code>  is a command that permits to search occurences of a keyword or more in a file or more. Through some flags you can decide the search criteria. The command grep is case sensitive (robot is different from Robot), but we will see how to ignore it</p>
+Here we have two files named <code>example1.txt</code> and <code>example2.txt</code> that contain 5 elements, to test this command:
+
+<code>example1.txt</code>
+{% highlight ruby linenos %}
+Car
+Computer
+Robot
+Smartphone
+Videogame
+{% endhighlight %}
+
+<code>example2.txt</code>
+{% highlight ruby linenos %}
+Apple
+Computer
+Robot
+Microsoft
+Huawei
+{% endhighlight %}
+
+The syntax command is:
+<pre>grep [flag] [keyword] [file]</pre>
+You can put different flags together to refine the search.
+
+{% highlight ruby linenos %}
+grep Robot example1.txt example2.txt (if you write robot you won't have the correspondence.)
+example1.txt: Robot
+example2.txt: Robot
+{% endhighlight %}
+<p>Your output will be this because grep found the keyword Robot in both files</p>
+
+<h2>Flags</h2>
+<p>Here a list that contains the main flags of these command:
+
+<ul>
+  <li> <b>-i</b>: this flag ignore the case sensitive. Here we can write Robot or robot that grep will find the correspondence. </li>
+  {% highlight ruby linenos %}
+grep -i robot example1.txt example2.txt
+example1.txt: Robot
+example2.txt: Robot
+  {% endhighlight %}
+
+  <li> <b>-v</b>: this flag ignore the keyword from the search. </li>
+  {% highlight ruby linenos %}
+grep -i -v robot example1.txt example2.txt
+example1.txt:Car
+example1.txt:Computer
+example1.txt:Smartphone
+example1.txt:Videogame
+example2.txt:Apple
+example2.txt:Computer
+example2.txt:Microsoft
+example2.txt:Huawei
+  {% endhighlight %}
+
+  <li> <b>-c</b>: this flag indicates the number of times that the keyword appears in the file. </li>
+  {% highlight ruby linenos %}
+grep -i -c robot example1.txt
+1
+  {% endhighlight %}
+<p> If in the file you would have had two times the keyword Robot, the output would have been 2</p>
+
+<li> <b>-h</b>: Remove from the output the file name where it found the keyword</li>
+{% highlight ruby linenos %}
+grep -i -h apple example1.txt example2.txt
+Apple
+{% endhighlight %}
+<p>How you can see the output doesn't show tha file name <code>example2.txt</code></p>
+</ul>
+
+</p>
