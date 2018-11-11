@@ -1,0 +1,56 @@
+---
+layout: page
+category-title: Basic commands
+category-page: basic
+tags: manual
+author: Gianmarco De Vita
+title: info
+previous-page: pages/cmd/basic/cd.html
+next-page: pages/cmd/basic/ls.html
+---
+<p> An <i>.info</i> file is an information document created by Texinfo.
+  It stores documentation in a book format with chapters, sections,
+  and subsections and can contain up to four layers of depth.
+  Info documents are used for storing software help manuals and technical books.
+  The <code>info</code> command allows you to read that kind of files
+  and to search for particular information by using special flags.</p>
+
+<pre>
+Device-name:Current-position username$ info [flag] [item]
+</pre>
+
+<p>By writing the command <code>info</code> followed by nothing, as result you
+  will get a list of what you can do with that command.</p>
+
+
+<h3>Look up for a specific string</h3>
+<p>Using the <code>--apropos</code> flag followed by a string, you obtain as
+  output a list of all the contents which correspond to the string you wrote.</p>
+
+<pre>
+Device-name:Current-position username$ info --apropos string
+</pre>
+
+<p>If the string you inserted has nothing to do with the content of the info files,
+  you will get a error message. For example:</p>
+
+<pre>
+  Device-name:Current-position username$ info --apropos duck
+  info: No available info files have `duck' in their indices.
+</pre>
+
+<h3>An help with this command</h3>
+<p>Using the <code>-h</code> flag (which stands for help), you obtain as
+  output a brief paragraph in which are explained the features of this command.</p>
+
+<pre>
+Device-name:Current-position username$ info -h
+</pre>
+
+<h3>Visit a specific <i>.info</i> file</h3>
+<p>Using the <code>-f</code> flag followed by the path and a <i>.info</i> file, you
+  as output obtain the content of that file.</p>
+
+<pre>
+Device-name:Current-position username$ info -f path/filename.info
+</pre>
