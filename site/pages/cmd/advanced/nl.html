@@ -1,0 +1,70 @@
+---
+layout: page
+topic: The nl command
+author: Domenico Votta
+category_title: Advanced Commands
+category_page: Advanced
+tags: number lines
+title: nl
+---
+<p>The <code>nl</code>  is a command that permits to number the lines. Through some flags you can decide how to filter this command.</p>
+We have a file named <code>example.txt</code> that contains 5 elements, to test this command:
+{% highlight ruby linenos %}
+Car
+Computer
+Robot
+Smartphone
+Videogame
+{% endhighlight %}
+
+The syntax command is:
+<pre> nl [flags][file] </pre>
+
+{% highlight ruby linenos %}
+nl example.txt
+ 1  Car
+ 2  Computer
+ 3  Robot
+ 4  Smartphone
+ 5  Videogame
+{% endhighlight %}
+<p>How you can see the command has numbered the lines.</p>
+
+<h2>Flags</h2>
+
+<p>Here a list that contains the main flags of these command:
+<ul>
+
+  <li> <b>-b</b>: Specify the lines to be numered </li>
+  {% highlight ruby linenos %}
+nl -b p^[cv] example.txt
+   1  Car
+   2  Computer
+   3  Videogame
+      Robot
+      Smartphone
+  {% endhighlight %}
+  <p> <code>p^[cv]</code> says to nl to number only the lines that start with c and v.</p>
+
+  <li> -b<b>n</b>: The flag n goes with b, doesn't number any lines </li>
+  {% highlight ruby linenos %}
+nl -bn example.txt
+     Car
+     Computer
+     Videogame
+     Robot
+     Smartphone
+  {% endhighlight %}
+
+  <li> <b>-s</b>: Usually nl separes the number of the line from the text with a tab, with -s flag you can choose another separator, in this example we will use "=". </li>
+  {% highlight ruby linenos %}
+nl -s= example.txt
+   1=Car
+   2=Computer
+   3=Videogame
+   4=Robot
+   5=Smartphone
+  {% endhighlight %}
+
+</ul>
+</p>
