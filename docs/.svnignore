@@ -8,4 +8,6 @@
 *.nav
 *.snm
 *.vrb
-
+*.mp
+*.tmp
+*.tui
