@@ -37,11 +37,13 @@ header{
   li:hover {
     color: #66aa66;
   }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
-.search-box ul.show {
-  display: block;
-}
 
 
 .nav-menu {
@@ -58,10 +60,10 @@ header{
     font-size: 20px;
     padding: 0 5px;
 
-    a{
-      text-decoration: none;
-      color: inherit;
-    }
+    //a{
+    //  text-decoration: none;
+    //  color: inherit;
+    //}
 
     ul:hover {
       display: block;
@@ -99,6 +101,14 @@ header{
     color: #FFFFFF;
   }
 
+  ul {
+    display: none;
+    li{
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
   img{
     vertical-align: middle;
     cursor: pointer;
@@ -106,9 +116,13 @@ header{
   }
 }
 
-.search-box:focus-within {
+.search-box:focus-within, .search-box:active {
   input {
     margin-left: 0;
     opacity: 1;
+  }
+
+  ul{
+    display: block;
   }
 }
