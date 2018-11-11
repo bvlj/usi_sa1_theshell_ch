@@ -1,29 +1,28 @@
 ---
 layout: page
-topic: The pipes command
 author: Domenico Votta
-category_title: Advanced Commands
-category_page: Advanced
-tags: pipes
+category-page: advanced
+category-title: Advanced commands
+tags: pipes redirect output input
 title: pipes
 ---
 
 <p>The <code>pipes</code> that in the shell are representend with the symbol | , they are used to join two commands on the terminal, taking the output of the first command and using it as input of the second. </p>
 <p> It is usually common to see the command grep and ps together, an example below.</p>
 
-{% highlight ruby linenos %}
+<pre>
 ps aux | grep user
-{% endhighlight %}
+</pre>
 <p>Lists all processes with your username</p>
 
-{% highlight ruby linenos %}
+<pre>
 cat example1.txt | nl
   1  Car
   2  Computer
   3  Robot
   4  Smartphone
   5  Videogame
-{% endhighlight %}
-<p>In this example you send this output to another process, in this case, the <a href="nl.html">nl</a> </p>
+</pre>
+<p>In this example you send this output to another process, in this case, the <a href="{{ site.baseurl }}/pages/cmd/advanced/nl.html">nl</a> </p>
 
 <p>You can use the commands that you learned and put them together, always respecting the logic of the command.</p>

@@ -1,9 +1,8 @@
 ---
 layout: page
-topic: The grep command
 author: Domenico Votta
-category_title: Advanced Commands
-category_page: Advanced
+category-page: advanced
+category-title: Advanced commands
 tags: search for occurences
 title: grep
 ---
@@ -11,7 +10,7 @@ title: grep
 Here we have two files named <code>example1.txt</code> and <code>example2.txt</code> that contain 5 elements, to test this command:
 
 <code>example1.txt</code>
-{% highlight ruby linenos %}
+{% highlight bash linenos %}
 Car
 Computer
 Robot
@@ -20,7 +19,7 @@ Videogame
 {% endhighlight %}
 
 <code>example2.txt</code>
-{% highlight ruby linenos %}
+{% highlight bash linenos %}
 Apple
 Computer
 Robot
@@ -44,14 +43,14 @@ example2.txt: Robot
 
 <ul>
   <li> <b>-i</b>: this flag ignore the case sensitive. Here we can write Robot or robot that grep will find the correspondence. </li>
-  {% highlight ruby linenos %}
+<pre>
 grep -i robot example1.txt example2.txt
 example1.txt: Robot
 example2.txt: Robot
-  {% endhighlight %}
+</pre>
 
   <li> <b>-v</b>: this flag ignore the keyword from the search. </li>
-  {% highlight ruby linenos %}
+<pre>
 grep -i -v robot example1.txt example2.txt
 example1.txt:Car
 example1.txt:Computer
@@ -61,20 +60,20 @@ example2.txt:Apple
 example2.txt:Computer
 example2.txt:Microsoft
 example2.txt:Huawei
-  {% endhighlight %}
+</pre>
 
   <li> <b>-c</b>: this flag indicates the number of times that the keyword appears in the file. </li>
-  {% highlight ruby linenos %}
+<pre>
 grep -i -c robot example1.txt
 1
-  {% endhighlight %}
+</pre>
 <p> If in the file you would have had two times the keyword Robot, the output would have been 2</p>
 
 <li> <b>-h</b>: Remove from the output the file name where it found the keyword</li>
-{% highlight ruby linenos %}
+<pre>
 grep -i -h apple example1.txt example2.txt
 Apple
-{% endhighlight %}
+</pre>
 <p>How you can see the output doesn't show tha file name <code>example2.txt</code></p>
 </ul>
 
