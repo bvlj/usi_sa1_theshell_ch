@@ -1,9 +1,9 @@
-ul {
+.list-commands {
    list-style: none;
    width: 50%;
  }
 
-.list-commands {
+.list-commands li {
    border-radius: 50px;
    margin-bottom: 5px;
    transition:500ms;
@@ -18,7 +18,7 @@ ul {
    }
 }
 
-#before-command {
+.before-command {
   background: #6a6;
   border-radius: 100%;
   padding: 4px 12px;
@@ -26,17 +26,17 @@ ul {
   transition:500ms;
 }
 
-.list-commands:hover{
+.list-commands li:hover{
  	background-color: #646464;
 
-  #before-command{
+  .before-command{
     border-radius:10px;
     color:#000;
   }
 
   .blink:after{
     content:"_";
-    animation: blink 500ms linear infinite;
+    animation: blink 800ms linear infinite;
   }
 
   @keyframes blink{

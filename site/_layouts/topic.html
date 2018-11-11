@@ -9,10 +9,10 @@ layout: main
 
   <div class="post-content list-commands-container">
     {{ content }}
-  	<ul>
+  	<ul class="list-commands">
     {% for item in site.pages %}
     	{% if item.category-page == page.category-page and item.layout == "page" %}
-    		<li class="list-commands"><span id="before-command"><</span><a href="{{ item.url }}">{{ item.title }}<span class="blink"></span></a></li>
+    		<li><span class="before-command">></span><a href="{{ item.url }}">{{ item.title }}<span class="blink"></span></a></li>
     	{% endif %}
     {% endfor %}
     </ul>
