@@ -1,15 +1,18 @@
 ---
 layout: page
-author: De Vita Gianmarco
-title: SAY
+category_title: Basic commands
+category-page: basic
+tags: say
+author: Gianmarco De Vita
+title: say
 ---
 <p>You can convert text into audible speech just by writing the command
   <code>say</code> followed by a string. This is possible thanks to the
   Speech Synthesis manager.</p>
 
-{% highlight ruby linenos %}
-  Device-name:Current-position username$ say string
-{% endhighlight %}
+<pre>
+    Device-name:Current-position username$ say string
+</pre>
 
 <p>Naturally, the wide presence of flags for this command allows you to use
   this command for many different tasks. Notice that using more flag
@@ -20,52 +23,54 @@ title: SAY
       of the string, by the path of a text file, you will get as output a voice
       reading the content of that file.</p>
 
-{% highlight ruby linenos %}
+<pre>
   Device-name:Current-position username$ say -f path/text.txt
-{% endhighlight %}
+</pre>
 
 <h3>Specify the reading voice</h3>
     <p>By writing the flag <code>-v</code> followed by a person name and a string, you
       can decide which voice should read the string.</p>
 
-{% highlight ruby linenos %}
-  Current-position username$ say -v name string
-{% endhighlight %}
+<pre>
+  Device-name:Current-position username$ say -v name string
+</pre>
 
 <p><b>Notice.</b> Of course, you're not expected to know every possible voice,
   so, by writing "?" as argument of the command (including also the flag -v),
   you will get a list of all the available voices.</p>
 
-{% highlight ruby linenos %}
-  Current-position username$ say -v ?
-{% endhighlight %}
+<pre>
+  Device-name:Current-position username$ say -v ?
+</pre>
 
 <h3>Specify the Speech Rate</h3>
     <p>By writing the flag <code>-r</code> followed by a rate and then by a
       string, you can decide the reading speed in words per minute.</p>
 
-{% highlight ruby linenos %}
-    Current-position username$ say -r rate string
-{% endhighlight %}
+<pre>
+    Device-name:Current-position username$ say -r rate string
+</pre>
 
 <h3>Store the output in an audible file</h3>
     <p>You can save the result of the command in an audible file. To do that,
     you have just to write after the command the flag <code>-o</code> followed
     by the path/name of the output file and then the string that has to be read.</p>
 
-{% highlight ruby linenos %}
-  Current-position username$ say -o path/audiofile.*format string
-{% endhighlight %}
+<pre>
+  Device-name:Current-position username$ say -o path/audiofile.*format string
+</pre>
 
-<h3>Exercise - Flags combinations</h3>
+<h3>Try by yourself - Flags combinations</h3>
     <p>As said above, you can use more flags in the same command, once you know
       well them. See the examples below and try to guess the output. You can
-      copy these commands into your terminal to verify your answers.</p>
+      copy these commands into your terminal to verify your answers. Naturally,
+      you have to create the text files if they don't exist (with some text
+      inside), to make the work.</p>
 
-{% highlight ruby linenos %}
-  Current-position username$ say -v Alex -f hello_world.txt
-{% endhighlight %}
+<pre>
+  Device-name:Current-position username$ say -v Alex -f hello_world.txt
+</pre>
 
-{% highlight ruby linenos %}
-  Current-position username$ say -o hi.aac -f hello_world.txt
-{% endhighlight %}
+<pre>
+  Device-name:Current-position username$ say -o hi.aac -f hello_world.txt
+</pre>
