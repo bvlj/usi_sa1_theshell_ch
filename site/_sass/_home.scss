@@ -1,0 +1,43 @@
+.home-tiles {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding-top: 40px;
+}
+
+.home-tile {
+    text-align: center;
+    font-size: 1rem;
+    margin: .5em;
+    padding: 2rem;
+    background-color: #68BB6A;
+    transition: all .2s ease-in-out;
+}
+
+.home-tile:hover {
+    text-align: center;
+    margin: .5em;
+    background-color: #388E3C;
+    transform: scale(1.1);
+}
+
+.home-tile-title {
+    color: white;
+    text-decoration: none;
+}
+
+.home-tile-title:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#videoHome {
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+
+    .home-tiles {
+        grid-template-columns: auto;
+    }
+}
