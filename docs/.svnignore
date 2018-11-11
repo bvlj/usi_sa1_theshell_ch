@@ -5,3 +5,7 @@
 *.synctex.gz
 *.toc
 *.lof
+*.nav
+*.snm
+*.vrb
+
