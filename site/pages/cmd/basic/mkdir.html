@@ -1,0 +1,56 @@
+
+---
+layout: page
+category-title: Basic commands
+category-page: basic
+tags: directory list
+author: Alessandro Marinelli
+title: mkdir
+previous-page: pages/cmd/basic/cd.html
+---
+
+<p>The <code>mkdir</code> command is used to create new directories<br>
+  The name stands for <i>MaKe DIRectory</i>.
+  <h2>Syntax</h2>
+  <p>The default ls command syntax is:
+    <pre>mkdir [flags] [-m mode] directory_name ...</pre>
+    Where [flags] are the mkdir <code> -p </code> and <code> -v </code> - flags,
+    read below for more info,and <code> directory_name</code> is the
+    name of the new directory we are going to create.</p>
+  <h2>Usage</h2> <br>
+  <h3>Create a new directory</h3>
+  <p> Let's see how to create a new directory </p>
+  <pre>
+ Device-Name:test YourName$ mkdir test_directory
+ Device-Name:test YourName$ ls
+test_directory
+
+</pre>
+  <p>Now we have created a new directory defined by the relative path <code> test/test_directory </code>.
+    Let's use the command <code> ls</code> to see if the experiment succeded.
+    <pre>
+    Device-Name:test YourName$ ls
+   test_directory
+ </pre>
+ <p> As you can see, the directory <code> test_directory </code> has been created
+   inside the directory <code> test</code>
+
+  <h3> Create a Path of directories </h3>
+  <p> Using the flag <code> -p</code> we can create a path of directories, allowing us
+  to build more than a directory at once.</p>
+  <pre>
+Device-Name:test lexinde$ mkdir -p test_directory/test_-pflag/A_Dir_in_a_Dir
+  </pre>
+  <p>As you can see, we are now creating two directories: one named <code> test_-pflag</code> and
+  another one, included in this, named <code> A_Dir_in_a_Dir</code></p>
+  <p><b>Notice:</b>the -p flag is necessary to  allow the shell to create intermidiate
+    directories as required </p>
+
+  <h3> Create directories with specified permissions</h3>
+  The <code>-m mode</code> option allows us to set permissions at the new directory
+  that we are now creating.
+  <pre>
+Device-Name:test YourName$ mkdir -m 777 test_free_directory
+</pre>
+    <p>Our new directory will now have read,write and execute permissions  for user, group and ...,.
+    Go to <a href: pagina chmod> chmod </a> to see more infos about permissions. </p>
