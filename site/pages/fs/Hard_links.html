@@ -1,0 +1,16 @@
+
+
+<h1>How to Create Hard Links in Linux</h1>
+
+<p>To create a hard links in Linux, we will use ln utility. For example, if you want
+to create a hard link named "hard_link1" to the file "file1" you can use first
+the <code> ls <code> <code> -l <code> command in order to see all files. Then you
+write <code> ln <code> "file1" "hard_link1" and after that if you write down again
+<code> ls <code> <code> -l <code> you can finally see the hard link named "hard_link1"
+created. Looking at that output, using <code> ls <code> command, the new file is not indicated
+as a link, it is shown as a regular file. This implies that "hard_link1" is just another
+regular executable file that points to the same underlying inode as "file1".
+If you desire to make a hard link directly into a soft link, use the <code> -P <code> flag
+like this: <code> ln <code> <code> -P <code> "file1" "hard_link1"
+
+</p>
