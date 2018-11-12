@@ -3,11 +3,36 @@
   {% include head.html %}
   <body onload="typing_shell()" style="background-color:#000;">
     <header class="spec-header">
-    	<div class="search-box" style="text-align:right;">
-	    	<input type="text" id="search-bar"><label for="search-bar"><img src="/assets/style/search_icon.png"></label>
-	   		<ul id="search-results"></ul>
-	  	</div>
-     	<div><h1 id="title-home" style="display:inline-block;"></h1><span id="blikli"></span></div>
+        <div class="menuDesktop">
+          <div class="logo">
+            <div><h1 id="title-home" style="display:inline-block;"></h1><span id="blikli"></span></div>
+          </div>
+          <div class="fill-space"></div>
+          <div class="search-box">
+            <input type="text" id="search-bar"><label for="search-bar"><img src="/assets/style/search_icon.png"></label>
+            <ul id="search-results"></ul>
+          </div>
+          <nav class="nav-menu">
+            <div>Learn
+              <ul>
+                <li><a href="{{ site.baseurl }}/pages/topic/cmd/basic.html">Basic commands</a></li>
+                <li><a href="{{ site.baseurl }}/pages/topic/cmd/interm.html">Intermediate commands</a></li>
+                <li><a href="{{ site.baseurl }}/pages/topic/cmd/advanced.html">Advanced commands</a></li>
+                <li><a href="{{ site.baseurl }}/pages/topic/fs.html">Filesystem</a></li>
+                <li><a href="{{ site.baseurl }}/pages/topic/scripts.html">Scripting</a></li>
+              </ul>
+            </div>
+            <code>|</code>
+            <div>About
+              <ul>
+                <li><a href="{{ site.baseurl }}/pages/info/project.html">The project</a></li>
+                <li><a href="{{ site.baseurl }}/pages/info/people.html">The people</a></li>
+                <li><a href="{{ site.baseurl }}/pages/topic/about.html">More...</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
     </header>
     <main class="container">
     {{ content }}
@@ -49,7 +74,7 @@
 
 		}
 
-		
+
 
 		setInterval(
 			typing_shell
