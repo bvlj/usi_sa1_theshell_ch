@@ -60,12 +60,12 @@
 			});
 		});
 
-		var sentence =["T", "H", "E", " ", "S", "H", "E", "L", "L"];
+		var sentence =["<span class='NotoSansLight'>t", "h", "e</span>", "<span class='NotoSansBold'>s", "h", "e", "l", "l</span>"];
 		var shell = "";
 		var counter = 0;
 
 		function typing_shell(){
-			if(counter < 9){
+			if(counter < 8){
 				write(counter);
 				counter++;
 			}else{

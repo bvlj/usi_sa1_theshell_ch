@@ -46,3 +46,21 @@
         grid-template-columns: auto;
     }
 }
+
+.NotoSansLight{
+    font-family: NotoSansLight;
+}
+
+.NotoSansBold{
+    font-family: NotoSansSemiBold;
+}
+
+@font-face{
+    font-family:'NotoSansLight';
+    src:url('/assets/style/NotoSansMono/NotoSansMono-Light.ttf ');
+}
+
+@font-face{
+    font-family:'NotoSansSemiBold';
+    src:url('/assets/style/NotoSansMono/NotoSansMono-SemiBold.ttf ');
+}
