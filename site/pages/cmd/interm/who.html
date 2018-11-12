@@ -1,0 +1,37 @@
+---
+layout: page
+category_title: Intermediate commands
+category-page: intermediate
+author: Marco Farace
+title: who
+---
+<p>
+The <code>who</code> command displays a list of all logged in users/display info
+about current user
+
+The who utility displays a list of all users currently logged on, showing
+for each user the login name, tty name, the date and time of login, and
+hostname if not local.<br><br>
+
+<h3>Flags</h3>
+Here are just some of the most useful options for this command:
+
+<ul>
+    <li>-b: Display time of last system boot.</li>
+    <li> -d: Print dead processes.</li>
+     <li>-H: Write column headings above the regular output.</li>
+     <li>-m: Only print information about the current terminal.  This is the
+        POSIX way of saying who am i.</li>
+     <li>-q: <i>Quick mode</i>: List only the names and the number of users currently logged on.
+        When this option is used, all other options are
+        ignored.</li>
+     <li>-s: List only the name, line and time fields. This is the default.</li>
+     <li>-T: Print a character after the user name indicating the state of the
+        terminal line: "+" if the terminal is writable; "-" if it is not;
+        and "?" if a bad line is encountered.</li>
+     <li>-u: Print the idle time for each user, and the associated process ID.</li>
+     <li>am I: Returns the invoker's real user name. You can also use <code>whoami</code></li>
+     <li>file: By default, who gathers information from the file /var/run/utmpx.
+        An alternative file may be specified.</li>
+    <ul>
+</p>

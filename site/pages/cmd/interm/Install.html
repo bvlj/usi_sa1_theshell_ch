@@ -5,49 +5,39 @@ category-page: intermediate
 author: Marco Farace
 title: install
 ---
-
-<h2>Use: install binaries, move or copy files</h2>
-
-<p>The file(s) are copied to the target file or directory. If the destination
-   is a directory, then the file is copied into directory with its original
-   filename.  If the target file already exists, it is either renamed to
-   file.old if the -b option is given or overwritten if permissions allow.
-   An alternate backup suffix may be specified via the -B option's argument.
-   Basic syntax is in the form <code>install [OPTION]... SOURCE DEST</code>
-   <br><code>$install -D /source/folder/*.xyz /destination/folder</code><br>
-   this line of code copies all .xyz file from /source/folder to
-   /destination/folder</p>
-
 <p>
+The file(s) are copied to the target file or directory. If the destination
+is a directory, then the file is copied into directory with its original
+filename.  If the target file already exists, it is either renamed to
+file.old if the -b option is given or overwritten if permissions allow.<br>
+An alternate backup suffix may be specified via the -B option's argument.<br>
+Basic syntax is in the form
 
-Here are just some of the most useful options for this command:
-  <ul>
-    <li>-b<br></li>
-    Back up any existing files before overwriting them by renaming
-    them to file.old.  See -B for specifying a different backup suffix.
-    (-B suffix Use suffix as the backup suffix if -b is given)
+<pre>
+install [OPTION]... SOURCE DEST
+</pre><br>
 
-    <li>-C<br></li>
-    Copy the file.  If the target file already exists and the files
-    are the same, then don't change the modification time of the target
+This line of code copies all .xyz file from <i>/source/folder</i> to <i>/destination/folder</i>
 
-    <li>-d<br></li>
-    Create directories.  Missing parent directories are created as
-    required.
+<pre>
+install -D /source/folder/*.xyz /destination/folder
+</pre><br>
 
-    <li>-f<br></li>
-    Specify the target's file flags; see chflags(1) for a list of
-    possible flags and their meanings.
+<h3>Flags</h3>
 
-    <li>-g<br></li>
-    Specify a group.  A numeric GID is allowed.
-
-    <li>-m<br></li>
-    Specify an alternate mode.  The default mode is set to rwxr-xr-x
-    (0755). The specified mode may be either an octal or symbolic
-    value;
-
-    <li>-o<br></li>
-    Specify an owner.  A numeric UID is allowed.
-
+<ul>
+    <li>-b: Back up any existing files before overwriting them by renaming
+        them to file.old.  See -B for specifying a different backup suffix.
+        (-B suffix Use suffix as the backup suffix if -b is given)</li>
+    <li>-C: Copy the file.  If the target file already exists and the files
+        are the same, then don't change the modification time of the target</li>
+    <li>-d: Create directories.  Missing parent directories are created as required.</li>
+    <li>-f: Specify the target's file flags; see chflags(1) for a list of
+        possible flags and their meanings.</li>
+    <li>-g: Specify a group.  A numeric GID is allowed.</li>
+    <li>-m: Specify an alternate mode.  The default mode is set to rwxr-xr-x
+        (0755). The specified mode may be either an octal or symbolic
+        value.</li>
+    <li>-o: Specify an owner.  A numeric UID is allowed.</li>
+</ul>
 </p>
