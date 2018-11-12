@@ -1,0 +1,82 @@
+---
+layout: page
+category-title: Basic commands
+category-page: basic
+tags: More and less
+author: Marzio Lunghi
+title: more and Less
+---
+
+<p>
+Both commands show the content of one or more files and it’s possible to do a research with
+particular flags, but the “less” one allows us to go also backwards while reading the text
+of a file.<br>
+More is quite old, less is more recent and powerful.<br>
+
+General syntax for both is:<br>
+
+<pre>
+less [flags] path/name-file.*
+more [flags] path/name-file.*
+</pre>
+
+The command <code>less</code> provides some useful commands to navigate and modify the file content.
+Commands does not include flags, which are included under Options.<br><br>
+
+<h3>Commands</h3>
+
+Such commands must be used once the file has been displayed.
+They are not flags. For a single operation there can be multiple commands.
+
+<ul>
+    <li><code>ENTER  RETURN e  ^E  j  ^N  CR </code>:
+        Scroll forward N lines, 1 by default, if N is not specified.</li>
+    <li><code> y  ^Y  k  ^K  ^P </code>:
+        Scroll backward N lines , 1 by default , if N is not specified.</li>
+    <li><code> f  ^F  ^V  SPACE </code>:
+        Scroll forward  N lines, a window by default, if N is not specified.</li>
+    <li><code> b  ^B  ESC-v </code>
+        Scroll backward N lines, one window by default, if N is not specified.</li>
+    <li><code> ESC-SPACE </code>
+        Scroll forward  one window like SPACE , but don't stop at end-of-file.</li>
+    <li><code>d  ^D </code>
+        Scroll forward  N lines, by default N correspond to half of the screen size.</li>
+    <li><code> u  ^U </code>
+        Scroll Backward  N lines, by default N correspond to half of the screen size.</li>
+    <li><code> ESC-)  RightArrow </code>
+        Scroll horizontally right  N characters, by default half of the screen size, if N is not specified.</li>
+    <li><code> ESC-(  LeftArrow </code></li>
+        Scroll horizontally left  N characters, by default half of the screen size, if N is not specified. </li`>
+</ul><br>
+
+<h3>Jumping</h3>
+
+Such commands must be used once the file has been displayed.
+They are not. For a single operation there can be multiple commands. </p>
+
+<ul>
+    <li><code>  g  <  ESC-<   </code>:
+        Go to line N, by default 1, if N is not specified.</li>
+    <li><code> G  >  ESC-> </code>:
+        Go to line N, by default the last one , if N is not specified.</li>
+    <li><code>  t </code>:
+        Go to the (N-th) next tag. </li>
+    <li><code> T </code>
+        Go to the (N-th) previous tag.</li>
+</ul><br>
+
+<h3>Flags</h3>
+
+Options may be given in one of two forms: either a single
+character preceded by a "-", or a name preceded by "--" .
+
+<ul>
+  <li><code> ?    OR    --help </code>
+    Display help guide with the description of commands and more , it is sufficient to enter less -? .</li>
+  <li><code> -c  OR   --clear-screen </code>
+    Repaint by clearing rather than scrolling.</li>
+  <li><code> -e  -E  OR  --quit-at-eof  --QUIT-AT-EOF </code>
+    Quit the file, when you scroll to the end of the file.</li>
+  <li><code>  -~  OR  --tilde </code>
+    Do not display tildes after end of file. </li>
+</ul>
