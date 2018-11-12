@@ -35,175 +35,117 @@
 \centering{\Huge Slides in \LaTeX}
 \end{frame}
 
-\section{Progress up to now}
+\section{What we've done so far}
+
 
 \begin{frame}[fragile]{Search box}
 \vfill\centering{\includegraphics[width=0.6\textwidth]{search.png}}\vfill
 \end{frame}
 
+
 \begin{frame}[fragile]{Automatic topic index pages}
 \vfill\centering{\includegraphics[width=0.6\textwidth]{index.png}}\vfill
 \end{frame}
+
 
 \begin{frame}[fragile]{Basic style}
 \vfill\centering{\includegraphics[width=\textwidth]{formatting.png}}\vfill
 \end{frame}
 
+
 \begin{frame}[fragile]{Automatic attribution (in footer)}
 \vfill\centering{\includegraphics[width=0.8\textwidth]{footer.png}}\vfill
 \end{frame}
+
 
 \begin{frame}[fragile]{Automatic attribution (in about page)}
 \vfill\centering{\includegraphics[width=0.7\textwidth]{about.png}}\vfill
 \end{frame}
 
+
 \begin{frame}[fragile]{Bonus 1 almost done}
 \vfill\centering{\includegraphics[width=0.7\textwidth]{rust.png}}\vfill
 \end{frame}
+
 
 \begin{frame}[standout]
 \centering{\Huge Nystrom seal of quality}
 \end{frame}
 
+
 \section{First code review for content}
-
-\begin{frame}[fragile]{A properly formatted Jekyll page}
-\begin{figure}[h]
-\begin{lstlisting}[language=html,basicstyle=\small\ttfamily]
----
-layout: page
-category-title: Basic commands
-category-page: basic
-tags: directory list
-author: Claudio Maggioni
-title: ls
----
-<p>The <code>ls</code> command is used to list a
-directory content or a file.<br>
-The name stands for <i>LiSt</i>.
-
-<h2>Usage</h2>
-<p>...</p>
-\end{lstlisting}
-\end{figure}
-\end{frame}
 
 {\setbeamercolor{background canvas}{bg=black}
 \begin{frame}
-\centering{\Huge\fontspec{Comic Sans MS}\color{red} 
-	\textsc{The evil side of HTML \\
+\centering{\Huge\fontspec{Helvetica}\color{green} 
+	\textsc{From HTML \\
+	to Jekyll\\
 	\vspace{0.5cm}
-	(and Jekyll)}}
+	\small was not that easy…}}
 \end{frame}}
 
-\begin{frame}[fragile]
+
+\begin{frame}[fragile]{From this…}
 \begin{figure}[h]
 \begin{lstlisting}[language=html]
-title: ...
-...
----
-
 <html>
 <head>
+    <meta author="Fabiano Fenini" />
+    ...
 </head>
 
 <body>
 <header>
-
-<h1>...</h1>
-...
+    <h1>cat command</h1>
+    ...
 </header>
+...
 </body>
 </html>
 \end{lstlisting}
 \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]
+
+\begin{frame}[fragile]{… to this}
 \begin{figure}[h]
 \begin{lstlisting}[language=html]
-<div class="title1">
-    <h1>...</h1>
-</div>
+---
+layout: page
+category-page: intermediate
+category-title: Intermediate commands
+tags: cat content file show concatenate
+author: Fabiano Fenini
+title: cat
+---
 
-A list of things:
-<br> ...
-<br> ...
-<br> ...
-<br> ...
-<br> ...
-\end{lstlisting}
-\end{figure}
-\end{frame}
-
-\begin{frame}[fragile]
-\begin{figure}[h]
-\begin{lstlisting}[language=html]
-<!-- No Jekyll header -->
-
-<!DOCTYPE html>
+<p>
 ...
+</p>
 \end{lstlisting}
 \end{figure}
 \end{frame}
+
 
 \begin{frame}{Page creation guide}
 \vfill\centering{\includegraphics[width=0.8\textwidth]{page_creation.png}}\vfill
 \end{frame}
 
-\section{Code contribution}
 
-\begin{frame}[fragile]{LOC stats}
-\begin{lstlisting}[language=bash]
-svn ls -R | egrep -v -e "\/\$" | xargs svn blame \
-    | awk '{print $2}' | sort | uniq -c | sort -r
-\end{lstlisting}
-\vfill
-This is not accurate:
-\begin{itemize}
-\item Only text files considered, not images or videos
-\item Assumes each person commits with their own user
-\item Writing 2 lines of complex code doesn't take the same time as writing 2 lines from a documentation
-\end{itemize}
+\begin{frame}{The Jekyll header}
+\begin{table}[h]
+\begin{tabular}{l l}
+\textbf{Variable} & \textbf{Use} \\
+layout & Template for the page\\
+category-page & Automatic topic pages creation\\
+category-title & Indexing in search\\
+tags & Keywords for search\\
+author & Automatic content attribution\\
+title & Title of the page\\
+\end{tabular}
+\end{table}
 \end{frame}
 
-\begin{frame}{LOC stats (as of 2018-11-12 12:00)}
-\begin{figure}
-    \begin{tikzpicture}
-      \begin{axis}[
-        legend pos=north east,
-        mbarplot,
-        enlarge x limits={0.5},
-        symbolic x coords={LOC},
-        width=\textwidth,
-        height=8.5cm,
-        xtick=data
-      ]
-      
-      \legend{maggicl, bevilj, britea, vottad, devitg, annoum, brunnn, terehm, luinia,
-      	rasicd, ponzim, feninif, marina, hijmam, omenem}
-
-      \addplot plot coordinates {(LOC,2405)};
-      \addplot plot coordinates {(LOC,978)};
-      \addplot plot coordinates {(LOC,171)};
-      \addplot plot coordinates {(LOC,145)};
-      \addplot plot coordinates {(LOC,144)};
-      \addplot plot coordinates {(LOC,130)};
-      \addplot plot coordinates {(LOC,128)};
-      \addplot plot coordinates {(LOC,116)};
-      \addplot plot coordinates {(LOC,108)};
-      \addplot plot coordinates {(LOC,85)};
-      \addplot plot coordinates {(LOC,66)};
-      \addplot plot coordinates {(LOC,63)};
-      \addplot plot coordinates {(LOC,36)};
-      \addplot plot coordinates {(LOC,36)}; 
-      \addplot plot coordinates {(LOC,22)};     
-      \addplot plot coordinates {(LOC,22)};
-      \addplot plot coordinates {(LOC,13)};
-      \end{axis}
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
 
 \begin{frame}[standout]
 \centering{\Huge Demo time!}
