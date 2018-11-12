@@ -1,4 +1,4 @@
-\documentclass[10pt]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
 
 \usetheme{metropolis}
 
@@ -39,22 +39,22 @@
 
 
 \begin{frame}[fragile]{Search box}
-\vfill\centering{\includegraphics[width=0.6\textwidth]{search.png}}\vfill
+\vfill\centering{\includegraphics[width=0.7\textwidth]{search.png}}\vfill
 \end{frame}
 
 
 \begin{frame}[fragile]{Automatic topic index pages}
-\vfill\centering{\includegraphics[width=0.6\textwidth]{index.png}}\vfill
+\vfill\centering{\includegraphics[width=0.7\textwidth]{index.png}}\vfill
 \end{frame}
 
 
 \begin{frame}[fragile]{Basic style}
-\vfill\centering{\includegraphics[width=\textwidth]{formatting.png}}\vfill
+\vfill\centering{\includegraphics[width=0.8\textwidth]{formatting.png}}\vfill
 \end{frame}
 
 
 \begin{frame}[fragile]{Automatic attribution (in footer)}
-\vfill\centering{\includegraphics[width=0.8\textwidth]{footer.png}}\vfill
+\vfill\centering{\includegraphics[width=0.7\textwidth]{footer.png}}\vfill
 \end{frame}
 
 
@@ -64,7 +64,7 @@
 
 
 \begin{frame}[fragile]{Bonus 1 almost done}
-\vfill\centering{\includegraphics[width=0.7\textwidth]{rust.png}}\vfill
+\vfill\centering{\includegraphics[width=0.45\textwidth]{rust.png}}\vfill
 \end{frame}
 
 
@@ -77,15 +77,15 @@
 
 {\setbeamercolor{background canvas}{bg=black}
 \begin{frame}
-\centering{\Huge\fontspec{Helvetica}\color{green} 
+\centering{\Huge\ttfamily\color{green} 
 	\textsc{From HTML \\
 	to Jekyll\\
 	\vspace{0.5cm}
-	\small was not that easy…}}
+	\Large was not that easy \ldots}}
 \end{frame}}
 
 
-\begin{frame}[fragile]{From this…}
+\begin{frame}[fragile]{From this \ldots}
 \begin{figure}[h]
 \begin{lstlisting}[language=html]
 <html>
@@ -93,10 +93,9 @@
     <meta author="Fabiano Fenini" />
     ...
 </head>
-
 <body>
 <header>
-    <h1>cat command</h1>
+    <h1>cat</h1>
     ...
 </header>
 ...
@@ -107,7 +106,7 @@
 \end{frame}
 
 
-\begin{frame}[fragile]{… to this}
+\begin{frame}[fragile]{\ldots to this}
 \begin{figure}[h]
 \begin{lstlisting}[language=html]
 ---
@@ -128,7 +127,7 @@ title: cat
 
 
 \begin{frame}{Page creation guide}
-\vfill\centering{\includegraphics[width=0.8\textwidth]{page_creation.png}}\vfill
+\vfill\centering{\includegraphics[width=0.6\textwidth]{page_creation.png}}\vfill
 \end{frame}
 
 
