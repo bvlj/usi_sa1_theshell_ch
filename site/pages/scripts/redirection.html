@@ -7,9 +7,10 @@ author: Dario Rasic
 title: Redirection
 ---
 <p>
-<h3>Output as input</h3>
 
-<p>To redirect a certain output of the command-line we have to use the symbol "&gt;".<br>
+<h3>Output as input</h3>
+<br>
+To redirect a certain output of the command-line we have to use the symbol "&gt;".<br>
 
 In this case, we will use a file named <i>hello.txt</i>, in which we want to insert
 a certain output ("Sun" in this case):<br>
@@ -26,7 +27,7 @@ cat hello.txt
 </pre>
 
 If we want to append a certain output to an existing file,
-we just have to use "&gt;&gt;" symbols:</p>
+we just have to use "&gt;&gt;" symbols:
 
 <pre>
 cat hello.txt
@@ -39,7 +40,7 @@ cat hello.txt
 
 <!-- Input redirection text -->
 <h3>Input as output</h3>
-
+<br>
 To redirect an input from a file for a command, the symbol "&lt;" is used.
 
 <pre>
@@ -47,14 +48,34 @@ echo < $(cat hello.txt)
     Sun
     Moon
 </pre>
-
-This is particularly useful when chaining commands.
-
+<p>This is particularly useful when chaining commands.</p>
 <br>
-
 <!-- Chaining command text -->
-<h3>Chaining</h3>
+<h3>Chaining (or Piping)</h3>
 <br>
-<h1>To be completed</h1>
+Chaining, also called Piping because it works with the pipe symbol "|", takes the output of a certain command-line and feeds it to another command in a direct way.
+<!-- Table for the example of the piping command -->
+<pre>
+cat hello.txt | grep Mo
+Moon
+</pre>
+
+<!-- A simple example -->
+<h3>Simple Example</h3>
+<br>
+Now let's say that we want to combine those commands in a more complex operation. Let's say we want to take some contents from a certain file and put it into another file.<br>
+
+We want to sort the animals whose name begins with letter "d"  from the file <i>animals.txt</i> and put it into <i>d_animals.txt</i>.<br>
+
+<pre>
+grep d < animals.txt > d_animals.txt
+<br>
+cat d_animals.txt
+Deer
+Dog
+Dolphin
+...
+</pre>
+
 
 </p>
