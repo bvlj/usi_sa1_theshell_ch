@@ -1,0 +1,83 @@
+---
+layout: page
+category_title: Intermediate commands
+category-page: intermediate
+author: Marco Farace
+title: mount
+---
+
+<h2>Use: mount file systems </h2>
+
+<p>To access a file on a Unix-like machine, the file system that contains it
+needs to be mounted with the mount command. Mount is frequently used for
+movable storage devices such as SD cards, DVDs, etc...
+
+The mount command instructs the operating system that a file system is ready to
+use, and associates it with a particular point in the overall file system
+hierarchy (its mount point) and sets options relating to its access. Mounting
+makes file systems, files, directories, devices and special files available for
+use and available to the user.
+
+Its counterpart, umount, does exactly the opposite.
+Both mount and umount require root user persmissions.
+To display all mounted partitions just write <code> mount </code></p>
+
+<p> This command will mount the second partition of a HDD:<br>
+    <code> $ mount /dev/hda2 /media/PHOTOS </code>
+</p>
+
+<p> and will unmount (by referring to the physical disk partition):<br>
+    <code> $ umount /dev/hda2 </code>
+</p>
+
+<p> or (by referring to the mount point):<br>
+    <code> $ umount /media/PHOTOS </code>
+</p>
+
+<p> Here are just some of the most useful options for this command:
+  <ul>
+      <li>-d<br></li>
+      Causes everything to be done except for the actual system call.
+      This option is useful in conjunction with the -v flag to determine
+      what the mount command is trying to do.
+
+      <li>-v<br></li>
+      Verbose mode. (Gives additional detail during the mount process)
+
+      <li>-f<br></li>
+      Forces the revocation of write access when trying to downgrade a
+      filesystem mount status from read-write to read-only.
+
+      <li>-u<br></li>
+      The -u flag indicates that the status of an already mounted file
+      system should be changed.  Any of the options discussed above
+      (the -o option) may be changed; also a file system can be changed
+      from read-only to read-write or vice versa.  An attempt to change
+      from read-write to read-only will fail if any files on the
+      filesystem are currently open for writing unless the -f flag is
+      also specified.
+
+      <li>-w<br></li>
+      Mount the file system read-write.
+
+      <li>-o<br></li>
+      Options are specified with a -o flag followed by a comma separated
+      string of options.  The following options are available:
+            <ul>
+                <li>noexec<br></li>
+                Do not allow execution of any binaries on the mounted file system.
+                This option is useful for a server that has file systems containing
+                binaries for architectures other than its own.
+
+                <li>noowners<br></li>
+                Ignore the ownership field for the entire volume. This causes all
+                objects to appear as owned by user ID 99 and group ID 99. User ID 99
+                is interpreted as the current effective user ID, while group ID 99 is
+                used directly and translates to ``unknown''.
+
+                <li>nobrowse<br></li>
+                This option indicates that the mount point should not be visible via
+                the GUI (It will not appear on the Desktop as a separate volume).
+            </ul>
+    </ul>
+  </p>
