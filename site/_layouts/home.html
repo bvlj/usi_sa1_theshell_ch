@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body onload="typing_shell()" style="background-color:#000;">
+    <header class="spec-header">
+    	<div class="search-box" style="text-align:right;">
+	    	<input type="text" id="search-bar"><label for="search-bar"><img src="/assets/style/search_icon.png"></label>
+	   		<ul id="search-results"></ul>
+	  	</div>
+     	<div><h1 id="title-home" style="display:inline-block;"></h1><span id="blikli"></span></div>
+    </header>
+    <main class="container">
+    {{ content }}
+    </main>
+    {% include footer.html %}
+		<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var searchBar = document.getElementById('search-bar');
+			var results = document.getElementById('search-results');
+
+			var sjs = SimpleJekyllSearch({
+				searchInput: searchBar,
+				resultsContainer: results,
+				json: '/search.json',
+				searchResultTemplate:
+					'<li><a href="{url}"><h3>{title}</h3><h4>{category}</h4></a></li>',
+				success: function(sr) {
+					results.setAttribute("class", sr.length <= 1 ? "" : "show");
+				}
+			});
+
+			searchBar.addEventListener('keypress', function () {
+				sjs.search();
+			});
+		});
+
+		var sentence =["T", "H", "E", " ", "S", "H", "E", "L", "L"];
+		var shell = "";
+		var counter = 0;
+
+		function typing_shell(){
+			if(counter < 9){
+				write(counter);
+				counter++;
+			}else{
+				document.getElementById("blikli").classList.add("bli");
+			}
+
+		}
+
+		
+
+		setInterval(
+			typing_shell
+		, 200);
+
+		function write(position){
+			shell = shell + sentence[position];
+			document.getElementById("title-home").innerHTML = shell;
+		}
+		</script>
+  </body>

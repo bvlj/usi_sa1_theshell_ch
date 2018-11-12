@@ -59,3 +59,10 @@
   padding: 20px;
   margin: 50px 0;
 }
+
+.bli:after{
+    content:"_";
+    font-size:9vh;
+    animation: blink 800ms linear infinite;
+  }
+

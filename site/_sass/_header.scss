@@ -126,3 +126,10 @@ header{
     display: block;
   }
 }
+
+
+@keyframes cursor {
+  from, to { border-color: transparent }
+  20% { border-color: orange; }
+}
+
