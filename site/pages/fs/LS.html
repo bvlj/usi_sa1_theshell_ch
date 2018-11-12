@@ -1,0 +1,47 @@
+---
+layout: page
+category_title: file system
+category-page: navigation
+tags: lS
+author: Mirko Ponzio
+title: LS
+---
+<p>
+<h1>LS, list directory contents</h1>
+<h2>What is LS?</h2>
+
+<p>
+  In computing, ls is a command to list computer files in Unix and Unix-like operating systems. ls is specified by POSIX and the Single UNIX Specification.
+  When invoked without any arguments, ls lists the files in the current working directory. The command is also available in the EFI shell.
+  In other environments, such as DOS and Microsoft Windows, similar functionality is provided by the dir command.
+<br><br>
+
+Unix and Unix-like operating systems maintain the idea of a current working directory, that is, where one is currently positioned in the hierarchy of directories.
+When invoked without any arguments, ls lists the files in the current working directory.
+If another directory is specified, then ls will list the files there, and in fact the user may specify any list of files and directories to be listed.
+<br><br>
+
+Files whose names start with "." are not listed, unless the -a flag is specified, the -A flag is specified, or the files are specified explicitly.
+<br><br>
+
+Without options, ls displays files in a bare format. This bare format however makes it difficult to establish the type, permissions, and size of the files.
+The most common options to reveal this information or change the list of files are:
+<ul>
+  <li> -l long format, displaying Unix file types, permissions, number of hard links, owner, group, size, last-modified date and filename </li>
+  <li> -f do not sort. Useful for directories containing large numbers of files. </li>
+  <li> -F appends a character revealing the nature of a file, for example, * for an executable, or / for a directory. Regular files have no suffix.</li>
+  <li> -a lists all files in the given directory, including those whose names start with "." (which are hidden files in Unix). By default, these files are excluded from the list.</li>
+  <li> -R recursively lists subdirectories. The command ls -R / would therefore list all files. </li>
+  <li> -d shows information about a symbolic link or directory, rather than about the link's target or listing the contents of a directory. </li>
+  <li> -t sort the list of files by modification time. </li>
+  <li> -h print sizes in human readable format. (e.g., 1K, 234M, 2G, etc.) This option is not part of the POSIX standard,
+    although implemented in several systems, e.g., GNU coreutils in 1997, FreeBSD 4.5 in 2002, and Solaris 9 in 2002. </li>
+  </ul>
+</p>
+
+<h2> LS, all commands </h2>
+<p> The following options are available: </p><br>
+<p>-@  <br>
+
+Display extended attribute keys and sizes in long (-l) output.
+</p> <br>
