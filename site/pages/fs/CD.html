@@ -1,0 +1,48 @@
+---
+layout: page
+category_title: file system
+category-page: navigation
+tags: lS
+author: Mirko Ponzio
+title: CD
+---
+<h1> CD, change directory</h1>
+<h2> what is CD<h2>
+
+<p> Nei sistemi operativi Unix e Unix-like, e più in generale nei sistemi POSIX[1], cd (abbreviazione dalla lingua inglese di change directory,
+cambia directory) è un comando interno delle shell testuali che cambia la directory corrente della shell da cui viene eseguito. <br><br>
+
+Il comando è necessariamente un comando interno della shell, e non può essere un programma esterno ad essa,
+in quanto un processo può modificare solo la propria directory corrente e non quella di altri processi;
+da ciò segue che la shell deve implementare autonomamente questa funzione.
+La nuova impostazione della directory corrente viene comunque ereditata dai programmi avviati in seguito dalla stessa shell. <br> <br>
+
+Dopo un cambio di directory corrente, la variabile d'ambiente PWD viene automaticamente aggiornata con il pathname della nuova directory corrente.</p> <br> <br>
+
+<h2> Some usefull command for CD<h2>
+  <ul>
+<li> cd by itself or cd ~ will always put you in your home directory.</li>
+<li> cd . will leave you in the same directory you are currently in (i.e. your current directory won't change).
+This can be useful if your shell's internal code can't deal with the directory you are in being recreated; running cd . will place your
+shell in the recreated directory. </li>
+<li> cd ~username will put you in username's home directory. </li>
+<li> cd dir (without a /) will put you in a subdirectory; for example, if you are in /usr, typing cd bin will put you in /usr/bin, while cd /bin puts you in /bin.</li>
+<li> cd .. will move you up one directory. So, if you are /usr/bin/tmp, cd .. moves you to /usr/bin, while cd ../.. moves you to /usr (i.e. up two levels).
+  You can use this indirection to access subdirectories too. So, from /usr/bin/tmp, you can use cd ../../local to go to /usr/local.</li>
+<li> cd - will switch you to the previous directory. For example, if you are in /usr/bin/tmp, and go to /etc,
+  \you can type cd - to go back to /usr/bin/tmp. You can use this to toggle back and forth between two directories. </li>
+</ul>
+
+<h2> sintax of CD </h2>
+<p>
+La sintassi generale di cd è la seguente:
+
+cd [opzioni] [--] [dir]
+Il parametro facoltativo dir indica la nuova directory corrente. Se non è specificato, viene usato al suo posto il valore della variabile d'ambiente HOME,
+che normalmente indica la home directory dell'utente. Se invece è un trattino ("-"), allora viene usata la directory corrente precedente.
+
+Se il parametro dir è un pathname relativo che non ha come primo elemento "." o "..", allora esso viene unito a ciascuna delle directory
+elencate nella variabile d'ambiente CDPATH: se il risultato corrisponde ad una directory esistente, allora essa diviene la nuova directory corrente.
+Altrimenti dir viene considerato relativo alla directory corrente.
+
+Il doppio trattino -- (facoltativo) indica che i parametri successivi non sono da considerarsi opzioni.</p>
