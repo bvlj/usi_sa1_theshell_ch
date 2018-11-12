@@ -151,14 +151,15 @@ svn ls -R | egrep -v -e "\/\$" | xargs svn blame \
     | awk '{print $2}' | sort | uniq -c | sort -r
 \end{lstlisting}
 \vfill
-May not be 100\% accurate:
+This is not accurate:
 \begin{itemize}
 \item Only text files considered, not images or videos
 \item Assumes each person commits with their own user
+\item Writing 2 lines of complex code doesn't take the same time as writing 2 lines from a documentation
 \end{itemize}
 \end{frame}
 
-\begin{frame}{LOC stats (as of 2018-11-11)}
+\begin{frame}{LOC stats (as of 2018-11-12 12:00)}
 \begin{figure}
     \begin{tikzpicture}
       \begin{axis}[
@@ -171,24 +172,26 @@ May not be 100\% accurate:
         xtick=data
       ]
       
-      \legend{maggicl, bevilj, devitg, britea, vottad, brunnn, annoum, terehm,
-      	marina, rasicd, vivanr, feninif, hijmam, omenem}
+      \legend{maggicl, bevilj, britea, vottad, devitg, annoum, brunnn, terehm, luinia,
+      	rasicd, ponzim, feninif, marina, hijmam, omenem}
 
-      \addplot plot coordinates {(LOC,2338)};
-      \addplot plot coordinates {(LOC,640)};
-      \addplot plot coordinates {(LOC,305)};
+      \addplot plot coordinates {(LOC,2405)};
+      \addplot plot coordinates {(LOC,978)};
       \addplot plot coordinates {(LOC,171)};
       \addplot plot coordinates {(LOC,145)};
-      \addplot plot coordinates {(LOC,129)};
+      \addplot plot coordinates {(LOC,144)};
+      \addplot plot coordinates {(LOC,130)};
+      \addplot plot coordinates {(LOC,128)};
       \addplot plot coordinates {(LOC,116)};
       \addplot plot coordinates {(LOC,108)};
-      \addplot plot coordinates {(LOC,84)};
-      \addplot plot coordinates {(LOC,68)};
+      \addplot plot coordinates {(LOC,85)};
+      \addplot plot coordinates {(LOC,66)};
       \addplot plot coordinates {(LOC,63)};
-      \addplot plot coordinates {(LOC,41)};
-      \addplot plot coordinates {(LOC,25)};
+      \addplot plot coordinates {(LOC,36)};
+      \addplot plot coordinates {(LOC,36)}; 
+      \addplot plot coordinates {(LOC,22)};     
+      \addplot plot coordinates {(LOC,22)};
       \addplot plot coordinates {(LOC,13)};
-      
       \end{axis}
     \end{tikzpicture}
   \end{figure}
