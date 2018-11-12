@@ -1,20 +1,11 @@
 \documentclass[10pt]{beamer}
 
-\usepackage{fontspec}
 \usetheme{metropolis}
 
 \usepackage{booktabs}
-\usepackage[scale=2]{ccicons}
-
 \usepackage{pgfplots}
-\usepgfplotslibrary{dateplot}
-
-\usepackage{xspace}
-\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
-
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{lmodern}
 
 \lstset{
 	basicstyle=\ttfamily,
@@ -34,14 +25,14 @@
 \subtitle{Group 1}
 \date{12 November 2018}
 \author{Claudio Maggioni}
-\titlegraphic{\centering{\includegraphics[height=1.5cm]{logo.png}}}
+\titlegraphic{\centering{\includegraphics[height=1cm]{logo.png}}}
 
 \begin{document}
 
 \maketitle
 
 \begin{frame}[standout]
-\centering{\Huge\LaTeX}
+\centering{\Huge Slides in \LaTeX}
 \end{frame}
 
 \section{Progress up to now}
@@ -58,11 +49,36 @@
 \vfill\centering{\includegraphics[width=\textwidth]{formatting.png}}\vfill
 \end{frame}
 
-\begin{frame}[fragile]{Automatic attribution in footer}
+\begin{frame}[fragile]{Automatic attribution (in footer)}
 \vfill\centering{\includegraphics[width=0.8\textwidth]{footer.png}}\vfill
 \end{frame}
 
+\begin{frame}[fragile]{Automatic attribution (in about page)}
+\vfill\centering{\includegraphics[width=0.7\textwidth]{about.png}}\vfill
+\end{frame}
+
 \section{First code review for content}
+
+\begin{frame}[fragile]{A properly formatted Jekyll page}
+\begin{figure}[h]
+\begin{lstlisting}[language=html,basicstyle=\small\ttfamily]
+---
+layout: page
+category-title: Basic commands
+category-page: basic
+tags: directory list
+author: Claudio Maggioni
+title: ls
+---
+<p>The <code>ls</code> command is used to list a
+directory content or a file.<br>
+The name stands for <i>LiSt</i>.
+
+<h2>Usage</h2>
+<p>...</p>
+\end{lstlisting}
+\end{figure}
+\end{frame}
 
 {\setbeamercolor{background canvas}{bg=black}
 \begin{frame}
@@ -127,45 +143,59 @@ A list of things:
 \vfill\centering{\includegraphics[width=0.8\textwidth]{page_creation.png}}\vfill
 \end{frame}
 
-\section{Code contribution of each team}
+\section{Code contribution}
 
-\begin{frame}{Code contribution of each team}
+\begin{frame}[fragile]{LOC stats}
+\begin{lstlisting}[language=bash]
+svn ls -R | egrep -v -e "\/\$" | xargs svn blame \
+    | awk '{print $2}' | sort | uniq -c | sort -r
+\end{lstlisting}
+\vfill
+May not be 100\% accurate:
+\begin{itemize}
+\item Only text files considered, not images or videos
+\item Assumes each person commits with their own user
+\end{itemize}
+\end{frame}
+
+\begin{frame}{LOC stats (as of 2018-11-11)}
 \begin{figure}
     \begin{tikzpicture}
       \begin{axis}[
-        legend pos=north west,
+        legend pos=north east,
         mbarplot,
-        ylabel={Bar},
         enlarge x limits={0.5},
-        symbolic x coords={a small bar,a medium bar,a large bar},
+        symbolic x coords={LOC},
         width=\textwidth,
-        height=6cm,
+        height=8.5cm,
         xtick=data
       ]
       
-      \legend{FS, Front, Basic, Interm, Advanced, Scripting}
+      \legend{maggicl, bevilj, devitg, britea, vottad, brunnn, annoum, terehm,
+      	marina, rasicd, vivanr, feninif, hijmam, omenem}
 
-      \addplot plot coordinates {(a small bar,42)
-        (a medium bar,50)
-        (a large bar,60)};
-      \addplot plot coordinates {(a small bar,42)
-        (a medium bar,50)
-        (a large bar,60) };
-      \addplot plot coordinates {(a small bar,42)
-        (a medium bar,50)
-        (a large bar,60)};
-      \addplot plot coordinates {(a small bar,42)
-        (a medium bar,50)
-        (a large bar,60)};
-      \addplot plot coordinates {(a small bar,42)
-        (a medium bar,50)
-        (a large bar,60)};
-      \addplot plot coordinates {(a small bar,42)
-        (a medium bar,50)
-        (a large bar,60)};
+      \addplot plot coordinates {(LOC,2338)};
+      \addplot plot coordinates {(LOC,640)};
+      \addplot plot coordinates {(LOC,305)};
+      \addplot plot coordinates {(LOC,171)};
+      \addplot plot coordinates {(LOC,145)};
+      \addplot plot coordinates {(LOC,129)};
+      \addplot plot coordinates {(LOC,116)};
+      \addplot plot coordinates {(LOC,108)};
+      \addplot plot coordinates {(LOC,84)};
+      \addplot plot coordinates {(LOC,68)};
+      \addplot plot coordinates {(LOC,63)};
+      \addplot plot coordinates {(LOC,41)};
+      \addplot plot coordinates {(LOC,25)};
+      \addplot plot coordinates {(LOC,13)};
+      
       \end{axis}
     \end{tikzpicture}
   \end{figure}
+\end{frame}
+
+\begin{frame}[standout]
+\centering{\Huge Demo time!}
 \end{frame}
 
 \end{document}
