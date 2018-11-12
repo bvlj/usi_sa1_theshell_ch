@@ -5,26 +5,37 @@ category-page: basic
 tags: directory change navigate
 author: Alessandro Marinelli
 title: cd
-previous-page: pages/cmd/basic/cd.html
+previous-page: pages/cmd/basic/open.html
 next-page: pages/cmd/basic/ls.html
 ---
+<p>
+The <code>cd</code> command is used to change the working directory<br>
+The name stands for <i>Change Directory</i>.<br>
 
-<p>The <code>cd</code> command is used to change the working directory<br>
-  The name stands for <i>Change Directory</i>. </p>
-  <h2>Syntax</h2>
-  <p>The default cd command syntax is:
-    <pre>cd [flags] [path]</pre>
-    Where [flags] are the cd flags, read below for more info,and [path] is the
-    path (absolute or relative), of the directory which we  want to make as working directoty</p>
-    <h2>Usage</h2> <br>
-    <h3> Change the working directory</h3>
-    <p> Let's see how to use the command <code> cd </code> in order to change the working directory</p>
-    <pre>
-      Device-Name:~ YourName$ cd Desktop/Multimedia.Folder/
-      Device-Name:Multimedia.Folder YourName$
-  </pre>
-<p> As you can see, we changed the working directory from ~ (which stands for HOME),
-  to <code>Multimedia.Folder</code>. Now our Shell will work on the  directory <code>Multimedia.Folder</code>
-  until a new <code>cd</code> will occour. </p>
-  <p> <b> Notice: </b> If you want to move to a directory which is not contained in <thead>
-    current working directory, you <u>MUST</u> use the absolute path.</p>
+The default cd command syntax is:
+
+<pre>
+cd [flags] [path]
+</pre>
+
+Where [flags] are the cd flags, read below for more info,and [path] is the
+path (absolute or relative), of the directory which we  want to make as working directory.<br><br>
+
+<h3>Change the working directory</h3>
+Let's see how to use the command <code>cd</code> in order to change the working directory
+
+<pre>
+pwd
+    ~
+cd Desktop/multimedia
+pwd
+    ~/Desktop/multimedia
+</pre>
+
+As you can see, we changed the working directory from ~ (which stands for HOME),
+to "multimedia". Now our Shell will work on the  directory "multimedia"
+until a new <code>cd</code> will occour.<br>
+
+<b> Notice:</b> If you want to move to a directory which is not contained in the
+current working directory, you <u>MUST</u> use the absolute path.
+</p>

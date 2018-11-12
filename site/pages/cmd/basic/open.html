@@ -1,79 +1,69 @@
 ---
 layout: page
-category_title: Basic commands
+category-title: Basic commands
 category-page: basic
 tags: open
 author: Gianmarco De Vita
 title: open
+previous-page: pages/cmd/basic/openshell.html
+next-page: pages/cmd/basic/cd.html
 ---
-<p>You can open files and folder as new windows through the terminal.
-  The command is <code>open</code>. By writing the command open followed by the
-  path and the name of the file (remember that you can omit the path if
-  the file is in the current position), a new window in the common user
-  interface opens. Now you can work on the opened file.
-</p>
+<p>
+You can open files and folder as new windows through the terminal.
+The command is <code>open</code>. By writing the command open followed by the
+path and the name of the file (remember that you can omit the path if
+the file is in the current position), a new window in the common user
+interface opens. Now you can work on the opened file.
 
 <pre>
-Device-name:Current-position username$ open path/name-file
-</pre>
+open path/name-file
+</pre><br>
 
 <h3>Open a file with a specific application</h3>
-<p>Adding the flag <code>-a</code> to the command permit you to decide with
-  which specific application open the file. Just write the flag followed by the
-  name of the application.
-</p>
+Adding the flag <code>-a</code> to the command permit you to decide with
+which specific application open the file. Just write the flag followed by the
+name of the application.
 
 <pre>
-Device-name:Current-position username$ open -a application-name path/name-file
+open -a application-name path/name-file
 </pre>
 
-<h4>Example</h4>
-<p>Assume that I want to open with <i>Preview</i> the file
-  <code>abc.pdf</code> on my Desktop.
-  I have to write:
-</p>
+Assume that you want to open the file <i>abc.pdf</i> on my Desktop using the program "preview".
 
 <pre>
-User-Device:~ user$ open -a preview Desktop/abc.pdf
+open -a preview Desktop/abc.pdf
 </pre>
 
-<p>As result, a new <i>Preview</i> window appears in pop up showing the content of the
-  chosen file.
-</p>
-
-<h3>Open a file with <i>TextEdit</i></h3>
-<p>If you want to open a file with TextEdit, just use instead of <code>-a</code>
-  the flag <code>-e</code> and write the path and the name of the file you want
-  to open.</p>
-
-<pre>
-User-Device:~ user$ open -e Desktop/text.txt
-</pre>
+As result, a new <i>Preview</i> window appears showing the content of the
+chosen file.<br><br>
 
 <h3>Open the folder which contains the file</h3>
-<p>If you want to open the folder that contains a specific file, just use
-  the flag <code>-R</code> and write the path and the name of the file you want to open.
-</p>
+If you want to open the folder that contains a specific file, just use
+the flag <code>-R</code> and write the path and the name of the file you want to open.
+
 <pre>
-User-Device:~ user$ open -R Desktop/text.txt
+open -R Desktop/text.txt
 </pre>
 
-<p>As result, a new <i>Finder</i> window opens the folder displaying its content.</p>
+As result, a new <i>Finder</i> window opens the folder displaying its content.<br><br>
 
-<h3>Open a file as a text</h3>
-<p>If you want to open a file with your default text editor (determined via
-  LaunchServices), just use the flag <code>-t</code> and write the path and the name of
-  the file you want to open.</p>
+<h3>Open a file with an editor</h3>
+If you want to open a file with your default editor,
+just use the flag <code>-t</code> and write the path and the name of
+the file you want to open.
+
 <pre>
-User-Device:~ user$ open -t Desktop/text.txt
-</pre>
+open -t Desktop/text.txt
+</pre><br>
 
 <h3>Visit a Website</h3>
-<p>You can use this tool not only to open files and folders, but also webpages.
-Just write the command <code>open</code> followed by the <code>URL</code> of the page
-you want to visit. For example, by typing the command</p>
+You can use this tool not only to open files and folders, but also webpages.
+Just write the command <code>open</code> followed by the <i>URL</i> of the page
+you want to visit.
+
 <pre>
-User-Device:~ user$ open http://www.google.com
+open http://www.google.com
 </pre>
-<p>A new page of your default browser will open on the indicated page (in this
-  example, the main page of the Google Search Engine). </p>
+
+A new page of your default browser will open on the indicated page (in this
+example, the main page of the Google Search Engine).

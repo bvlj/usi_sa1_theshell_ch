@@ -6,13 +6,12 @@ tags: redirect output input
 author: Dario Rasic
 title: Redirection
 ---
-<br>
-<!-- Output redirection text -->
-<h2>Output as input</h2>
+<p>
+<h3>Output as input</h3>
 
 <p>To redirect a certain output of the command-line we have to use the symbol "&gt;".<br>
 
-In this case, we will use a file named "<i>hello.txt</i>", in which we want to insert
+In this case, we will use a file named <i>hello.txt</i>, in which we want to insert
 a certain output ("Sun" in this case):<br>
 
 <pre>
@@ -20,9 +19,10 @@ echo "Sun" > hello.txt
 </pre>
 
 So if we print the content of the file in our command-line, the output will be the following:
+
 <pre>
 cat hello.txt
-Sun
+    Sun
 </pre>
 
 If we want to append a certain output to an existing file,
@@ -30,22 +30,22 @@ we just have to use "&gt;&gt;" symbols:</p>
 
 <pre>
 cat hello.txt
-Sun
+    Sun
 echo "Moon" >> hello.txt
 cat hello.txt
-Sun
-Moon
+    Sun
+    Moon
 </pre>
 
 <!-- Input redirection text -->
-<h2>Input as output</h2>
+<h3>Input as output</h3>
 
 To redirect an input from a file for a command, the symbol "&lt;" is used.
 
 <pre>
 echo < $(cat hello.txt)
-Sun
-Moon
+    Sun
+    Moon
 </pre>
 
 This is particularly useful when chaining commands.
@@ -53,7 +53,7 @@ This is particularly useful when chaining commands.
 <br>
 
 <!-- Chaining command text -->
-<h2>Chaining</h2>
+<h3>Chaining</h3>
 <br>
 <h1>To be completed</h1>
 

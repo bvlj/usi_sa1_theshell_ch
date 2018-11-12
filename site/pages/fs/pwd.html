@@ -1,43 +1,34 @@
 ---
 layout: page
-category_title: File System
 category-page: fs
+category-title: FileSystem
 tags: working directory current position where
 author: Mirko Ponzio
-title: PWD
+title: pwd
 ---
-
-<h2>Description</h2>
 <p>
-<code>PWD</code> (abbreviation of print working directory, it gives you the
+The command <code>pwd</code>(abbreviation of print working directory, it returns the
 corrent directory) it is a command of the operation system Unix and Unix-like,
 and in general of the systems POSIX, that show on the standard output the
-absolute pathname on the corrent directory.
+absolute pathname on the corrent directory.<br>
 Since a command line interface cannot provide graphic pictures of the file
-system structure, it must have a different way of representing it.
+system structure, it must have a different way of representing it.<br>
 Think of the file system tree as a maze, and you are standing in it. At any
-given moment, you are located in a single directory.
+given moment, you are located in a single directory.<br>
 Inside that directory, you can see its files and the pathway to its parent
 directory and the pathways to the subdirectories of the directory in which you
-are standing.
-</p>
-<p>
+are standing.<br>
+
 The working directory is the directory where you are standing in. So for
-knowing where you are, you must use the pwd command.
-</p>
+knowing where you are, you must use the pwd command.<br><br>
 
 
-<h2>Options</h2>
-<p>
+<h3>Flags</h3>
 <ul>
-<li> -L :      Display the logical current working directory.</li>
-
-<li>-P :   Display the physical current working directory (all symbolic
+    <li> -L :      Display the logical current working directory.</li>
+    <li>-P :   Display the physical current working directory (all symbolic
         links resolved).</li>
 </ul>
-<br><br>
-If no options are specified, the -L option is assumed.</p>
 
-
-
-<h2> Examples <h2>
+If no options are specified, the -L option is assumed.
+</p>
