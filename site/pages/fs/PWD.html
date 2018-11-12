@@ -1,0 +1,42 @@
+---
+layout: page
+category_title: File System
+category-page: fs
+tags: working directory current position where
+author: Mirko Ponzio
+title: PWD
+---
+
+<h1> PWD, print working directory </h1>
+
+<h2> what is PWD <h2>
+<p>
+pwd (abbreviazione dalla lingua inglese di print working directory, stampa la directory corrente) è un comando dei sistemi operativi Unix e Unix-like,
+e più in generale dei sistemi POSIX, che mostra sullo standard output il pathname assoluto della directory corrente.
+Since a command line interface cannot provide graphic pictures of the file system structure, it must have a different way of representing it.
+Think of the file system tree as a maze, and you are standing in it. At any given moment, you are located in a single directory.
+Inside that directory, you can see its files and the pathway to its parent directory and the pathways to the subdirectories of the directory in which you are standing.
+<br><br>
+The directory you are standing in is called the working directory. To find the name of the working directory, use the pwd command.
+</p>
+
+
+
+<h2> description </h2>
+<p> The pwd utility writes the absolute pathname of the current working
+directory to the standard output.
+Some shells may provide a builtin pwd command which is similar or identical to this utility. </p>
+
+<h2> option </h2>
+<p>
+
+-L      Display the logical current working directory.
+
+-P      Display the physical current working directory (all symbolic
+        links resolved).
+
+If no options are specified, the -L option is assumed.</p>
+
+
+
+<h2> Image <h2>
