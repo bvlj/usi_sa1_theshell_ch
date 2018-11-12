@@ -4,34 +4,71 @@ category-page: fs
 category-title: FileSystem
 tags: absolute relative path
 author: Marwan Announ
-title: Absolute paths
+title: paths
 ---
+
+<h1>Absolute Path</h1>
+
+<h2>First, what is a path?</h2>
+
 <p>
-A path is a location to a folder or file in a file system of a Operating System,
-then is a combination of characters and "/".<br>
+  A path is a location to a folder or file in a file system of a Operating System, then is a combination of characters
+  and "/"
+</p>
 
-An absolute path is defined as specifying the location of a file or directory
-from the root directory (/).In other words we can say absolute path is a complete
-path from start of actual filesystem from / directory.<br><br>
+<h3>Now, what is an Absolute path?</h3>
 
-<h3>To write an absolute path-name:</h3>
 
-Start at the root directory ( / ) and work down.<br>
-Write a slash ( / ) after every directory name (last one is optional).<br>
+<p>
+  An absolute path is defined as specifying the location of a file or directory from the root directory(/).
+  In other words we can say absolute path is a complete path from start of actual filesystem from / directory.
+</p>
 
-If for example, we the commands "cat group1.txt", it'll work only and only if the "group1.txt"
-exist in the current directory.<br>
-If doesn't works, it's not a problem, you just have to know where the file is actually stored.<br>
-Now, we suppose that you know where your file is saved so you can rewrite the command.
-"cat /home/a1/group1.txt".<br>
+<h4>To write an absolute path-name:</h4>
 
-As you can see from the last commands, the path started from "/" which is the root directory
-for every Unix machines.<br>
+<p>
+  Start at the root directory ( / ) and work down.
+  <br>Write a slash ( / ) after every directory name (last one is optional)
+</p>
 
-Here are some other examples of absolute paths:
+<h5>Example:</h5>
 
-<ul>
-    <li>/home/user/Document/group1.txt</li>
-    <li>/root/data/dev.zip</li>
-    <li>/var/log/messages</li>
-</ul>
+<p> cat group1.txt </p>
+if for example, we use the above line, this commands work only and only if the "group1.txt" exist in the current
+directory.
+<br> If not works, it's not a problem, the file is present somewhere, before restart the new command, you have to
+know where
+<br> the file is saved.
+<br> Now, we supposed that you know where your file is saved you can rewrite the command.
+<p> cat /home/a1/group1.txt</p>
+Now, we suppose that the file is saved into folder a1 in home,
+<br>where: /home is the location respect to root, in fact, you have to descend one level
+<br>in the file system like above to access your file.
+
+As you can see from the last commands, all the paths started from /directory whis is a root directory for every Unix
+machines.
+
+<p> Other examples, where all are absolute path</p>
+
+/home/user/Document/group1.txt
+/root/data/dev.jpg
+/var/log/messages
+
+<h6>Example of Absolute path's uses:</h6>
+Now, as we learned from the previous pages we can use other commands in addition to "cat", such as:
+
+<br>ls /etc
+<br>ls /usr/share/games if you have games obviously :)
+<br>cd /usr/share/games
+<br>cd ~
+<br>cat /etc/passwd
+<br>cp /etc/passwd /tmp
+<br>cd /tmp
+<br>cat passwd
+
+
+<br><br><br> <h7> Read this if you are not Bill Gates, so read this..  </h7>
+
+<p> So, if you dont't understand anything, like me before this writing, you have to know that Absolute pathnames start with a
+   <br>slash on the left(simplyfied version..).
+   <br>For example etc/passwd is a good example of Absolute pathnames.
