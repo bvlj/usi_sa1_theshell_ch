@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body>
+  <body id="bdy">
     <header class="header">
       {% include header.html %}
     </header>
@@ -29,6 +29,13 @@
 			searchBar.addEventListener('keypress', function () {
 				sjs.search();
 			});
+		});
+
+		var bdy = document.getElementById("bdy");
+		document.addEventListener("keypress", function(event){
+			if(event.key == "q"){
+				window.scrollTo (0,0);
+			}
 		});
 		</script>
   </body>

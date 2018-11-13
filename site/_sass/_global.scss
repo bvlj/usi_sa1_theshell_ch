@@ -82,6 +82,7 @@ main {
 
 ul, dl, ol {
   margin-left: 2em;
+  padding: 10px 0;
 }
 
 /* ------- HOMEPAGE --------*/
@@ -138,4 +139,8 @@ video{
   a:hover{
     color:#6a6;
   }
+}
+
+#time-line{
+  float:left;
 }

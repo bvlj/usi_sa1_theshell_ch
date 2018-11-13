@@ -1,0 +1,56 @@
+---
+layout: page
+category-title: Intermediate commands
+category-page: intermediate
+tags: 
+author: Andrea Brites Marto
+title: git
+---
+
+<p>
+	If you want to use <i>Git</i> on the shell you need to know how this command works (usually it is preinstalled on Mac and Linux).
+	The <code>git</code> command providesa set of high-level operations and full access to internals.
+
+	Here is the basic syntax but sometimes you will may have some more complicated:
+
+	<pre>
+		git [flags] [path]
+	</pre>
+
+	First of all, you need to know if you have the right version of git with:
+
+	<pre>
+		git --version
+	</pre>
+
+	Now that we know that we have the right version, we can move to the common <code>git</code> flags used.
+	I will divide commands in different type of operation.<br>
+
+	<h3>Start a working area</h3>
+	<ul>
+		<li>-clone: is used to clone a repository in a new directory.</li>
+		<li>-init: this onw is used to create an empty Git repository or reinitialize an existing one.</li>
+	</ul>
+
+	<h3>Work on the current changes</h3>
+	<ul>
+		<li>-add: add a file contents to the index.</li>
+		<li>-mv: move or renamea file, directory or a symlink (a symbolic link).</li>
+		<li>-rm: remove files from the working tree and from the index.</li>
+	</ul>
+
+	<h3>History and state</h3>
+	<ul>
+		<li>-log: show commit logs.</li>
+		<li>-status: show the working tree status.</li>
+	</ul>
+
+	<h3>Managing modification</h3>
+	<ul>
+		<li>-commit: record changes to the repository.</li>
+		<li>-diff: show changes between commits.</li>
+		<li>-merge: merge two or more development histories together.</li>
+		<li>-pull: fetch from and update your local directory with the repository.</li>
+		<li>-push: update the remote repository with your changes.</li>
+	</ul>
+</p>
