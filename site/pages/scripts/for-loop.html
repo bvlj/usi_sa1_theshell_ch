@@ -1,0 +1,67 @@
+---
+layout: page
+category-page: scripts
+category:title Scripting
+tags: loop for done script scripting
+author: Matteo Omenetti
+title: For Loop
+---
+
+<p>
+
+<!-- Introduction -->
+The second type of loops are for loops.
+They follow this sintax:
+<pre>
+  for [variable] in [list] do
+    [code]
+  done
+</pre>
+Their purpose is to <i>iterate</i> over a list. Also while loops could do this, you might argue... <br>
+Of course they could, but for loops are specifically meant to do this. Therefore, for instance,
+you don't have to decleare your counter variable outside the loop. Most importantly,
+this variable can be accessed from inside the loop. <br>
+<br>
+For loops take this form:
+<pre>
+for VARIABLE in 1 2 3 4 5 .. N
+do
+	command1
+	command2
+	commandN
+done
+</pre>
+<!-- End of Introduction -->
+
+
+<!-- First Example -->
+Here is a simple example:
+<pre>
+for i in 1 2 3 4 5
+do
+   echo "Welcome $i times"
+done
+</pre>
+
+This first example of code simply displays a welcome message 5 times.
+The output of this piece of code is:
+<pre>
+Welcome 1 times
+Welcome 2 times
+Welcome 3 times
+Welcome 4 times
+Welcome 5 times
+</pre>
+<!-- End of First Example -->
+
+<!-- Explenation of Numerical Range -->
+There are also other ways to specify the <i> numerical range </i>. For instance, if your numerical range
+is too big, you can simply write: <code> {1..100} </code>. This piece of code means every natural number
+between 1 and 100 (both included). <br>
+Ranges can also count backward like this: <code>{10..1}</code>.
+You can even icrement the numerical value by step of two: <code> {0..10..2} </code>.
+This piece of code means every natural number between 0 and 10 with a step of two,
+0 2 4 6... 10.
+<!-- End of Explenation of Numerical Range -->
+
+</p>

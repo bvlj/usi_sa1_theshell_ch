@@ -6,12 +6,13 @@ tags: loop while do script scripting read
 author: Matteo Omenetti
 title: While Loop
 ---
+<p>
 <!-- Introduction -->
 Loops are an important concept in programming and therefore also in scripting. Thanks to loops you are able to repeat an instruction
 automatically several times, until a certain condition turns false. <br>
 
 Two are the main types of loops: while and for. They both generate a repeating piece of code, but with some key differences
-that make them suitable for some different needs while programming. <br>
+that make them suitable for different needs while programming. <br>
 
 While loops take this form:
 <pre>
@@ -38,9 +39,10 @@ While loops take this form:
   </pre>
 
   In this first example, you simply create a variable called i and evaluate it to 0.
-  Then you acces the while loop: the condition <code> [$i -lt 4] </code> means while the varibale
-  i is less than 4. every cycle of this loop, you print out the value of variable i with <code> echo $i </code>
-  and  finally you increase its value by 1 with <code> i=$((i + 1)) </code>.
+  Then you acces the while loop: the condition <code> [$i -lt 4] </code> means that this while
+  loop will run until the <code> i </code> varibale is less than 4.
+  Every cycle of this loop, you print out the value of variable i with <code> echo $i </code>
+  and finally you increase its value by 1 with <code> i=$((i + 1)) </code>.
   Therefore in 4 cycles the value of i will be 4. This will make the condition of the while loop false.
   The output of this piece of code is:
   <pre>
@@ -51,10 +53,10 @@ While loops take this form:
   </pre>
   <!-- End of First Example -->
 
-  <!-- Second Example -->
-  Sometimes it required to decleare infinite loops for various programming purposes. <br>
-  Here is an example:
 
+  <!-- Infinite Loop First Example -->
+  Sometimes it is required to decleare infinite loops for various programming purposes. <br>
+  Here is an example:
   <pre>
   i=1
 
@@ -76,16 +78,16 @@ While loops take this form:
     i=$((i + 1))
     done
     </pre>
-    No termination codinition is set for this loop in this example. This type of loop is called infinite loop.
+    No termination condition is set for this loop in this example. This type of loop is called infinite loop.
     The <code> exit </code> statement is used to quit the loop. This loop will iterate for 9 times, then
-    as soon as i becomes equal to 0, the condtition of the last if statement will evaluate to true and the
+    as soon as <code> i </code> becomes equal to 0, the condtition of the last if statement will evaluate to true and the
     loop will be terminated. <br>
     The output of this piece of code is:
      <pre>
        1: Hello World
        2: Hello World
        3: Hello World
-       I Love programming
+       I love programming
        4: Hello World
        5: Hello World
        I love Bash
@@ -95,30 +97,35 @@ While loops take this form:
        8: Hello World
        9: Hello World
       </pre>
-<!-- End of Second Example -->
 
+<!-- End of Infinite Loop First Example  -->
+
+<!-- Infinite Loop Second Example  -->
   If you want your shell to hang forever doing nothing you can write out the following infinite loop:
-
   <pre>
     while :
     do
     :
     done
   </pre>
+  <!-- End of Infinite Loop Second Example  -->
 
-
-  In scripting, while loops, are often used to process files line by line. <br>
+<!-- Read  -->
+  In scripting, while loops are often used to process files line by line. <br>
   Here is an examaple:
   <pre>
   while read -r first_name last_name phone;
   do
   printf '%s\n' "$last_name"
-  done < "$file"
+  done <!-- Find out how to write "<"  --> "$file"
   </pre>
 
-  The <code> read </code> command is used to read file line by line. The flag <code> -r </code> is used to tell the
+  The <code> read </code> command is used to read a file line by line. The flag <code> -r </code> is used to tell the
   command read to intepret backslashes (/) literally, instead as escape characters. This command, expect for some few
   rare cases, should always be used with this flag.
-  In this example, <code> < "$file" </code> redirects the loop's input from a file whose name is stored in a variable.
+  In this example, <code> <!-- Find out how to write "<" --> "$file" </code> redirects the loop's input from a file whose name is stored in a variable.
   This file has 3 colums, <code> first_name last_name phone </code>, separated by blank space (or a tab).
   This piece of code only prints out the second column.
+  <!-- End of Read -->
+
+  </p>
