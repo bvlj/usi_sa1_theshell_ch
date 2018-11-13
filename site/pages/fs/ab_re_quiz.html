@@ -30,3 +30,66 @@ Yeah, right, there is a quiz.
 
 
 <!-- quiz di javascript pronto che linkero -->
+
+
+<link href ="style.css" rel ="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src = "main.js"></script>
+
+</head>
+
+
+<body>
+<h1>Are you ready for the quiz?</h1>
+
+
+<form id = "quiz" name = "quiz">
+
+
+<!--1-->
+<p class = "questions">What is path?</p>
+
+<input type = "radio" id = "mc" name = "question1" value = "Is a location to a folder or file in a file system of a Operating System"> Is a location to a folder or file in a file system of a Operating System<br>
+<input type = "radio" id = "mc" name = "question1" value = "Is an Operating System"> Is an Operating System<br>
+<input type = "radio" id = "mc" name = "question1" value = "Is a folder that you can find on your Operating System"> Is a folder that you can find on your Operating System<br>
+
+
+<!--2-->
+<p class = "questions">What is an absolute path?</p>
+
+<input type = "radio" id = "mc" name = "question2" value = "The bigger folder that you can find on your Operating System"> The bigger folder that you can find on your Operating System<br>
+<input type = "radio" id = "mc" name = "question2" value = "Is defined as specifying the location of a file or directory from the root directory(/)"> Is defined as specifying the location of a file or directory from the root directory(/)<br>
+<input type = "radio" id = "mc" name = "question2" value = "The last location of a file or directory from Documents"> The last location of a file or directory from Documents<br>
+
+
+
+<p class = "questions">"cat /home/a1/group1.txt" it's an example of absolute path?</p>
+
+<input type = "radio" id = "mc" name = "question3" value = "YES"> YES <br>
+<input type = "radio" id = "mc" name = "question3" value = "NO"> NO <br>
+
+
+<p class = "questions">If you choose "NO" why it's not correct? if you think it's correct don't write anything</p>
+<input id = "textbox" type = "text" name = "question4">
+
+
+
+<p class = "questions">"pwd/home/user1cd Documents" it's an example of relative path?</p>
+
+<input type = "radio" id = "mc" name = "question5" value = "YES"> YES <br>
+<input type = "radio" id = "mc" name = "question5" value = "NO"> NO <br>
+
+
+
+
+
+<br><br><input id = "button" type = "button" value = "Finish?  Sure!?" onclick = "check();">
+
+
+</form>
+
+<div id = "after_submit">
+<p id = "number_correct"></p>
+<p id = "message"></p>
+<img id = "picture">
+</div>
