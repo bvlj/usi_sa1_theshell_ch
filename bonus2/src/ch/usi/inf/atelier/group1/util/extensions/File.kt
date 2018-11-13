@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018. Bevilacqua Joey
+ * Copyright (c) 2018 Bevilacqua Joey.
  */
 package ch.usi.inf.atelier.group1.util.extensions
 
@@ -9,6 +9,11 @@ import java.io.File
 import java.io.FileReader
 import java.io.IOException
 
+/**
+ * Get the content of the file as String
+ *
+ * @return this File content
+ */
 fun File.getContent(): String {
     val content = StringBuilder()
     try {

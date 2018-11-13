@@ -1,15 +1,22 @@
 /*
- * Copyright (c) 2018. Bevilacqua Joey
+ * Copyright (c) 2018 Bevilacqua Joey.
  */
-package ch.usi.inf.atelier.group1.html
+package ch.usi.inf.atelier.group1.jekyll
 
 import ch.usi.inf.atelier.group1.util.extensions.getContent
 import java.io.BufferedReader
 import java.io.File
 import java.io.StringReader
 
-class JekyllHtmlFile(file: File) {
+class JekyllPage(file: File) {
+    /**
+     * The jekyll header variables
+     */
     val header = HashMap<String, String>()
+
+    /**
+     * The jekyll html code
+     */
     val content: String
 
     init {
@@ -28,12 +35,14 @@ class JekyllHtmlFile(file: File) {
                 isIteratingInHeader = HEADER_END != line
 
                 if (isIteratingInHeader) {
+                    // Import a jekyll variable
                     val values = line.split(":")
                     if (values.size == 2) {
                         header[values[0]] = values[1].trim()
                     }
                 }
             } else {
+                // Import html code
                 contentBuilder.append(line).append('\n')
             }
 
@@ -43,10 +52,14 @@ class JekyllHtmlFile(file: File) {
         content = contentBuilder.toString()
     }
 
+    /**
+     * Check whether the imported file actually had valid content
+     *
+     * @return true if the header and the content aren't empty
+     */
     fun isValid() = header.isNotEmpty() && content.isNotBlank()
 
-    override fun toString() =
-            "Header:\n$header\nContent:\n$content"
+    override fun toString() = "Header:\n$header\nContent:\n$content"
 
     companion object {
         private const val HEADER_START = "---"
