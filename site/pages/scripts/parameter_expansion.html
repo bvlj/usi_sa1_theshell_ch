@@ -10,35 +10,35 @@ title: Parameter expansion
 <!-- TODO: insert correct link once page exists -->
 There are some special operations that can be performed on <a href="#">variables</a> and strings called parameter expansions.
 The general syntax for all parameter expansions is this one:
-<pre>
+{% highlight bash %}
   ${CODE_HERE}
-</pre>
+{% endhighlight %}
 Depending on what you want to do with your variable, the code that goes inside the braces differs.<br>
 <br>
-<pre>
+{% highlight bash %}
   ${VARIABLE:-DEFAULT_VALUE}
-</pre>
+{% endhighlight %}
 If the variable VARIABLE exists and has a value (i.e. it is not null), this is equal to the value of VARIABLE.
 Otherwise, it is equal to DEFAULT_VALUE.<br>
 Example: <code>echo "First name: ${firstname:-John}";</code><br>
 <br>
-<pre>
+{% highlight bash %}
   ${VARIABLE:=DEFAULT_VALUE}
-</pre>
+{% endhighlight %}
 If the variable VARIABLE exists and has a value, this is equal to the value of VARIABLE.
 Otherwise, it sets the variable to DEFAULT_VALUE and is equal to it.<br>
 Example: <code>echo "Last name: ${lastname:=Doe}";</code><br>
 <br>
-<pre>
+{% highlight bash %}
   ${VARIABLE:?ERR_VALUE}
-</pre>
+{% endhighlight %}
 If the variable VARIABLE exists and has a value, this is equal to the value of VARIABLE.
 Otherwise, it prints ERR_VALUE to STDERR and exits (meaning nothing else will be executed after this).<br>
 Example: <code>currdate=${date:?Operation failed: date unknown};</code><br>
 <br>
-<pre>
+{% highlight bash %}
   ${VARIABLE:+VALUE}
-</pre>
+{% endhighlight %}
 If the variable VARIABLE exists and has a value, this is equal to VALUE.
 Otherwise, this has no effect.<br>
 Example: <code>echo -e "reading from address $read.${write:+\nWARNING: read and write set at the same time}";</code><br>
@@ -47,23 +47,25 @@ All of these can also be written without the colon, in which case their meaning 
 "If the variable VARIABLE exists at all (even if it is null), this is ..."<br>
 <br>
 <br>
-<pre>
+{% highlight bash %}
   ${VARIABLE: NUMBER}
-</pre>
+{% endhighlight %}
 This is equal to the substring of the value of VARIABLE, starting at the character with (0-based) index NUMBER <br>
 If NUMBER is negative, the substring starts NUMBER characters before the end of the string.<br>
 Example: <code>lastname=${fullname:$firstnamelength};</code><br>
 <br>
-<pre>
+{% highlight bash %}
   ${VARIABLE: FROM:LENGTH}
-</pre>
+{% endhighlight %}
 This is equal to the substring of the value of VARIABLE, starting at the character with (0-based) index FROM with length LENGTH<br>
 If FROM is negative, the substring starts FROM characters before the end of the string.<br>
 Example: <code>lastname=${middlename:$firstnamelength:$middlenamelength};</code><br>
 <br>
-<pre>
+{% highlight bash %}
   ${#VARIABLE}
-</pre>
+{% endhighlight %}
 This is equal to the length of the value of VARIABLE<br>
 Example: <code>echo "your name has ${#name} characters";</code><br>
 <br>
+<br>
+Further reading: <a href="http://www.gnu.org/software/bash/manual/bashref.html#Shell-Parameter-Expansion">the bash reference manual</a>
