@@ -6,163 +6,178 @@ category-title: Advanced commands
 tags: difference lines diff file separating
 title: diff
 ---
+<p>
+The command <code>diff</code> analyzes two files and prints the lines that are different.
+Essentially, it outputs a set of instructions for how to change one file to
+make it identical to the second file.<br>
 
+<h3>How to use</h3>
 
+To activate the diff command, we must take as parameters two or more
+files that we want to compare and it will give us the output of
+different lines.<br>
+For example let's say we have two files, file1.txt and file2.txt.<br>
+If <b>file1.txt</b> contains the following four lines of text:
 
+{% highlight bash %}
+1. I need to buy apples.
+2. I need to run around the park.
+3. I need to clean the dog.
+4. I need to get the car detailed.
+{% endhighlight %}
 
+and <b>file2.txt</b> contains these four lines:
 
-<p> diff analyzes two files and prints the lines that are different.
-   Essentially, it outputs a set of instructions for how to change one file to
-   make it identical to the second file.</p>
+{% highlight bash %}
+1. I need to do the laundry.
+2. I need to clean the dog.
+4. I need to get the dog detailed.
+{% endhighlight %}
 
+then we can use diff to automatically display for us which lines differ
+between the two files with this command:
 
+<pre>
+diff file1.txt file2.txt
+</pre>
 
+and the output will be:
 
+<pre>
+2,4c2,4
 
+&lt; I need to run the laundry.
+&lt; I need to wash the dog.
+&lt; I need to get the car detailed.
+---
+&gt; I need to do the laundry.
+&gt; I need to wash the car.
+&gt; I need to get the dog detailed.
+</pre>
 
+In our output, "2,4c2,4" means: "Lines 2 through 4 in the first
+file need to be changed to match lines 2 through 4 in the second file.
 
-   <h3>How to use</h3>
-
-     <p> To activate the diff command, we must take as parameters two or more
-       files that we want to compare and it will give us the output of
-        different lines. <br>
-        For example let's say we have two files, file1.txt and file2.txt.<br>
-        <br> If <b>file1.txt</b> contains the following four lines of text: </p>
-
-<ol><code><li>I need to buy apples.</li>
-<li>I need to run around the park.</li>
-<li>I need to wash the dog.</li>
-<li>I need to get the car detailed.</li></code></ol>
-
-<p> ...and <b>file2.txt</b> contains these four lines: </p>
-
-<ol><code><li> I need to buy apples.</li>
-<li>I need to do the laundry.</li>
-<li>I need to wash the dog.</li>
-<li>I need to get the dog detailed.</li></ol></code>
-
-<p>...then we can use diff to automatically display for us which lines differ
-   between the two files with this command:</p>
-
-   <pre>diff file1.txt file2.txt</pre>
-
-   <p> ...and the output will be:</p>
-
-   <pre> 2,4c2,4 <br>
-< I need to run the laundry.<br>
-< I need to wash the dog.<br>
-< I need to get the car detailed.<br>
----<br>
-> I need to do the laundry.<br>
-> I need to wash the car.<br>
-> I need to get the dog detailed.</pre>
-
-<p> In our output above, "2,4c2,4" means: "Lines 2 through 4 in the first
-  file need to be changed to match lines 2 through 4 in the second file.</p>
-
-
-
-
-
-
-
-   <h3>Flags</h3>
-   <ul>
-     <li><h4> -c:</h4> <br>To view differences in context mode, use the -c option.
-        For instance, let's say <b>file1.txt</b> and <b>file2.txt</b> contain
-        the following:<br><br>
+<h3>Context mode</h3>
+To view differences in context mode, use the -c option.
+For instance, let's say <i>file1.txt</i> and <i>file2.txt</i> contain
+the following:<br>
 
 <table>
-<tr>
-      <th> File1.txt </th> <th>File2.txt</th></tr>
-      <tr><td> apples </td> <td>apples</td></tr>
-      <tr><td>oranges</td> <td>kiwis</td></tr>
-      <tr><td>kiwis</td>   <td>carrots</td></tr>
-      <tr><td>carrots</td>  <td>grapefruits</td></tr></table>
+    <tr>
+        <th>File1.txt</th>
+        <th>File2.txt</th>
+    </tr>
+    <tr>
+        <td>apples</td>
+        <td>apples</td>
+    </tr>
+    <tr>
+        <td>oranges</td>
+        <td>kiwis</td>
+    </tr>
+    <tr>
+        <td>kiwis</td>
+        <td>carrots</td>
+    </tr>
+    <tr>
+        <td>carrots</td>
+        <td>grapefruits</td>
+    </tr>
+</table>
 
+<pre>
+diff -c file1.txt file2.txt
+</pre>
 
+Our output will be like the following:
 
+<pre>
+*** file1.txt   2014-08-21 17:58:29.764656635 -0400
+--- file2.txt   2014-08-21 17:58:50.768989841 -0400
+***************
+*** 1,4 ****
+  apples
+- oranges
+  kiwis
+  carrots
+--- 1,4 ----
+  apples
+  kiwis
+  carrots
++ grapefruits
+</pre>
 
+The first two lines of this output show us information about our "from"
+file (file 1) and our "to" file (file 2). It lists the file name,
+modification date, and modification time of each of our files, one per
+line. The "from" file is indicated by "***", and the "to" file is
+indicated by "---"..<br>
 
+The line "***************" is just a separator.<br>
+The next line has three asterisks ("***") followed by a line
+range from the first file (in this case lines 1 through 4, separated by
+a comma). Then four asterisks ("****").<br>
+Then it shows us the contents of those lines. If the line is unchanged,
+it's prefixed by two spaces. If the line is changed, however, it's prefixed
+by an indicative character and a space. The character meanings are as
+follows:
 
+<table>
+    <tr>
+        <th>Character</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td><b>!</b></td>
+        <td>
+            Indicates that this line is part of a group of one or more lines that
+            needs to change. There is a corresponding group of lines prefixed with
+            "!" in the other file's context as well.
+        </td>
+    </tr>
+    <tr>
+        <td><b>+</b></td>
+        <td>Indicates a line in the second file that needs to be added to the first file.</td>
+    </tr>
+    <tr>
+        <td><b>-</b></td>
+        <td>Indicates a line in the first file that needs to be deleted.</td>
+    </tr>
+</table>
 
+After the lines from the first file, there are three dashes ("---"),
+then a line range, then four dashes ("----"). This indicates the
+line range in the second file that will sync up with our changes
+in the first file.
 
+If there is more than one section that needs to change, diff will
+show these sections one after the other. Lines from the first file will
+still be indicated with "***", and lines from the second file
+with "---".
 
-       <pre> diff -c file1.txt file2.txt </pre>
+<h3>Unified mode</h3>
+Unified mode (the -u option) is similar to context mode,
+but it doesn't display any redundant information. Here's an example,
+using the same input files as our last example:
 
-       Our output will be like the following:
-  <pre>     *** file1.txt   2014-08-21 17:58:29.764656635 -0400<br>
---- file2.txt   2014-08-21 17:58:50.768989841 -0400<br>
-***************<br>
-*** 1,4 ****<br>
-  apples<br>
-- oranges<br>
-  kiwis<br>
-  carrots<br>
---- 1,4 ----<br>
-  apples<br>
-  kiwis<br>
-  carrots<br>
-+ grapefruits< </pre>
+<pre>
+diff -u file1.txt file2.txt
+</pre>
 
-       The first two lines of this output show us information about our "from"
-       file (file 1) and our "to" file (file 2). It lists the file name,
-       modification date, and modification time of each of our files, one per
-       line. The "from" file is indicated by "***", and the "to" file is
-       indicated by "---"..<br>
-     <br> The line "***************" is just a separator.
-     <br><br> The next line has three asterisks ("***") followed by a line
-     range from the first file (in this case lines 1 through 4, separated by
-     a comma). Then four asterisks ("****").<br>
-   <br> Then it shows us the contents of those lines. If the line is unchanged,
-   it's prefixed by two spaces. If the line is changed, however, it's prefixed
-   by an indicative character and a space. The character meanings are as
-   follows:<br><br>
+will output:
 
-
-
-
-
-<table> <tr>
-  <th>Character</th>
-  <th>Meaning</th></tr>
-  <tr> <td> <b>!</b></td>
-    <td>Indicates that this line is part of a group of one or more lines that
-      needs to change. There is a corresponding group of lines prefixed with
-      "!" in the other file's context as well.</td></tr>
-      <tr><td><b>+</b></td>
-        <td>Indicates a line in the second file that needs to be added to the
-          first file.</td></tr>
-          <tr><td><b>-</b></td>
-          <td>Indicates a line in the first file that needs to be deleted.</td>
-          </tr>
-        </table><br>
-
-        After the lines from the first file, there are three dashes ("---"),
-        then a line range, then four dashes ("----"). This indicates the
-        line range in the second file that will sync up with our changes
-        in the first file.<br><br>
-
-        If there is more than one section that needs to change, diff will
-        show these sections one after the other. Lines from the first file will
-        still be indicated with "***", and lines from the second file
-        with "---".
-
- </li>
-
-  <li><h4> -u</h4>:Unified mode (the -u option) is similar to context mode,
-         but it doesn't display any redundant information. Here's an example,
-         using the same input files as our last example:
-        <pre>diff -u file1.txt file2.txt</pre>
-         will output:<br>
-         <pre> --- file1.txt   2014-08-21 17:58:29.764656635 -0400<br>
-+++ file2.txt   2014-08-21 17:58:50.768989841 -0400<br>
-@@ -1,4 +1,4 @@<br>
- apples<br>
--oranges<br>
- kiwis<br>
- carrots<br>
-+grapefruits</pre>
+<pre>
+--- file1.txt   2014-08-21 17:58:29.764656635 -0400
++++ file2.txt   2014-08-21 17:58:50.768989841 -0400
+@@ -1,4 +1,4 @@
+ apples
+-oranges
+ kiwis
+ carrots
++grapefruits
+</pre>
 
 The output is similar to above, but as you can see, the differences are
- "unified" into one set.
+"unified" into one set.
+</p>

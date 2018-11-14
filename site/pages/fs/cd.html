@@ -3,51 +3,40 @@ layout: page
 category-page: fs
 category-title: FileSystem
 tags: change directory
-author: Mirko Ponzio
+author: Alessandro Marinelli
 title: cd
 ---
-<p> In the operative system Unix and Unix-like, and in general in the system
-  POSIX, cd  (change directory) is an internal command of shell that change the
-  corrent directory. <br><br>
 
-The command is only an internal command of shell, it can't be an external program,
-because one process can modified only the own corrent directory and not that of
-other processes.
-So the Shell has to implement this function autonomously.
+<!-- Co-authored with Mirko Ponzio -->
 
-
-La new setting of the corrent directory it has been inherited from the started
-programs.
- <br> <br>
-
-After the change of the directory, the variable pwd it is automatically updated
-with the pathname of the new directory.
-</p> <br> <br>
-
-<h2> Some usefull command for CD<h2>
-  <ul>
-<li> cd by itself or cd ~ will always put you in your home directory.</li>
-<li> cd . will leave you in the same directory you are currently in (i.e. your current directory won't change).
-This can be useful if your shell's internal code can't deal with the directory you are in being recreated; running cd . will place your
-shell in the recreated directory. </li>
-<li> cd ~username will put you in username's home directory. </li>
-<li> cd dir (without a /) will put you in a subdirectory; for example, if you are in /usr, typing cd bin will put you in /usr/bin, while cd /bin puts you in /bin.</li>
-<li> cd .. will move you up one directory. So, if you are /usr/bin/tmp, cd .. moves you to /usr/bin, while cd ../.. moves you to /usr (i.e. up two levels).
-  You can use this indirection to access subdirectories too. So, from /usr/bin/tmp, you can use cd ../../local to go to /usr/local.</li>
-<li> cd - will switch you to the previous directory. For example, if you are in /usr/bin/tmp, and go to /etc,
-  \you can type cd - to go back to /usr/bin/tmp. You can use this to toggle back and forth between two directories. </li>
-</ul>
-
-<h2> sintax of cd </h2>
 <p>
-La sintassi generale di cd è la seguente:
+The <code>cd</code> command is used to change the working directory<br>
+The name stands for <i>Change Directory</i>.<br>
 
-cd [opzioni] [--] [dir]
-Il parametro facoltativo dir indica la nuova directory corrente. Se non è specificato, viene usato al suo posto il valore della variabile d'ambiente HOME,
-che normalmente indica la home directory dell'utente. Se invece è un trattino ("-"), allora viene usata la directory corrente precedente.
+The default cd command syntax is:
 
-Se il parametro dir è un pathname relativo che non ha come primo elemento "." o "..", allora esso viene unito a ciascuna delle directory
-elencate nella variabile d'ambiente CDPATH: se il risultato corrisponde ad una directory esistente, allora essa diviene la nuova directory corrente.
-Altrimenti dir viene considerato relativo alla directory corrente.
+<pre>
+cd [flags] [path]
+</pre>
 
-Il doppio trattino -- (facoltativo) indica che i parametri successivi non sono da considerarsi opzioni.</p>
+Where [flags] are the cd flags, read below for more info,and [path] is the
+path (absolute or relative), of the directory which we  want to make as working directory.<br><br>
+
+<h3>Change the working directory</h3>
+Let's see how to use the command <code>cd</code> in order to change the working directory
+
+<pre>
+pwd
+    ~
+cd Desktop/multimedia
+pwd
+    ~/Desktop/multimedia
+</pre>
+
+As you can see, we changed the working directory from ~ (which stands for HOME),
+to "multimedia". Now our Shell will work on the  directory "multimedia"
+until a new <code>cd</code> will occour.<br>
+
+<b> Notice:</b> If you want to move to a directory which is not contained in the
+current working directory, you <u>MUST</u> use the absolute path.
+</p>

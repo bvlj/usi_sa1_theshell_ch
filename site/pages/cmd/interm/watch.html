@@ -2,39 +2,35 @@
 layout: page
 category-page: intermediate
 category-title: Intermediate commands
-tags: watch repeat track analyse seconds 
+tags: watch repeat track analyse seconds
 author: Claudio Maggioni
 title: watch
 ---
 <p>
-  The <code>watch</code> command is a system utility able to execute a command
-  every <em>n</em> seconds by clearing the screen and displaying the 
-  output of the command each time the interval is over. This command is very
-  simple to use and very effective: it can be used to check the size in bytes
-  of a file while downloading it, or it can be used on <em>Linux</em> to jiggle
-  around the mouse every ~5 minutes with the command <code>xdotool</code> in
-  order to keep the computer awake.
-</p>
+The <code>watch</code> command is a system utility able to execute a command
+every <i>n</i> seconds by clearing the screen and displaying the
+output of the command each time the interval is over. This command is very
+simple to use and very effective: it can be used to check the size in bytes
+of a file while downloading it, or it can be used on <i>Linux</i> to jiggle
+around the mouse every ~5 minutes with the command <code>xdotool</code> in
+order to keep the computer awake.
 
 <h3>Usage</h3>
 
-<p>
-  <code>watch</code> has a very simple syntax: the amount in seconds to wait
-  between executions is specified in seconds using the <code>-n</code> flag 
-  and the default value is <em>2</em>. Also, differences between older and 
-  newer outputs are highlighted if the <code>-d</code> flag is used.
-</p>
+<code>watch</code> has a very simple syntax: the amount in seconds to wait
+between executions is specified in seconds using the <code>-n</code> flag
+and the default value is <i>2</i>. Also, differences between older and
+newer outputs are highlighted if the <code>-d</code> flag is used.
 
-<h4>Watch the size of "ubuntu.iso" every 5 seconds</h4>
+Example: Watch the size of "ubuntu.iso" every 5 seconds
 
 <pre>
-watch -n 5 du -h ubuntu.iso 
+watch -n 5 du -h ubuntu.iso
 </pre>
 
-<h4>Watch the contents of "site.html" every 2 seconds and highlight the
-  differencies between iterations</h4>
+Example: Watch the contents of "site.html" every 2 seconds and highlight the
+differencies between iterations
 
 <pre>
 watch -d cat site.html
 </pre>
-

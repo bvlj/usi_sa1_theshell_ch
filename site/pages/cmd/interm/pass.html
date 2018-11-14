@@ -7,104 +7,90 @@ author: Claudio Maggioni
 title: pass
 ---
 <p>
-  The <code>pass</code> command, also known as <em>Password Store</em>, is an
-  entirely offline password manager that uses <em>GPG</em> for encryption with
-  the ability to sync the (entirely encrypted) passwords using <code>git</code>.
-  <code>pass</code> works on <em>MacOS</em> (avaliable via
-  <a href="https://brew.sh">Homebrew</a>), <em>Linux</em> and on
-  <em>Android</em> (with a GUI app). Think of it as an entirely FLOSS
-  alternative to services like <em>Keypass</em> or <em>Dashlane</em>.
-</p>
+The <code>pass</code> command, also known as <i>Password Store</i>, is an
+entirely offline password manager that uses <i>GPG</i> for encryption with
+the ability to sync the (entirely encrypted) passwords using <code>git</code>.
+<code>pass</code> works on <i>MacOS</i> (avaliable via
+<a href="https://brew.sh">Homebrew</a>), <i>Linux</i> and on
+<i>Android</i> (with a GUI app). Think of it as an entirely FLOSS
+alternative to services like <i>Keypass</i> or <i>Dashlane</i>.<br>
 
-<p>
-  Excluding the initial setup (that requires the creation of a <em>GPG key</em>),
-  <code>pass</code> is very easy and straightforward to use: instead of
-  printing passwords to <em>stdout</em>, <code>pass</code> copies them in the 
-  system clipboard, erasing them after a certain number of seconds (usually
-  <em>45</em>).
-</p>
+Excluding the initial setup (that requires the creation of a <i>GPG key</i>),
+<code>pass</code> is very easy and straightforward to use: instead of
+printing passwords to <i>stdout</i>, <code>pass</code> copies them in the
+system clipboard, erasing them after a certain number of seconds (usually
+<i>45</i>).<br>
 
-<p>
-  <code>pass</code> has many unofficial GUI clients and migration scripts from
-  other password managers. For more information, check out 
-  <a href=https://www.passwordstore.org/#other">the official website</a>.
-</p>
+<code>pass</code> has many unofficial GUI clients and migration scripts from
+other password managers. For more information, check out
+<a href=https://www.passwordstore.org/#other">the official website</a>.<br>
 
 <h3>Setup</h3>
 
-<p>
-  An accurate walkthrough through the setup of <code>pass</code>, in addition
-  to some other useful sets of commands (such as how to migrate the password
-  repository to another computer) is provided
-  in this <a href="https://gist.github.com/flbuddymooreiv/a4f24da7e0c3552942ff">
-    GitHub Gist</a> by <a href="https://github.com/flbuddymooreiv">
-    <em>flbuddymooreiv</em></a>.
-</p>
+An accurate walkthrough through the setup of <code>pass</code>, in addition
+to some other useful sets of commands (such as how to migrate the password
+repository to another computer) is provided
+in this <a href="https://gist.github.com/flbuddymooreiv/a4f24da7e0c3552942ff">
+GitHub Gist</a> by <a href="https://github.com/flbuddymooreiv">
+<i>flbuddymooreiv</i></a>.<br>
 
-<p>
-  For more detailed explainations on the setup process or on any commands
-  please check out the online version of the 
-  <a href="https://git.zx2c4.com/password-store/about/">man page</a>, which is
-  surprisingly more readable that most of the man pages for other utilities.
-</p>
+For more detailed explainations on the setup process or on any commands
+please check out the online version of the
+<a href="https://git.zx2c4.com/password-store/about/">man page</a>, which is
+surprisingly more readable that most of the man pages for other utilities.
 
 <h3>Usage</h3>
 
-<p>
-  Common <code>pass</code> commands are shown below. For more information refer
-  to the documentation linked above.
-</p>
+Common <code>pass</code> commands are shown below. For more information refer
+to the documentation linked above.<br>
 
-<h4>Initialize the password repository with a GPG key with id "0DEADBEEF"</h4>
+Example: Initialize the password repository with a GPG key with id "0DEADBEEF"
 
 <pre>
 pass init 0DEADBEEF
 </pre>
 
-<h4>Insert a password for <em>example.com</em> with username <em>bob</em> in
-  the password repository interactively</h4>
+Example: Insert a password for <i>example.com</i> with username <i>bob</i> in
+  the password repository interactively
 
 <pre>
 pass insert example.com/bob
 </pre>
 
-<p>
-  Please note that the password <em>name</em> here follows the most common
-  naming convention in <code>pass</code>, which is
-  <code>{website}/{username}</code>. Passwords can be stored in
-  hierarchical structures (i.e. in nested folders), but the naming is up to the
-  user.
-</p>
+Please note that the password <i>name</i> here follows the most common
+naming convention in <code>pass</code>, which is
+<code>{website}/{username}</code>. Passwords can be stored in
+hierarchical structures (i.e. in nested folders), but the naming is up to the
+user.<br>
 
-<h4>Generate a password for <em>zombo.com</em> of 16 characters and copy it in
-  the clipboard</h4>
+Example: Generate a password for <i>zombo.com</i> of 16 characters and copy it in
+the clipboard
 
 <pre>
 pass generate -c zombo.com/bob 16
 </pre>
 
-<h4>Retrieve the password for <em>google.com</em> and copy it in the system
-  clipboard (<code>-c</code> flag)</h4>
+Example: Retrieve the password for <i>google.com</i> and copy it in the system
+clipboard (<code>-c</code> flag)
 
 <pre>
 pass -c google.com/bob@gmail.com
 </pre>
 
-<h4>Edit the password for <em>facebook.com</em> using the default editor</h4>
+Example: Edit the password for <i>facebook.com</i> using the default editor
 
 <pre>
 pass edit facebook.com/bob
 </pre>
 
-<h4>Convert the password repository to a git repository for synchronization</h4>
+Edit: Convert the password repository to a git repository for synchronization
 
 <pre>
 pass git init
 </pre>
 
-<p>
-  Every <code>git</code> command on the password repository must be given with
-  the prefix <code>pass git</code> (e.g. <code>pass git push</code>). An
-  automatic commit is performed whenever a password is created, edited or
-  deleted.
+Every <code>git</code> command on the password repository must be given with
+the prefix <code>pass git</code> (e.g. <code>pass git push</code>). An
+automatic commit is performed whenever a password is created, edited or
+deleted.
 </p>

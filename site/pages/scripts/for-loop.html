@@ -8,49 +8,49 @@ title: For Loop
 ---
 
 <p>
-
 <!-- Introduction -->
 The second type of loops are for loops.
 They follow this sintax:
-<pre>
+{% highlight bash %}
   for [variable] in [list] do
     [code]
   done
-</pre>
+{% endhighlight %}
+
 Their purpose is to <i>iterate</i> over a list. Also while loops could do this, you might argue... <br>
 Of course they could, but for loops are specifically meant to do this. Therefore, for instance,
 you don't have to decleare your counter variable outside the loop. Most importantly,
 this variable can be accessed from inside the loop. <br>
-<br>
+
 For loops take this form:
-<pre>
+{% highlight bash %}
 for VARIABLE in 1 2 3 4 5 .. N
 do
 	command1
 	command2
 	commandN
 done
-</pre>
+{% endhighlight %}
 <!-- End of Introduction -->
 
 
 <!-- First Example -->
 Here is a simple example:
-<pre>
+{% highlight bash %}
 for i in 1 2 3 4 5
 do
    echo "Welcome $i times"
 done
-</pre>
+{% endhighlight %}
 
 This first example of code simply displays a welcome message 5 times.
 The output of this piece of code is:
 <pre>
-Welcome 1 times
-Welcome 2 times
-Welcome 3 times
-Welcome 4 times
-Welcome 5 times
+    Welcome 1 times
+    Welcome 2 times
+    Welcome 3 times
+    Welcome 4 times
+    Welcome 5 times
 </pre>
 <!-- End of First Example -->
 
