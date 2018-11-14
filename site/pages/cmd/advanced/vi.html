@@ -1,0 +1,72 @@
+---
+layout: page
+author: Alessandro Luini
+category-page: advanced
+category-title: Advanced commands
+tags: Vi advanced text editor
+title: Vi
+---
+
+<p>The default editor that comes with the UNIX operating system is called
+  vi (visual editor).</p>
+  <br><br>
+  <p>The UNIX vi editor is a full screen editor and has two modes of
+    operation:</p>
+    <br><br>
+    <ol><li>Command mode commands which cause action to be taken on the file,
+      and</li>
+      <li>Insert mode in which entered text is inserted into the file.</li>
+    </ol>
+    <br><br>
+    <p>In the command mode, every character typed is a command that does
+      something to the text file being edited; a character typed in the
+      command mode may even cause the vi editor to enter the insert mode.
+      In the insert mode, every character typed is added to the text in the
+       file; pressing the {Esc} (Escape) key turns off the Insert mode.</p>
+       <p>While there are a number of vi commands, just a handful of these
+          is usually sufficient for beginning vi users. To assist such users,
+          this Web page contains a sampling of basic vi commands. The most
+          basic and useful commands are marked with an asterisk (* or star)
+          in the tables below. With practice, these commands should become
+          automatic.</p>
+
+        <p>Both UNIX and vi are <b>case-sensitive</b>. Be sure not to use a
+           capital letter in place of a lowercase letter; the
+           results will not be what you expect.</p><br><br>
+
+           <h3>How to start <code> vi </code>
+           </h3>
+           <p>To use vi on a file, type in vi filename. If the file named
+              filename exists, then the first page (or screen) of the file
+              will be displayed; if the file does not exist, then an empty
+              file and screen are created into which you may enter text.</p>
+              <pre>vi filename.txt</pre>
+              <p>To edit filename starting at line 1</p>
+<br><br>
+              <h3>How to exit <code>vi</code></h3>
+              <p>Usually the new or modified file is saved when you leave vi.
+               However, it is also possible to quit vi without saving the file.
+             </p>
+             <p>The cursor moves to bottom of screen whenever a colon (:) is
+               typed. This type of command is completed by hitting the
+               &ltReturn&gt (or &ltEnter&gt) key.<br><br>
+               <pre>:q&ltReturn&gt</pre>
+               <p>quit (or exit). <code>vi</code></p>
+               <pre>:x&ltReturn&gt</pre>
+               <p>quit vi, writing out modified file to
+                 file named in original invocationt modified file to file
+                  named in original </p>
+                 <pre>:wq&ltReturn&gt</pre>
+                   <p>quit vi, writing out modified file to file named in
+                      original invocation.</p>
+
+                      <pre>:q!&ltReturn&gt</pre>
+                      <p>quit vi even though latest changes have not been
+                        saved for this vi call</p>
+
+
+      <h3>Flags</h3>
+      <h4>-r:</h4>
+      <p>Use -r to recover filename that was being edited when system
+        crashed.</p>
+      <pre>vi -r filename.txt</pre>
