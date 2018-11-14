@@ -1,0 +1,154 @@
+---
+layout: page
+category-page: scripts
+category-title: Scripting
+tags: if else script scripting read
+author: Matteo Omenetti
+title: If Statement
+---
+<!-- Introduction -->
+<p>
+  If statements allow us to make decisions in our Bash scripts. They allow us to whether run or not a piece
+  of code based on a condition that we set. <br>
+  If statements take this form:
+  <pre>
+    if [condition]
+      then
+        command1
+        command2
+        command3
+        ...
+      fi
+  </pre>
+
+Anything between <code>then</code> and <code>fi</code> will be executed only if the condtion
+evaluates to true. <br>
+Here is a simple example:
+
+<pre>
+  i=210;
+
+  if [$i -ge 200]
+    then
+      echo You chose a big number.
+  fi
+</pre>
+
+In this first example we evaluate a varibale <code>i</code> to 105. The <i> if statement </i> will print "You chose a big number"
+only if the number contained in our varibale <code>i</code> is <b>G</b>reater or <b>E</b>qual to 200. <br>
+This is our case, therefore the output of this piece of code will be:
+<pre>
+  You chose a big number.
+</pre>
+<!-- End of Introduction -->
+
+
+<!-- If Else -->
+<h3> If Else </h3>
+
+Sometimes we want to perform a certain set of actions, if our condtion evaluates to true and another set
+of actions if our condition evaluates to false. We can do this with the <i> if else </i> statement.
+<i> If else </i> sattements take this form:
+<pre>
+  if [condition]
+    then
+      command1
+      command2
+      command3
+      ...
+    else
+      command1
+      command2
+      command3
+      ...
+    fi
+</pre>
+
+Here is a simple example:
+<pre>
+  i=50;
+
+  if [$i -ge 200]
+    then
+      echo You chose a big number.
+    else
+    echo You chose a small number.
+  fi
+</pre>
+In this example, that is just an extention of the previuous example, we evealuate a variable <code>i</code>
+to 50. If <code>i</code> is gretaer or equal to 200, you print out "You chose a big number", otherwise,
+(if <code>i</code> is not gretaer or equal to 200), just like in this case, you print out "You chose a small number".
+Therefore the output of this piece of code is:
+<pre>
+  You chose a small number.
+</pre>
+<!-- End of If Else -->
+
+
+<!-- If Elif Else -->
+<h3> If Elif Else </h3>
+Sometimes, in programming, it is necessary to have a series of condtions that lead to different paths.
+We can accomodate this need with the <i>if else elif</i> mechanism.
+The <i>if else elif</i> mechanism takes this form:
+
+<pre>
+  if [condition]
+    then
+      command1
+      command2
+      command3
+      ...
+  elif [condition]
+    then
+      command1
+      command2
+      command3
+      ...
+  else
+      command1
+      command2
+      command3
+      ...
+  fi
+</pre>
+
+Here is a simple example:
+
+<pre>
+  i=150;
+
+  if [$i -ge 200]
+    then
+      echo You chose a big number.
+  elif [$i == 150]
+    then
+      echo You chose 150.
+  else
+    echo You chose a small number
+  fi
+</pre>
+
+  In this example, that is just an extention of the previuous example, we evealuate a variable <code>i</code>
+  to 150. If <code>i</code> is gretaer or equal to 200, you print out "You chose a big number", if <code>i</code>
+  is equal to 150 you print out "You chose 150" otherwise you print out "You chose a small number".
+  Therefore the output of this piece of code is:
+<pre>
+  You chose 150.
+</pre>
+<!-- End of If Elif Else -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </p>
