@@ -15,9 +15,32 @@ title: fs
   <br> whereas you want to use relative path we should be present that you have to be in the working directory.
 </p>
 
+
+<br><br><br>We suppose that now you know the differences between both, but, what is the vantages and disadvantages?
+
+
+<br> <br> <br>
+<h3> Pro and Cons of using Absolute and Relative </h3>
+
+<pre>
+<br>1)Absolute paths are clearer: who will have to maintain/modify your script (you or others) will be able to know
+<br>every time what directories are involved;
+<br><br>2)With absolute paths you are sure the involved directories are the one with the exact path you are writing
+<br>in the script;
+<br><br>3)Relative paths are shorter, but you need to be sure of the subtree you're working into;
+<br><br>4)You can achieve shortness replacing recurring paths with a variable at the beginning of the script
+<br><br>
+(e.g. /var/log/app/component/module/logfile.log -> $module_log_dir/logfile.log)
+
+
+
+
+</pre>
+
+
 <!-- quiz about absolute vs relative, where the user have to choose one or another(javascript) -->
 
-<h2> I'm sure that if you read this for two or more times you will be able to pass the quiz </h2>
+<h3> I'm sure that if you read this for two or more times you will be able to pass the quiz </h3>
 
 Yeah, right, there is a quiz.
 <br> The best way to learn something it's not the theory, in fact you have to do some practice, if you click
