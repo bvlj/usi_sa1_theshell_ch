@@ -1,0 +1,56 @@
+---
+layout: page
+category-title: Intermediate commands
+category-page: intermediate
+tags: base64 representation
+author: Gianmarco De Vita
+title: Base64
+previous-page:
+next-page:
+---
+<p><i>Base64</i> is an encoding system that allows the translation of binary
+  data into ASCII text strings, basing upon 64 different ASCII characters.
+Each <i>Base64</i> digit represents exactly 6 bits of data so, for example,
+six bytes (a total of 48 bits) can be represented by eight <i>Base64</i> digits.</p>
+
+<p>By writing the command <code>base64</code> you can encode and decode Base64 data.
+The command follows the structure:</p>
+
+<pre>
+Device-name:Current-position username$ base64 [flag] [-i input item] [-o output item]
+</pre>
+
+<h3>Defining input and output files</h3>
+<p>In this case, flag such as <code>-i</code> and <code>-o</code> are fundamental
+  to define respectevely from which file take the stream and into which to store
+  the result. Naturally, the path and the name of the files must be specified.</p>
+
+<pre>
+Device-name:Current-position username$ base64 -i path/input.file -o path/output.file
+</pre>
+
+<h3>Insert line breaks</h3>
+<p>Using the <code>-b</code> (which stands for <i>break</i>) flag followed by a
+  number, line breaks are added every specified "number" characters.</p>
+
+<pre>
+Device-name:Current-position username$ base64 -b number path/input.file path/output.file
+</pre>
+
+<p>By leaving the number field empty, an unbroken stream will be generated.</p>
+
+<h3>Decode Base64</h3>
+<p>Using the <code>-D</code> flag (which stands for decode), you obtain as
+  output the input message decoded into binary data.</p>
+
+<pre>
+Device-name:Current-position username$ base64 -D [-i input item] [-o output item]
+</pre>
+
+<h3>Summarize the tools</h3>
+<p>Using the <code>-h</code> (which stands for <i>help</i>) a short paragraph
+in which are listed the flags with the respective paragraph will be displayed.</p>
+
+<pre>
+Device-name:Current-position username$ base64 -h
+</pre>
