@@ -1,0 +1,99 @@
+---
+layout: page
+category-page: scripts
+category-title: Scripting
+tags: variables, defining, deleting, naming
+author: Dario Rasic
+title: Script Variables
+---
+<!-- Intro -->
+<p>
+A variable is simply a string to which we assign a certain type of data, which could be a text, a number, a filename and other types of data.
+<br>
+<!-- How to name a variable - text -->
+<h3>Naming a variable</h3>
+<!-- Explaination -->
+To name a variable in Unix we have to use only letters, numbers or the underscore character (_).<br>
+Other characters can't be used because they have a special meaning in Unix Shell.<br>
+<br>
+<!-- Examples of naming -->
+Some simple examples are:
+
+<pre>
+  VAR_1
+  VAR_2
+  NAME_3
+  name_4
+</pre>
+
+<br>
+<!-- How to define a variable - text -->
+<h3>Defining a variable</h3>
+
+To define a certain variable, we could use the following basecase:
+
+<pre>
+  variable_name=variable_value
+</pre>
+<!-- Examples of defining -->
+Let me show you a simple example:
+
+<pre>
+  VAR_1=Strawberry
+</pre>
+<!-- How to access the variables - text -->
+To access a variable we have to use the dollar sign ($). So if I want to access VAR_1, I have to write:
+<!-- Examples of accessing -->
+<pre>
+  VAR_1=Strawberry
+  echo $VAR_1
+</pre>
+And shell will give us the following result:
+<pre>
+  Strawberry
+</pre>
+<br>
+<!-- How to delete a variable - text -->
+<h3>Deleting a variable</h3>
+<!-- Explaination -->
+Deleting a variable means that shell will remove a certain variable from the list of those that it tracks.<br>
+To delete a variable we use the following command:
+<!-- Examples of deleting -->
+<pre>
+  unset variable_name
+</pre>
+
+which in our case would be:
+
+<pre>
+  unset VAR_1
+</pre>
+<br>
+<!-- How to protect  a  variable - text -->
+<h3>Protecting variables</h3>
+<!-- Explaination -->
+To protect a certain variable, we can set them as read-only so that it can't be changed or deleted.<br>
+So, if we try to change the value of VAR_1, the result will be the following:
+<!-- Examples of protection -->
+<pre>
+  VAR_1=Strawberry
+  readonly VAR_1
+  VAR_1=Blueberry
+</pre>
+
+which will give us:
+
+<pre>
+  VAR_1: This variable is read only.
+</pre>
+
+If we try to delete the variable, shell will give us the following value:
+
+<pre>
+  VAR_1=Strawberry
+  unset  VAR_1
+  echo $VAR_1
+</pre>
+
+As VAR_1 is read-only, shell will not give us any output, as you can't use the unset command with read-only files.
+</p>
