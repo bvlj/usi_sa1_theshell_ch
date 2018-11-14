@@ -1,0 +1,37 @@
+---
+layout: page
+author: Alessandro Luini
+category-page: advanced
+category-title: Advanced commands
+tags: calculator sum add substract divide calculate compute
+title: bc
+---
+
+<p>
+In computing, <code>bc</code> is a command in Unix operating systems that can do easy
+calculations in the shell.<br>
+Usually input are passed using the <code>echo</code> command and pipes.
+The name stands for <i>Basic Calculator</i>.<br>
+
+<pre>
+echo "(12 / 2 - 3) * 3 + 1.5" | bc
+    10.5
+</pre>
+
+<h3>Interactive mode</h3>
+
+Using the interactive mode makes you do calculations freely in a special shell inside the shell.
+All you need to do is run the bc command with the <code>-i</code> flag
+and no parameter.<br>
+To exit the interactive mode, write <i>quit</i>.
+
+<pre>
+bc -i
+
+1+1
+    2
+(12 / 2 - 3) * 3 + 1.5
+    10.2
+quit
+</pre>
+</p>
