@@ -1,0 +1,83 @@
+---
+layout: page
+category-page: intermediate
+category-title: Intermediate commands
+tags: curl download http client crawler request online 
+author: Claudio Maggioni
+title: curl
+---
+<p>
+  The <code>curl</code> command is a fast and versatile shell program that can
+  request online content using various protocols, including <em>HTTP</em>,
+  <em>FTP</em> and <em>POP3</em>. Some example use cases for this utility are 
+  the need to automate some remote call to a server, testing <em>REST</em> or
+  <em>SOAP</em> apis or simply download or display the <em>HTML</em> code of a 
+  website.
+</p>
+
+<p>
+  The name, as mentioned in the <a href="https://ec.haxx.se/curl-name.html">
+    <em>Evertything curl</em></a> online book, stands for <em>"client URL"</em>
+  and the right pronunciation rhymes with "earl" or "girl". By this fact, the
+  reader is able to tell the author of this page to stop pronuncing it as 
+  <em>"cooorl"</em>, like if the name is some sort of word in the
+  <a href="https://en.wikipedia.org/wiki/Bergamasque_dialect"><em>Bergamasque
+      dialect</em></a>.
+</p>
+
+<h3>Usage</h3>
+
+<p>
+  <code>curl</code> is a very complex command: if you want to learn it deeply,
+  please refer to the previously mentioned guide called 
+  <a href="https://ec.haxx.se/"><em>Evertything curl</em></a>. Some basic
+  ways to use this command are shown below:
+</p>
+
+<h4>Download the contents of the page "example.com" to "file.html"</h4>
+
+<pre>
+curl example.com -o file.html
+</pre>
+
+<h4>Download the contents of the page "en.wikipedia.org/wiki/Curl" to
+a file with the same name as the last element in the path (here "Curl")</h4>
+
+<pre>
+curl -O en.wikipedia.org/wiki/Curl
+</pre>
+
+<h4>Download the contents of the page "example.com" to "file.html"</h4>
+
+<pre>
+curl example.com -o file.html
+</pre>
+
+<h4>Download the contents of the page "example.com" following location
+redirects (<code>-L</code> flag)</h4>
+
+<pre>
+curl -O -L example.com 
+</pre>
+
+<h4>Download the contents of the page "example.com" resuming a previous attempt
+(<code>-C</code> flag)</h4>
+
+<pre>
+curl -O -C example.com 
+</pre>
+
+
+<h4>Do an HTTP DELETE request to "example.com" with a custom header
+(<code>-H</code> and <code>-X</code> flags)</h4>
+
+<pre>
+curl -H 'User-Agent: Tamagotchi' -X DELETE example.com
+</pre>
+
+<h4>Print to <em>stdout</em> "example.com" making a request with HTTP basic
+authentication (<code>-u</code> flag)</h4>
+
+<pre>
+curl -u bob:P@ssw0rd example.com
+</pre>
