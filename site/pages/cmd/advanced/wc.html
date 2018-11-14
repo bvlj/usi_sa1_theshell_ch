@@ -1,0 +1,48 @@
+---
+layout: page
+author: Alessandro Luini
+category-page: advanced
+category-title: Advanced commands
+tags: word count lines
+title: wc
+---
+
+<p>The program reads either standard input or a list of files and
+  generates one or more of the following statistics: newline count,
+   word count, and byte count. If a list of files is provided, both
+   individual file and total statistics follow.</p>
+
+   <h3> How to use</h3>
+   <p>Sample execution of wc:</p>
+   <pre> wc file1.txt file2.txt</pre>
+   <p>will output:</p>
+   <pre>
+     40      149      947     file1.txt<br>
+    2294    16638    97724    file2.txt<br>
+    2334    16787    98671    total</pre>
+
+    <p>The first column is the count of newlines, meaning that the text file
+      <code>file1.txt</code> has 40 newlines while bar has 2294 newlines-
+      resulting in a total
+      of 2334 newlines. The second column indicates the number of words in each
+       text file showing that there are 149 words in <code>file1.txt</code>
+       and 16638 words in
+       <code>file2.txt</code> – giving a total of 16787 words. The last
+       column indicates the
+       number of characters in each text file, meaning that the file
+        <code>file1.txt</code> has
+       947 characters while bar has 97724 characters – 98671 characters all
+       in all.</p>
+
+       <h3>Flags</h3>
+       <pre>wc -l file1.txt</pre>
+       <p>prints the line count (note that if the last line does not have \n,
+       it will not be counted).<p>
+       <pre>wc -c file1.txt</pre>
+       <p>prints the byte count.</p>
+       <pre>wc -m file1.txt</pre>
+       <p> prints the character count</p>
+        <pre>wc -L file1.txt</pre>
+        <p>prints the length of longest line (GNU extension)</p>
+      <pre>wc -w file1.txt</pre>
+      <p> prints the word count.</p>
