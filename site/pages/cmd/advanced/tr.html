@@ -7,42 +7,49 @@ tags: translate
 title: tr
 ---
 
+<p>
+The <code>tr</code> command in Unix-like operating systems, which name stands for
+<i>TRanslate</i> or <i>TRansliterate</i>, indicating its operation of replacing or removing
+specific characters in its input data set.
+
+<h3>How to use</h3>
+
+The utility reads a byte stream from its standard input and writes the
+result to the standard output. As arguments, it takes two sets of
+characters (generally of the same length), and replaces occurrences of
+the characters in the first set with the corresponding elements from the
+second set.<br>
+
+For example,
+<pre>
+tr 'abcd' 'jkmn'
+</pre>
+
+would maps all characters a to j, b to k, c to m, and d to n.<br>
+The character set may be abbreviated by using character ranges. The
+previous example could be also written as:
+
+<pre>
+tr 'a-d' 'jkmn'
+</pre>
 
 
-
-
-<p> tr is a command in Unix-like operating systems. It is an abbreviation of
-   translate or transliterate, indicating its operation of replacing or removing
-   specific characters in its input data set.</p>
-
-   <h3>How to use</h3>
-
-     <p> The utility reads a byte stream from its standard input and writes the
-       result to the standard output. As arguments, it takes two sets of
-       characters (generally of the same length), and replaces occurrences of
-       the characters in the first set with the corresponding elements from the
-       second set. For example,
-     </p>
-
-       <pre> <code>tr 'abcd' 'jkmn'</code></pre>
-       <p> maps all characters a to j, b to k, c to m, and d to n.</p>
-       <p> The character set may be abbreviated by using character ranges. The
-         previous example could be written: </p>
-
-         <pre> tr 'a-d' 'jkmn' </pre>
-
-
-   <h3>Flags</h3>
-   <ul>
-     <li><h4> -s:</h4> The s flag causes tr to compress sequences of identical
-       adjacent characters in its output to a single token.
-       <pre> tr -s '\n'</pre>
-       replaces sequences of one or more newline characters with a single
-       newline.</li>
-
-      <li><h4> -d</h4>:The d flag causes tr to delete all tokens of the specified
+<h3>Flags</h3>
+<ul>
+    <li> <b>-s</b>: The s flag causes tr to compress sequences of identical
+        adjacent characters in its output to a single token.
+<pre>
+tr -s '\n'
+</pre>
+        replaces sequences of one or more newline characters with a single
+        newline.
+    </li>
+    <li> <b>-d</b>: The d flag causes tr to delete all tokens of the specified
         set of characters from its input. In this case, only a single character
         set argument is used. The following command removes carriage return
         characters.
-        <pre>tr -d '\r'</pre>
-        </li>
+<pre>
+tr -d '\r'
+</pre>
+    </li>
+</ul>

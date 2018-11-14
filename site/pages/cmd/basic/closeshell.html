@@ -8,9 +8,16 @@ title: Closing the shell
 <!--next-page: pages/cmd/basic/ --> <!-- The sequence must be defined -->
 ---
 
-<h2> Close </h2>
+<p>
+If you want to close the shell session, there are several ways to do so:
 
-<p> If you want to close the shell session, all you have to do is press <code> ^ (control) + D.</code>
-Apply the change and save the session.
-After closing the session, the screen is still visible but the program does not allow you to type a new command.
-To continue using the shel all you need to do is quit the terminal and reopen the application </p>
+<ul>
+    <li>Press <code>^ (control) + D</code>. Although this key combination closes the shell,
+        it doesn't quit the terminal application as it just saves and closes the current session.
+        A closed session does not allow any input or output anymore.
+    </li>
+    <li>Insert the <code>exit</code> command. Unlike the mentioned key combo, exit also quits
+        the terminal application itself.
+    </li>
+</ul>
+</p>

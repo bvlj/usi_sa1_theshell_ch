@@ -6,8 +6,12 @@ category-title: Advanced commands
 tags: number lines count
 title: nl
 ---
-<p>The <code>nl</code>  is a command that permits to number the lines. Through some flags you can decide how to filter this command.</p>
+<p>
+The <code>nl</code> is a command that permits to number the lines.
+Through some flags you can decide how to filter this command.<br>
+
 We have a file named <code>example.txt</code> that contains 5 elements, to test this command:
+
 {% highlight bash linenos %}
 Car
 Computer
@@ -21,49 +25,52 @@ The syntax command is:
 
 <pre>
 nl example.txt
- 1  Car
- 2  Computer
- 3  Robot
- 4  Smartphone
- 5  Videogame
+    1  Car
+    2  Computer
+    3  Robot
+    4  Smartphone
+    5  Videogame
 </pre>
-<p>How you can see the command has numbered the lines.</p>
+
+How you can see the command has numbered the lines.
 
 <h2>Flags</h2>
 
-<p>Here a list that contains the main flags of these command:
 <ul>
-
-  <li> <b>-b</b>: Specify the lines to be numered </li>
+    <li> <b>-b (regex)</b>: Specify the lines to be numered
 <pre>
 nl -b p^[cv] example.txt
-   1  Car
-   2  Computer
-   3  Videogame
-      Robot
-      Smartphone
+    1  Car
+    2  Computer
+    3  Videogame
+       Robot
+       Smartphone
 </pre>
-  <p> <code>p^[cv]</code> says to nl to number only the lines that start with c and v.</p>
+    <code>p^[cv]</code> says to nl to number only the lines that start with c and v.
+    </li>
 
-  <li> -b<b>n</b>: The flag n goes with b, doesn't number any lines </li>
+    <li> -b<b>n</b>: The flag n goes with b, doesn't number any lines
 <pre>
 nl -bn example.txt
-     Car
-     Computer
-     Videogame
-     Robot
-     Smartphone
+    Car
+    Computer
+    Videogame
+    Robot
+    Smartphone
 </pre>
+    </li>
 
-  <li> <b>-s</b>: Usually nl separes the number of the line from the text with a tab, with -s flag you can choose another separator, in this example we will use "=". </li>
+  <li> <b>-s</b>: Usually nl separes the number of the line from the text with a tab, with -s
+      flag you can choose another separator, in this example we will use "=".
 <pre>
 nl -s= example.txt
-   1=Car
-   2=Computer
-   3=Videogame
-   4=Robot
-   5=Smartphone
+    1=Car
+    2=Computer
+    3=Videogame
+    4=Robot
+    5=Smartphone
 </pre>
+    </li>
 
 </ul>
 </p>
