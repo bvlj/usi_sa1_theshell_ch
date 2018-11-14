@@ -60,6 +60,8 @@ Example: <code>lastname=${fullname:$firstnamelength};</code><br>
 This is equal to the substring of the value of VARIABLE, starting at the character with (0-based) index FROM with length LENGTH<br>
 If FROM is negative, the substring starts FROM characters before the end of the string.<br>
 Example: <code>lastname=${middlename:$firstnamelength:$middlenamelength};</code><br>
+<!-- If/when somebody makes the page on arithmetic operations, mention that NUMBER can be an arithmetic operation as well
+     and link it. -->
 <br>
 {% highlight bash %}
   ${#VARIABLE}
@@ -67,5 +69,9 @@ Example: <code>lastname=${middlename:$firstnamelength:$middlenamelength};</code>
 This is equal to the length of the value of VARIABLE<br>
 Example: <code>echo "your name has ${#name} characters";</code><br>
 <br>
+Paremeter expansions can also be nested, like this:
+{% highlight bash %}
+  ${input:?${INVALID_INPUT_ERR_MSG:-An unknown error occurred}}
+{% endhighlight %}
 <br>
 Further reading: <a href="http://www.gnu.org/software/bash/manual/bashref.html#Shell-Parameter-Expansion">the bash reference manual</a>
