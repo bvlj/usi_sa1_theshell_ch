@@ -9,63 +9,73 @@
     {{ content }}
     </main>
     {% include footer.html %}
-		<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			var searchBar = document.getElementById('search-bar');
-			var results = document.getElementById('search-results');
+    <script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var searchBar = document.getElementById('search-bar');
+    var results = document.getElementById('search-results');
 
-			var sjs = SimpleJekyllSearch({
-				searchInput: searchBar,
-				resultsContainer: results,
-				json: '/search.json',
-				searchResultTemplate:
-					'<li><a href="{url}"><h3>{title}</h3><h4>{category}</h4></a></li>',
-				success: function(sr) {
-					results.setAttribute("class", sr.length <= 1 ? "" : "show");
-				}
-			});
+    var sjs = SimpleJekyllSearch({
+        searchInput: searchBar,
+        resultsContainer: results,
+        json: '/search.json',
+        searchResultTemplate:
+            '<li><a href="{url}"><h3>{title}</h3><h4>{category}</h4></a></li>',
+        success: function(sr) {
+            results.setAttribute("class", sr.length <= 1 ? "" : "show");
+        }
+    });
 
-			searchBar.addEventListener('keypress', function () {
-				sjs.search();
-			});
-		});
+    searchBar.addEventListener('keypress', function () {
+        sjs.search();
+    });
+});
 
-		var bdy = document.getElementById("bdy");
-		document.addEventListener("keypress", function(event){
-			if(event.key == "w" || event.key == "k"){
-				window.scrollTo (0,0);
-			}else if(event.key == "~"){
-				location.href = "{{ site.baseurl }}/";
-			}else if(event.key == "a" || event.key == "h"){
-				var previous = "{{ site.baseurl }}/{{ page.previous-page }}";
-				if(previous){
-					location.href = previous;
-				}
-			}else if(event.key == "d" || event.key == "l"){
-				var next = "{{ site.baseurl }}/{{ page.next-page }}";
-				if(next){
-					location.href = next;
-				}
-			}else if(event.key == "s" || event.key == "j"){
-				var topic;
-				switch("{{ page.category-page }}"){
-								case "basic":
-									 topic = "{{ site.baseurl }}/pages/topic/cmd/basic.html";
-								case "intermediate":
-									 topic = "{{ site.baseurl }}/pages/topic/cmd/intermediate.html";
-								case "advanced":
-									 topic = "{{ site.baseurl }}/pages/topic/cmd/advanced.html";
-								case "fs":
-									 topic = "{{ site.baseurl }}/pages/topic/fs.html";
-								case "scripts":
-									 topic = "{{ site.baseurl }}/pages/topic/scripts.html";
-							};
-				if (topic){
-					location.href = topic;
-				}
-			}
-		});
-		</script>
+document.addEventListener("keypress", function(event) {
+    switch (event.key) {
+        case "w":
+        case "k":
+            window.scrollTo (0,0);
+            break;
+        case "a":
+        case "h":
+            var previous = "{{ page.previous-page }}";
+            if (previous) {
+                location.href = "{{ site.baseurl }}/" + previous;
+            }
+            break;
+        case "d":
+        case "l":
+            var next = "{{ page.next-page }}";
+            if (next) {
+                location.href = "{{ site.baseurl }}/" + next;
+            }
+            break;
+        case "s":
+        case "j":
+            var topicPage;
+            var topic = "{{ page.category-page }}";
+            switch (topic) {
+                case "basic":
+                case "intermediate":
+                case "advanced":
+                    topicPage = "{{ site.baseurl }}/pages/topic/cmd/" + topic + ".html";
+                    break;
+                case "fs":
+                case "scripts":
+                    topicPage = "{{ site.baseurl }}/pages/topic/" + topic + ".html";
+                    break;
+            }
+
+            if (topicPage) {
+                location.href = topicPage;
+            }
+            break;
+        case "~":
+            location.href = "{{ site.baseurl }}/";
+            break;
+    }
+});
+</script>
   </body>
 </html>

@@ -38,60 +38,63 @@
     {{ content }}
     </main>
     {% include footer.html %}
-		<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			var searchBar = document.getElementById('search-bar');
-			var results = document.getElementById('search-results');
+        <script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var searchBar = document.getElementById('search-bar');
+    var results = document.getElementById('search-results');
 
-			var sjs = SimpleJekyllSearch({
-				searchInput: searchBar,
-				resultsContainer: results,
-				json: '/search.json',
-				searchResultTemplate:
-					'<li><a href="{url}"><h3>{title}</h3><h4>{category}</h4></a></li>',
-				success: function(sr) {
-					results.setAttribute("class", sr.length <= 1 ? "" : "show");
-				}
-			});
+    var sjs = SimpleJekyllSearch({
+        searchInput: searchBar,
+        resultsContainer: results,
+        json: '/search.json',
+        searchResultTemplate:
+            '<li><a href="{url}"><h3>{title}</h3><h4>{category}</h4></a></li>',
+        success: function(sr) {
+            results.setAttribute("class", sr.length <= 1 ? "" : "show");
+        }
+    });
 
-			searchBar.addEventListener('keypress', function () {
-				sjs.search();
-			});
-		});
+    searchBar.addEventListener('keypress', function () {
+        sjs.search();
+    });
+});
 
-		var sentence =["<span class='NotoSansLight'>t", "h", "e</span>", "<span class='NotoSansBold'>s", "h", "e", "l", "l</span>"];
-		var shell = "";
-		var counter = 0;
+// Animated logo
+var sentence = ["<span class='NotoSansLight'>t", "h", "e</span>",
+        "<span class='NotoSansBold'>s", "h", "e", "l", "l</span>"];
+var shell = "";
+var counter = 0;
 
-		function typing_shell(){
-			if(counter < 8){
-				write(counter);
-				counter++;
-			}else{
-				document.getElementById("blikli").classList.add("bli");
-			}
+function typing_shell() {
+    if (counter < 8){
+        write(counter);
+        counter++;
+    } else {
+        document.getElementById("blikli").classList.add("bli");
+    }
+}
 
-		}
+setInterval(typing_shell, 200);
 
-		setInterval(
-			typing_shell
-		, 200);
+function write(position){
+    shell = shell + sentence[position];
+    document.getElementById("title-home").innerHTML = shell;
+}
 
-		function write(position){
-			shell = shell + sentence[position];
-			document.getElementById("title-home").innerHTML = shell;
-		}
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+if (!isChrome) {
+    document.getElementById('foolChrome').remove();
+    var homeVideo = document.getElementById('videoHome');
 
-
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if (!isChrome) {
-        document.getElementById('foolChrome').remove();
-
-        // Mute and play
-        var homeVideo = document.getElementById('videoHome');
+    // Try and see if we can play with audio, otherwise mute the video
+    try {
+        homeVideo.play();
+    } catch (err) {
+        homeVideo.muted = true;
         homeVideo.play();
     }
+}
 
-		</script>
+        </script>
   </body>
