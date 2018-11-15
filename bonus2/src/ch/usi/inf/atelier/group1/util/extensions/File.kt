@@ -26,7 +26,7 @@ fun File.getContent(): String {
             line = reader.readLine()
         }
     } catch (e: IOException) {
-        Log.e(exception = e)
+        Log.e(e, true)
     }
 
     return content.toString()

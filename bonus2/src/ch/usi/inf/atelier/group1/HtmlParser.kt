@@ -8,29 +8,48 @@ import ch.usi.inf.atelier.group1.jekyll.HtmlToLatexWriter
 import ch.usi.inf.atelier.group1.jekyll.JekyllPage
 import ch.usi.inf.atelier.group1.util.Log
 import ch.usi.inf.atelier.group1.util.extensions.insertJekyllHeader
-import ch.usi.inf.atelier.group1.util.extensions.writeTo
 import java.io.File
+import java.io.FileWriter
+import java.lang.StringBuilder
+import java.text.SimpleDateFormat
+import java.util.*
 
-class HtmlParser(private val input: File) {
-    private val file = JekyllPage(input)
-    private val output = HtmlToLatexWriter(file.content)
+class HtmlParser(private val singlePage: Boolean) {
+    private val content = StringBuilder()
+    private var outName = "${SimpleDateFormat("yyyy-MM-dd_hh:mm").format(Date())}.html"
 
-    fun parse(): String {
+    /**
+     * Parse a jekyll html file to a LaTex Document
+     *
+     * @param path The path of the html file
+     */
+    fun parse(path: File) {
+        val file = JekyllPage(path)
+        val output = HtmlToLatexWriter(file.content, singlePage)
+
+        // Make sure this is a jekyll html file
         if (!file.isValid()) {
-            Log.e(IllegalArgumentException("This file is not valid"))
+            Log.e(IllegalArgumentException("This file is not valid"), false)
+            return
         }
-
-        /*
-        if (file.header["author"] == "Marwan Announ") {
-            throw IllegalStateException("Invalid fuckery. Please don\'t attemp to parse this shit. Kthxbye")
-        }
-        */
 
         output.run {
-            start()
-            insertJekyllHeader(file)
-            beginDocument()
+            if (singlePage) {
+                // In singlePage mode, insert the beginning of the document only once
+                if (content.isEmpty()) {
+                    start()
+                    addSinglePageInfo("Documentation", "Group 1")
+                    beginDocument()
+                }
 
+                insertJekyllHeader(file)
+            } else {
+                start()
+                insertJekyllHeader(file)
+                beginDocument()
+            }
+
+            // Convert html elements
             changeBold()
             changeBr()
             changeCode()
@@ -46,14 +65,60 @@ class HtmlParser(private val input: File) {
             changeTable()
             changeUnderline()
 
+            // Strip html comments
             stripComments()
 
-            endDocument()
+            // Store the converted document
+            commit()
 
-            writeTo(input.absolutePath.replace(".html", ".tex"))
+            if (!singlePage) {
+                // End the document if singlePage is not enabled
+                endDocument()
+            }
         }
 
-        return output.toString()
+        Log.i("Parsed: $path")
+
+        content.append(output.toString())
+
+        // Set the file name basing on the original html file name if not running in singlePage mode
+        if (!singlePage) {
+            outName = path.absolutePath
+        }
     }
 
+    fun save() {
+        val document = if (singlePage) {
+            // End the singlePage'd document
+            HtmlToLatexWriter(content.toString(), true).run {
+                commit()
+                endDocument()
+                toString()
+            }
+        } else {
+            content.toString()
+        }
+
+        // No ned to save an empty document
+        if (document.isEmpty()) {
+            return
+        }
+
+        val outDir = File("out", if (singlePage) "" else File(outName).parent)
+
+        if (!outDir.exists()) {
+            outDir.mkdirs()
+        }
+
+        // Save the LaTeX document
+        val file = File("out", outName.replace(".html", ".tex"))
+
+        val writer = FileWriter(file, false)
+
+        Log.i("${file.path} created")
+
+        writer.write(document)
+        writer.flush()
+        writer.close()
+    }
 }

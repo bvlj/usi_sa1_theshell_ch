@@ -11,6 +11,8 @@ import java.io.FileWriter
 
 /**
  * Insert author and title from Jekyll file
+ *
+ * @param file File from which the author will be read
  */
 fun HtmlToLatexWriter.insertJekyllHeader(file: JekyllPage) {
     val title = file.header["title"] ?: "Unknown title"
@@ -18,22 +20,4 @@ fun HtmlToLatexWriter.insertJekyllHeader(file: JekyllPage) {
 
     addTitle(title)
     addAuthor(author)
-}
-
-fun HtmlToLatexWriter.writeTo(path: String) {
-    val outDir = File("out", File(path).parent)
-
-    if (!outDir.exists()) {
-        outDir.mkdirs()
-    }
-
-    val file = File("out", path)
-
-    val writer = FileWriter(file, false)
-
-    Log.i("${file.path} created")
-
-    writer.write(toString())
-    writer.flush()
-    writer.close()
 }

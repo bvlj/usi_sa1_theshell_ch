@@ -7,7 +7,7 @@ import org.jsoup.Jsoup
 import org.jsoup.parser.Parser
 import java.util.regex.Pattern
 
-class HtmlToLatexWriter(private var content: String) {
+class HtmlToLatexWriter(private var content: String, private val singlePage: Boolean) {
     private val document = StringBuilder()
 
     /**
@@ -31,10 +31,17 @@ class HtmlToLatexWriter(private var content: String) {
     }
 
     /**
+     * Store the converted html text into
+     * the writer content so it can be later exported
+     */
+    fun commit() {
+        insert(content)
+    }
+
+    /**
      * End the document
      */
     fun endDocument() {
-        insert(content)
         insert("\\end{document}", afterLine = true)
     }
 
@@ -116,26 +123,36 @@ class HtmlToLatexWriter(private var content: String) {
                 .replaceTag("<h5>", "</h5>", "", "")
                 .replaceTag("<p>", "</p>", "\n", "")
                 .replaceTag("<a>", "</a>", "", "")
+
+        if (singlePage) {
+            content = content.replaceTag("<h3>", "</h3>", "", "")
+        }
     }
 
     /**
      * Replace <h1> with LaTeX \section
      */
     fun changeSection() {
-        content = content.replaceTag("<h1>", "</h1>", "\\section{", "}\n")
+        content = content.replaceTag("<h1>", "</h1>",
+                if (singlePage) "\\subsection{" else "\\section{", "}\n")
     }
 
     /**
      * Replace <h2> with LaTeX \subsection
      */
     fun changeSubSection() {
-        content = content.replaceTag("<h2>", "</h2>", "\\subsection{", "}\n")
+        content = content.replaceTag("<h2>", "</h2>",
+                if (singlePage) "\\subsubsection{" else "\\subsection{", "}\n")
     }
 
     /**
      * Replace <h3> with LaTeX \subsubsection
      */
     fun changeSubSubSection() {
+        if (singlePage) {
+            return
+        }
+
         content = content.replaceTag("<h3>", "</h3>", "\\subsubsection{", "}\n")
     }
 
@@ -197,7 +214,7 @@ class HtmlToLatexWriter(private var content: String) {
      * @param author the text being inserted
      */
     fun addAuthor(author: String) {
-        insert(AUTHOR.format(author), true, true)
+        insert(if (singlePage) "\\large $author \\normalsize\\\\" else AUTHOR.format(author), true, true)
     }
 
     /**
@@ -206,7 +223,19 @@ class HtmlToLatexWriter(private var content: String) {
      * @param title the text being inserted
      */
     fun addTitle(title: String) {
+        insert(if (singlePage) "\\section{$title}\n" else TITLE.format(title), true, true)
+    }
+
+    /**
+     * Add an header for the html file in singlePage mode
+     */
+    fun addSinglePageInfo(title: String, author: String) {
+        if (!singlePage) {
+            return
+        }
+
         insert(TITLE.format(title), true, true)
+        insert(AUTHOR.format(author), false, true)
     }
 
     /**

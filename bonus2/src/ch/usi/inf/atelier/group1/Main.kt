@@ -3,14 +3,25 @@
  */
 package ch.usi.inf.atelier.group1
 
+import ch.usi.inf.atelier.group1.util.Log
 import java.io.File
 
 object Main {
+    private lateinit var parser: HtmlParser
 
     @JvmStatic
     fun main(args: Array<String>) {
 
+        if (args.isEmpty()) {
+            Log.e("At least one argument is needed")
+            return
+        }
+
+        parser = HtmlParser(arrayOf("-s", "--singlepage").contains(args[0]))
+
         args.forEach(this::convert)
+
+        parser.save()
     }
 
     /**
@@ -19,10 +30,15 @@ object Main {
      * @param path of the file (or directory containing files) to be converted
      */
     private fun convert(path: String) {
+        // Ignore the flags
+        if (path.startsWith("-")) {
+            return
+        }
+
         val file = File(path)
 
         if (!file.isDirectory) {
-            HtmlParser(file).parse()
+            parser.parse(file)
             return
         }
 
