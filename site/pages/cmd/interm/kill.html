@@ -1,0 +1,69 @@
+---
+layout: page
+category-title: Intermediate commands
+category-page: intermediate
+tags:
+author: Announ Marwan
+title: kill
+---
+
+<p>
+<h1>Kill Commands</h1>
+<br>
+<h2> Before all, what is a "kill command"!?</h2>
+<br><br> "kill" is a command used for terminating the
+<br>running processes on your system.
+<br>
+<br> In fact, using this commands you can easily kill all the processes that you want.
+<br><br><br>
+<h2>Why I have to use it? </h2>
+<br><br> Sometimes happens that you couldn't control an application, for example when
+<br>you want to exit from your browser when it seems freezing.
+<br><br> You have to know that "kill commands" can help you in do this.
+
+<br><br><br><br>Ok, good, I understand, but how can I use it?
+
+<br> First, you have to know that there are two type of kill commands.
+
+<pre>
+  -killall
+<br>-kill
+</pre>
+
+<br><br>  <h3> KILLALL   </h3>
+
+<br> Will terminate all programs that match the name specified without
+<br>additional arguments.
+<br><br> You have to know also that "killall" sends SIGTERM, or signal number 15.
+<br>If you want to specify a different signal you can use "-s".
+
+
+<br><br> <p> examples of using killall</p>
+
+<pre>
+<br>-killall -s 9 [process name]
+<br>-killall -KILL [process name]
+<br>-killall -9 [process name]
+
+</pre>
+
+<br><br>  <h4> KILL  </h4>
+
+<br> Will terminate only one program.
+<br> Without Without options, kill sends SIGTERM to the PID specified and asks the application
+<br>or service to shut itself down.
+
+<br><br><p> examples of using only kill</p>
+
+<pre>
+<br>-kill [PID]
+<br>-kill -s KILL [PID]
+<br>-kill -KILL [PID]
+
+</pre>
+
+<h4> Now, you can close all the programs with this commands, have a fun :)</h4>
+
+
+
+</p>
