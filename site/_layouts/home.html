@@ -84,15 +84,14 @@
 		}
 
 
-        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        if (!isChrome) {
-            document.getElementById('foolChrome').remove();
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if (!isChrome) {
+        document.getElementById('foolChrome').remove();
 
-            // Mute and play
-            var homeVideo = document.getElementById('videoHome');
-            homeVideo.muted = true;
-            homeVideo.play();
-        }
+        // Mute and play
+        var homeVideo = document.getElementById('videoHome');
+        homeVideo.play();
+    }
 
 		</script>
   </body>

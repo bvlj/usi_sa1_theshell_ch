@@ -12,7 +12,7 @@ The <code>ps</code> command stands for "process status" and it is used to provid
 various information about the currently running processes.<br>
 
 Every process is an executing instance of a program which is assigned a unique PID
-(process identification numbers) by the system.<br>
+(process identification numbers) by the system.</p>
 
 The basic syntax of <code>ps</code> is:
 
@@ -20,6 +20,7 @@ The basic syntax of <code>ps</code> is:
 ps [options]
 </pre>
 
+<p>
 This command can be used without any option and by doing this you will get the standard output,
 which is the display monitor by default with four items of information for at least two
 processes currently on the system: the shell and ps.<br>
@@ -31,6 +32,7 @@ TIME is very simple: is the amount of CPU time in minutes and seconds that the p
 has been running. CMD is simply the name of the command that launched the process.<br>
 
 Here you will find some common option combinations
+</p>
 
 <pre>
 ps -aux | less
@@ -44,10 +46,12 @@ ps -aux | less
     </li>
 </ul>
 
+<p>
 This can be piped to the less command ( see out section pipe), which let us to
 view all processes in one screenfull at a time.<br>
 
 Another way to view all processes running on the system is:
+</p>
 
 <pre>
 ps -ef | less
@@ -59,16 +63,16 @@ Where:
     <li>The -e option is used to generate a list of information about every process
         (currently running).
      </li>
-    <li>The -f option providesa list that contains some information for each process.</li>
+    <li>The -f option provides a list that contains some information for each process.</li>
 </ul>
 
+<p>
 This is very useful, it can be used for example to control UID information (username of
 the account that owns the process) and STIME to know when the process started, or
 the starting date.<br>
 
 
-In the end the <code>ps</code> is very powerful if we knoe how to use it.
+In the end the <code>ps</code> is very powerful if we know how to use it.
 If you need to kill a process you can list all process in various ways
 and search for the process you need to kill by reading its PID or by UID for example.
-\
 </p>

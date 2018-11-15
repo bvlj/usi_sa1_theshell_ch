@@ -5,7 +5,6 @@
 
 .list-commands li {
    border-radius: 50px;
-   margin-bottom: 5px;
    transition:500ms;
 
    a{
@@ -28,6 +27,7 @@
 
 .list-commands li:hover{
  	background-color: #646464;
+  border-radius:10px;
 
   .before-command{
     border-radius:10px;
@@ -65,4 +65,5 @@
     font-size:32px;
     animation: blink 800ms linear infinite;
   }
+
 
