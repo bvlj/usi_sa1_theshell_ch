@@ -1,0 +1,42 @@
+---
+layout: page
+category_title: interm
+category-page: interm
+tags: tee shell command
+author: Nicola Brunner
+title: tee
+---
+
+<p>The <code>tee</code> command is used to split the output of a program, doing
+this the output can be displayed in the shell and in the same time written in a
+file. This is useful, for example, if we want to capture intermediate outputs of
+a long program.
+The command is named after the T-splitter used in plumbing, because they have
+similar functions.</p>
+<br>
+
+<h3>Usage:</h3>
+<p>The default tee command syntax is:</p>
+
+<pre>tee [flags] [file]</pre>
+
+<p>Where <code>[flags]</code> are the tee flags (below you will find more info),
+and argument <code>[file]</code> is a file or a list of files, each of which
+receives the output.</p>
+
+<h3>Flags:</h3>
+
+<p>The most common flags of tee are:</p>
+<ul>
+  <li><code>-a</code> Appends the output to each file, rather than overwriting it.</li>
+  <li><code>-i</code> Ignores interrupt signals.</li>
+</ul>
+
+<h3>Example:</h3>
+
+<pre>date | tee example.txt</pre>
+
+<p>Basically, with this example, we can see that tee writes the date in
+example.txt, but shows also the output (in this case the date) in the shell.
+If you wouldn’t your file be overwritten every time you use this command,
+you should use <code>-a</code> that appends the output to the file.</p>
