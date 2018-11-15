@@ -1,0 +1,92 @@
+---
+layout: page
+category-title: Intermediate commands
+category-page: intermediate
+tags:
+author: Announ Marwan
+title: ssh
+---
+
+<p>
+<h1>SSH</h1>
+
+<h2> What is "SSH"!?</h2>
+<br>Are you searching for a program for executing commands on a machine remotely or simply logging into a remote machine?
+<br>Are you searching a program that provide you secure encryption communications between two host?
+<br> I have the solution, SSH.
+<br> SSH connects and logs you into a specified hostname, where the user have only to prove his identity to the remote machine.
+<br> Briefly The ssh command provides a secure connection between two hosts over a insecure network.
+
+<h3> Example of using ssh</h3>
+
+-Logging to a remote server(to login in a remote server from local host)
+<pre>
+
+  localhost:[~]> ssh username@remote-server
+  username@remote-server password:
+  remote-server:[~]>
+
+  </pre>
+<br>
+-Logging out from remote server(you can do easily "command+d")
+
+<pre>
+
+  remote-server:[~]>exit
+  logout
+  Connection to remote-server closed.
+  localhost:[~]>
+
+
+  </pre>
+
+<br>
+-Running remote from local host
+
+<pre>
+
+  localhost:[~]> ssh user@remote-host "ls test"
+  online-backup.dat
+  oracle-storage.bat
+  unix-dedicated-server.txt
+
+  </pre>
+
+<br>
+-Debugging ssh client(to debug and find the exact error without connection to the remote host)
+
+<pre>
+  ssh -v user@remote-host
+ OpenSSH_4.3p2, OpenSSL 0.9.8e-fips-rhel5 01 Jul 2008
+ debug1: Reading configuration data /etc/ssh/ssh_config
+ debug1: Applying options for *
+ debug1: Connecting to remote-host [172.22.200.140] port 22.
+ debug1: Connection established.
+ debug1: identity file /home/user/.ssh/identity type -1
+ debug1: identity file /home/user/.ssh/id_rsa type -1
+ debug1: identity file /home/user/.ssh/id_dsa type 2
+ debug1: loaded 3 keys
+ ..........
+
+  </pre>
+
+<br>
+-Copying files between remote host and local
+
+<br>
+from remote
+<pre>
+
+scp user@remote-host:/usr/local/bin/add.sh
+  </pre>
+
+<br>
+from local
+
+<pre>
+scp filename user@remote-host:/var/tmp/
+</pre>
+
+
+
+</p>
