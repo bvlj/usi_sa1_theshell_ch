@@ -21,7 +21,7 @@ if [condition]; then
 fi
 {% endhighlight %}
 
-Anything between <code>then</code> and <code>fi</code> will be executed only if the condtion
+Anything between <code>then</code> and <code>fi</code> will be executed only if the condition
 evaluates to true. <br>
 Here is a simple example:
 
@@ -33,9 +33,9 @@ if [$i -ge 200]; then
  fi
 {% endhighlight %}
 
-In this first example we evaluate a varibale <code>i</code> to 105.
+In this first example we evaluate a variable <code>i</code> to 105.
 The <i> if statement </i> will print "You chose a big number"
-only if the number contained in our varibale <code>i</code> is <b>G</b>reater or
+only if the number contained in our variable <code>i</code> is <b>G</b>reater or
 <b>E</b>qual to 200. <br>
 This is our case, therefore the output of this piece of code will be:
 <pre>
@@ -47,7 +47,7 @@ This is our case, therefore the output of this piece of code will be:
 <!-- If Else -->
 <h3> If Else </h3>
 
-Sometimes we want to perform a certain set of actions, if our condtion evaluates to
+Sometimes we want to perform a certain set of actions, if our condition evaluates to
 true and another set of actions if our condition evaluates to false. We can do this with
 the <i> if else </i> statement.
 <i> if else </i> sattements take this form:
@@ -76,12 +76,12 @@ else
 fi
 {% endhighlight %}
 
-In this example, that is just an extention of the previuous example, we
-evealuate a variable <code>i</code> to 50. If <code>i</code> is gretaer or equal to
+In this example, that is just an extension of the previous example, we
+evaluate a variable <code>i</code> to 50. If <code>i</code> is greater or equal to
 200, you print out "You chose a big number", otherwise,
-(if <code>i</code> is not gretaer or equal to 200), just like in this case, you print out
+(if <code>i</code> is not greater or equal to 200), just like in this case, you print out
 "You chose a small number".
-Therefore the output of this piece of code is:
+Therefore, the output of this piece of code is:
 
 <pre>
   You chose a small number.
@@ -91,8 +91,8 @@ Therefore the output of this piece of code is:
 
 <!-- If Elif Else -->
 <h3> If Elif Else </h3>
-Sometimes, in programming, it is necessary to have a series of condtions that lead to different paths.
-We can accomodate this need with the <i>if else elif</i> mechanism.
+Sometimes, in programming, it is necessary to have a series of conditions that lead to different paths.
+We can accommodate this need with the <i>if else elif</i> mechanism.
 The <i>if else elif</i> mechanism takes this form:
 
 {% highlight bash %}
@@ -128,11 +128,11 @@ else
 fi
 {% endhighlight %}
 
-In this example, that is just an extention of the previuous example, we evealuate a
-variable <code>i</code> to 150. If <code>i</code> is gretaer or equal to 200,
+In this example, that is just an extension of the previous example, we evaluate a
+variable <code>i</code> to 150. If <code>i</code> is greater or equal to 200,
 you print out "You chose a big number", if <code>i</code> is equal to 150 you print out
 "You chose 150" otherwise you print out "You chose a small number".
-Therefore the output of this piece of code is:
+Therefore, the output of this piece of code is:
 
 <pre>
   You chose 150.

@@ -41,10 +41,10 @@ done
 {% endhighlight %}
 
 In this first example, you simply create a variable called i and evaluate it to 0.
-Then you acces the while loop: the condition <code> [$i -lt 4] </code> means that this while
-loop will run until the <code> i </code> varibale is less than 4.
+Then you access the while loop: the condition <code> [$i -lt 4] </code> means that this while
+loop will run until the <code> i </code> variable is less than 4.
 Every cycle of this loop, you print out the value of variable i with <code> echo $i </code>
-and finally you increase its value by 1 with <code> i=$((i + 1)) </code>.
+and finally, you increase its value by 1 with <code> i=$((i + 1)) </code>.
 Therefore in 4 cycles the value of i will be 4. This will make the condition of the while loop false.
 The output of this piece of code is:
 <pre>
@@ -58,7 +58,7 @@ The output of this piece of code is:
 
 
 <!-- Infinite Loop First Example -->
-Sometimes it is required to decleare infinite loops for various programming purposes. <br>
+Sometimes it is required to declare infinite loops for various programming purposes. <br>
 Here is an example:
 {% highlight bash %}
 i=1;
@@ -82,7 +82,7 @@ No termination condition is set for this loop in this example. This type of loop
 is called infinite loop.<br>
 The <code> exit </code> statement is used to quit the loop. This loop will
 iterate for 9 times, then
-as soon as <code> i </code> becomes equal to 0, the condtition of the last if
+as soon as <code> i </code> becomes equal to 0, the condition of the last if
 statement will evaluate to true and the loop will be terminated. <br>
 
 The output of this piece of code is:
@@ -115,7 +115,7 @@ done
 
 <!-- Read  -->
 In scripting, while loops are often used to process files line by line. <br>
-Here is an examaple:
+Here is an example:
 {% highlight bash %}
 while read -r first_name last_name phone;
 do
@@ -125,12 +125,12 @@ done &lt; "$file"
 
 The <code> read </code> command is used to read a file line by line.
 The flag <code> -r </code> is used to tell the
-command read to intepret backslashes (/) literally, instead as escape characters.
+command read to interpret backslashes (/) literally, instead as escape characters.
 This command, expect for some few
 rare cases, should always be used with this flag.
 In this example, <code> &lt; "$file" </code> redirects the loop's input from a file
 whose name is stored in a variable.
-This file has 3 colums, <code> first_name last_name phone </code>, separated by
+This file has 3 columns, <code> first_name last_name phone </code>, separated by
 blank space (or a tab).
 This piece of code only prints out the second column.
 <!-- End of Read -->
