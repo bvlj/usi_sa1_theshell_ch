@@ -8,16 +8,16 @@ title: ps
 ---
 
 <p>
-The <code>ps</code> command stands for "process status" and it is used to provide
+The <i>ps</i> command stands for "process status" and it is used to provide
 various information about the currently running processes.<br>
 
 Every process is an executing instance of a program which is assigned a unique PID
 (process identification numbers) by the system.</p>
 
-The basic syntax of <code>ps</code> is:
+The basic syntax of <i>ps</i> is:
 
 <pre>
-ps [options]
+    ps [options]
 </pre>
 
 <p>
@@ -35,7 +35,7 @@ Here you will find some common option combinations
 </p>
 
 <pre>
-ps -aux | less
+    ps aux | less
 </pre>
 
 <ul>
@@ -47,14 +47,14 @@ ps -aux | less
 </ul>
 
 <p>
-This can be piped to the less command ( see out section pipe), which let us to
+This can be piped to the less command (see our section pipe), which let us to
 view all processes in one screenfull at a time.<br>
 
 Another way to view all processes running on the system is:
 </p>
 
 <pre>
-ps -ef | less
+    ps ef | less
 </pre>
 
 Where:
@@ -72,7 +72,7 @@ the account that owns the process) and STIME to know when the process started, o
 the starting date.<br>
 
 
-In the end the <code>ps</code> is very powerful if we know how to use it.
+In the end the <i>ps</i> is very powerful if we know how to use it.
 If you need to kill a process you can list all process in various ways
 and search for the process you need to kill by reading its PID or by UID for example.
 </p>

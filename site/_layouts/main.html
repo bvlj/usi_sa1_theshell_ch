@@ -33,8 +33,37 @@
 
 		var bdy = document.getElementById("bdy");
 		document.addEventListener("keypress", function(event){
-			if(event.key == "q"){
+			if(event.key == "w" || event.key == "k"){
 				window.scrollTo (0,0);
+			}else if(event.key == "~"){
+				location.href = "{{ site.baseurl }}/";
+			}else if(event.key == "a" || event.key == "h"){
+				var previous = "{{ site.baseurl }}/{{ page.previous-page }}";
+				if(previous){
+					location.href = previous;
+				}
+			}else if(event.key == "d" || event.key == "l"){
+				var next = "{{ site.baseurl }}/{{ page.next-page }}";
+				if(next){
+					location.href = next;
+				}
+			}else if(event.key == "s" || event.key == "j"){
+				var topic;
+				switch("{{ page.category-page }}"){
+								case "basic":
+									 topic = "{{ site.baseurl }}/pages/topic/cmd/basic.html";
+								case "intermediate":
+									 topic = "{{ site.baseurl }}/pages/topic/cmd/intermediate.html";
+								case "advanced":
+									 topic = "{{ site.baseurl }}/pages/topic/cmd/advanced.html";
+								case "fs":
+									 topic = "{{ site.baseurl }}/pages/topic/fs.html";
+								case "scripts":
+									 topic = "{{ site.baseurl }}/pages/topic/scripts.html";
+							};
+				if (topic){
+					location.href = topic;
+				}
 			}
 		});
 		</script>
