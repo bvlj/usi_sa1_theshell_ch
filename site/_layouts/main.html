@@ -71,9 +71,29 @@ document.addEventListener("keypress", function(event) {
                 location.href = topicPage;
             }
             break;
+        case "0":
         case "~":
             location.href = "{{ site.baseurl }}/";
             break;
+        case "1":
+            location.href = "{{ site.baseurl }}/pages/topic/cmd/basic.html";
+            break;
+        case "2":
+            location.href = "{{ site.baseurl }}/pages/topic/cmd/intermediate.html";
+            break;
+        case "3":
+            location.href = "{{ site.baseurl }}/pages/topic/cmd/advanced.html";
+            break;
+        case "4":
+            location.href = "{{ site.baseurl }}/pages/topic/fs.html";
+            break;
+        case "5":
+            location.href = "{{ site.baseurl }}/pages/topic/scripting.html";
+            break;
+        case "6":
+            location.href = "{{ site.baseurl }}/pages/topic/about.html";
+            break;
+
     }
 });
 </script>
