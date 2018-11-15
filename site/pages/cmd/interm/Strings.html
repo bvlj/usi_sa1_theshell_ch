@@ -7,13 +7,14 @@ author: Marco Farace
 title: Strings
 ---
 
-<h2>Use: The strings command returns each string of printable characters (ASCII)
-  in files. Its main uses are to determine the contents of and to extract text
-  from binary files (i.e., non-text files). </h2>
+<h2></h2>
 
-<p>From the Shell manual: "find the printable strings in a object, or other binary,
-   file".<br>
-  Strings can be used to extract character information and string of a given lenght
+<p>Use: The strings command returns each string of printable characters (ASCII)
+  in files. Its main uses are to determine the contents of and to extract text
+  from binary files (i.e., non-text files). From the Shell manual: "find the
+  printable strings in a object, or other binary, file".</p>
+  
+<p>Strings can be used to extract character information and string of a given lenght
   from text file(s). When used without any options, strings displays all strings
   that are at least four characters in length in the files whose names are
   supplied as arguments (i.e., input data). Strings that are on separate lines
@@ -34,19 +35,15 @@ title: Strings
 
 <h3> Flags <h3>
   <ul>
-    <li><b>-n</b><br><br>
-    Specify the minimum string length, where the number argument  is
+    <li>-n: Specify the minimum string length, where the number argument  is
     a positive decimal integer. The default shall be 4.</li>
 
-    <li><b>-</b><br><br>
-    This  option  causes strings to look for strings in all bytes of
+    <li>-: This  option  causes strings to look for strings in all bytes of
     the files (the default for non-object files).</li>
 
-    <li><b>--</b><br><br>
-    This option causes strings to treat all the following  arguments
+    <li>--: This option causes strings to treat all the following  arguments
     as files.</li>
 
-    <li><b>-a</b><br><br>
-    This option causes strings to look for strings in  all  sections
+    <li>-a: This option causes strings to look for strings in  all  sections
     of the object file (including the (__TEXT,__text) section.</li>
   </ul>
