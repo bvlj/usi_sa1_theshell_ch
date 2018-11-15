@@ -1,0 +1,31 @@
+
+
+---
+layout: page
+category-page: basic
+category-title: Basic commands
+author: Joy Albertini
+tags: directory path mv file
+title: mv
+---
+
+<p>The <code>mv</code>  move a file from a directory to another:
+  Device-name:Current-position username$ mv path/name-file path2
+You can verify the success of the operation by using the command ls with argument the path. <br>
+With mv you can rename a file: Device-name:Current-position username$ mv path/name-file mv path/newname-file
+</p>
+
+<pre>
+  mv /home/user/desktop/file.txt /home/user/desktop/subfolder1/
+</pre>
+
+<ul>
+  <li><code>-i</code> Prompt(request confirm) before overwriting the file (Overrides previous -f or -n options, and override file permission) <br>
+  Example: mv -i name1.txt name2.txt, shell will ask overwrite 'name2.txt'? respond with Y(yes) or N(no)</li>
+  <li><code>-n</code> Don't permit to overwrite existing file <br>
+  Example: desktop as working directory there is a file called name2.txt, mv -n name5.txt name2.tx, with the flag -n you can't overwrite the file. </li>
+  <li><code>-v</code> (verbose) will output information explaining what it's doing <br>
+  Example: mv-v name1.txt name2.txt, the shell will output the operation: 'name1.txt' -to 'name2.txt'. </li>
+  <li><code>-f</code> (Force) force overwriting without prompting (overrides previous -i or -n options).<br>
+  Example: desktop as working directory there is a file called name2.txt, mv-f name1.txt name2.txt will overwrite the file without prompting</li>
+</ul>

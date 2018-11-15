@@ -1,0 +1,33 @@
+
+---
+layout: page
+category-page: basic
+category-title: Basic commands
+author: Joy Albertini
+tags:directory file chown  symbolic link
+title: chown
+---
+
+<p>The <code>chown</code>
+If you want to change the user ID of a specific file, you can use chown. <br>
+Device-name:Current-position username$ chown owner[:group] file <br>
+Example chown Joy:student alice.txt add Joy to the group student <br>
+Use chgrp [:group] file to create a group for a file <br>
+Use Sudo chown owner[:group], if you need root permission for add the user to the group </p>
+
+<pre>
+  chown Joy [students] file
+</pre>
+
+<ul>
+  <li><code>-f</code> Don't show all error messages except usage messages.</li>
+  <li><code>-h</code> Changes the symbolic link and not the file or directory referred  by the symbolic link.</li>
+  <li><code>-R</code> changing the ownership for each file in a folder, if encounter symbolic link it will cheange the owenership of that symbolic link,
+     and the directoryfile referred in the symbolic link, but the directory is not further transversed. </li>
+  <li><code>-RH</code> changing the ownership for each file in a folder, if encounter symbolic link it will cheange the owenership of that symbolic link,
+     the directory/file referred in the symbolic link, and all the directory is further transversed.</li>
+  <li><code>-RL</code> <!-- don't understand the diffrence between -RH --> If the -R option is specified and a symbolic link referencing a file of type directory
+    is specified on the command line or encountered during the traversal of a file hierarchy, the chown command shall change the user ID (and group ID, if specified) of the directory referenced by the symbolic link and all files in the file hierarchy below it.</li>
+  <li><code>-RP</code> changing the ownership for each file in a folder, if encounter symbolic link it will cheange the owenership of that symbolic link, but will not chenage the
+     the directory/file referred in the symbolic link, and  the directory is not further transversed.</li>
+</ul>
