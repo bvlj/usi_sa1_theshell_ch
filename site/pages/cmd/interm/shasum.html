@@ -8,6 +8,7 @@ title: shasum
 previous-page: pages/cmd/interm/
 next-page: pages/cmd/interm/
 ---
+
 With <code>shasum</code> command you can work with SHA Checksums.
 
 <pre>
@@ -17,36 +18,40 @@ shasum [flag] [file]
 <h3>Store the Checksum</h3>
 
 You can store the output in a file by adding to the command line the string
-  output symbol "&gt;" and then the path and the name of the file.
+output symbol "&gt;" and then the path and the name of the file.<br>
 
 <h3>Define the algorithm</h3>
+
 The flag <code>-a</code> allows you to choose which algorithm to use when
-  defining the checksum of a file. The default algorithm is 1.
+defining the checksum of a file. The default algorithm is 1.
 
 <pre>
 shasum -a algorithm file
 </pre>
 
 <h3>Read in binary mode</h3>
+
 The flag <code>-b</code> allows you to read files in binary mode.
 
 <pre>
-shasum -b file
+shasum -b file.bin
 </pre>
 
 <h3>Check two SHA sums</h3>
+
 You can verify wheter two checksums belong to the same file or not (and so
-  define wheter the two files are the same thing) wit the flag <code>-c</code>.
-  After storing the Checksums into two files (let say file1 and file2),
-  you can write to command as follows:
+define wheter the two files are the same thing) wit the flag <code>-c</code>.
+After storing the Checksums into two files (let say file1 and file2),
+you can write to command as follows:
 
 <pre>
-shasum -c file1 file2
+shasum -c shaSum1 shaSum2
 </pre>
 
 <h3>Display help</h3>
+
 Writing the command followed by the <code>-h</code> h flag will display a little
-  help paragraph with the main functions of this command.
+help paragraph with the main functions of this command.
 
 <pre>
 shasum -h

@@ -2,25 +2,21 @@
 layout: page
 category-page: scripts
 category-title: Scripting
-tags: variables, special, $, !
+tags: variables special $ !
 author: Dario Rasic
 title: Script Special Variables
 ---
 <!-- Intro -->
-<p>
-As previously said, there are certain characters that we can not
- use in the variable-naming process.<br>
+There are certain strings that we can not use in the variable-naming process.<br>
+In this page we will see what actually are those strings, and what's their purpose.<br>
 
-In this page we will see what actually are those characters,
-and what's their purpose.<br>
-<!-- list of commands-->
 <h4>$$</h4>
 To begin, we will see the simplest variable, which is the dollar sign ($).
 This command simply gives us the process ID number of the current shell.<br>
 
 <pre>
-  echo $$
-  11480
+echo $$
+    11480
 </pre>
 
 <h4>$0</h4>
@@ -35,5 +31,3 @@ This variable gives us the number of arguments supplied to a script.
 
 <h4>$!</h4>
 This variable gives us the process number of the last background command.
-
-</p>

@@ -25,23 +25,25 @@ The values in the array can be accessed using the syntax
   ${names[SELECTOR]}
 {% endhighlight %}
 
-where SELECTOR is the selector associated to the desired element. There are two kinds of arrays, depending on
-what kind of selector is used.<br>
+where SELECTOR is the selector associated to the desired element. There are two kinds of
+arrays, depending on what kind of selector is used.<br>
 
-<code>names</code> is an <i>indexed</i> array, meaning the selector is a number. Since we didn't specify any when
-we defined it, <code>names</code>' selectors start at 0 and count up from there.<br>
+<code>names</code> is an <i>indexed</i> array, meaning the selector is a number.
+Since we didn't specify any when we defined it, <code>names</code>' selectors start at
+0 and count up from there.<br>
 
 Thus we can access the string <code>"Anna"</code> using <code>names[0]</code>.
 In the same way we use <code>names[1]</code> to access <code>"Bob"</code> and so on.<br>
 
-If we want to specify a particular index for our values when creating the array we can do it like this:
+If we want to specify a particular index for our values when creating the array
+we can do it like this:
 
 {% highlight bash %}
   names=([1]="Anna" [2]="Bob" [5]="Ernie" [12]="Luigi")
 {% endhighlight %}
 
-As you might have guessed, this will create an array with <code>"Anna"</code> at index 1, <code>"Bob"</code>
-at index 2, <code>"Ernie"</code> at index 3 and so on.<br>
+As you might have guessed, this will create an array with <code>"Anna"</code> at index 1,
+<code>"Bob"</code> at index 2, <code>"Ernie"</code> at index 3 and so on.<br>
 
 If our indices are all sequential and we just want to change the starting index, we can use
 
@@ -49,12 +51,12 @@ If our indices are all sequential and we just want to change the starting index,
   names=([12]="Luigi" "Mario" "Nate")
 {% endhighlight %}
 
-Which will create an array with <code>"Luigi"</code> at index 12, <code>"Mario"</code> at index 13 and
-<code>"Nate"</code> at index 14.<br>
+Which will create an array with <code>"Luigi"</code> at index 12,
+<code>"Mario"</code> at index 13 and <code>"Nate"</code> at index 14.<br>
 An indexed array's selector can also be negative, which will start counting from the end,
-so <code>${names[-1]}</code> means <code>"Nate"</code>, <code>${names[-3]</code> is <code>"Luigi"</code> and so on.
+so <code>${names[-1]}</code> means <code>"Nate"</code>, <code>${names[-3]</code> is
+<code>"Luigi"</code> and so on.<br>
 
-<br>
 The other kind of array is an <i>associative</i> array.
 In an associative array, the values are not mapped to a number but to some other string.<br>
 
@@ -64,8 +66,9 @@ Here's an example of an associative array:
   colors=([white]="#FFFFFF" [black]="#000000" [red]="#FF0000" [yellow]="#00FFFF")
 {% endhighlight %}
 
-In this case it is not possible to omit the selector as there is no logical word that "follows" white.
-To access its members, we use the same syntax but write a string instead of a number as the selector.<br>
+In this case it is not possible to omit the selector as there is no logical word
+that "follows" white. To access its members, we use the same syntax but write a string
+instead of a number as the selector.<br>
 Arrays, both kinds, can also be modified after creation. We can use
 
 {% highlight bash %}
@@ -80,12 +83,11 @@ to add an element to the array (or modify it if it exists already) and
 
 to remove one.<br>
 
-<br>
-The <code>@</code> and <code>*</code> selectors are special - they cannot be written to but reading from them will
-return <b>all</b> the values in the array, separated by spaces. Similarly, <code>${!colors[@]}</code> is a list of
+The <code>@</code> and <code>*</code> selectors are special - they cannot be written to but
+reading from them will return <b>all</b> the values in the array, separated by spaces.
+Similarly, <code>${!colors[@]}</code> is a list of
 all the selectors (or indices) that were assigned a value.<br>
 
-<br>
 <a href="parameter_expansion.html">Parameter Expansion</a> works on indexed arrays as well,
 much like it works on strings, but it manipulates the members of the array instead of characters.
 For example:
@@ -103,4 +105,5 @@ is equivalent to <code>"Mario" "Luigi"</code>, while
 counts the number of elements in the array, in this case 3.<br>
 
 <br>
-Further reading: <a href="http://www.gnu.org/software/bash/manual/bashref.html#Arrays">the bash reference manual</a>
+Further reading: <a href="http://www.gnu.org/software/bash/manual/bashref.html#Arrays">
+the bash reference manual</a>

@@ -6,8 +6,6 @@ tags: mount drive umount storage device
 author: Marco Farace
 title: mount
 ---
-
-<p>
 To access a file on a Unix-like machine, the file system that contains it
 needs to be mounted with the <code>mount</code> command. Mount is frequently used for
 movable storage devices such as SD cards, DVDs, etc...<br>
@@ -25,17 +23,17 @@ To display all mounted partitions just write <code>mount</code>.<br>
 This command will mount the second partition of a HDD:<br>
 <pre>
 mount /dev/hda2 /media/PHOTOS
-</pre><br>
+</pre>
 
 and will unmount (by referring to the physical disk partition):<br>
 <pre>
 umount /dev/hda2
-</pre><br>
+</pre>
 
 or (by referring to the mount point):<br>
 <pre>
 umount /media/PHOTOS
-</pre><br><br>
+</pre>
 
 <h3>Flags</h3>
 <ul>

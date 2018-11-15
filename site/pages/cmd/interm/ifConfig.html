@@ -2,60 +2,67 @@
 layout: page
 category-page: intermediate
 category-title: Intermediate commands
-tags: command IfConfig
+tags: command ifconfig
 author: Matteo Omenetti
-title: IfConfig
+title: ifconfig
 ---
-<!-- Introduction -->
-<i> IfConfig </i> stands for "<b>I</b>nterface <b>C</b>onfiguration". It is used
-to configure, control, and query network interface parameters of your system. <br>
+
+The command <code>ifconfig</code> stands for <i>Interface CONFIGuration</i>. It is used
+to configure, control, and query network interface parameters of your system.<br>
 If you try running this command with no arguments, it will simply display information
-about all network interfaces currently active. <br>
+about all network interfaces currently active.<br>
+
 {% highlight bash %}
-  ifConfig
+    ifconfig
 {% endhighlight %}
+
 The output sill resembles something like this, of course it changes from machine
 to machine:
 
 <pre>
 en5: flags=8863 UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST mtu 1500
-	ether ac:de:48:00:11:22
-	inet6 fe80::aede:48ff:fe00:1122%en5 prefixlen 64 scopeid 0x8
-	nd6 options=201 PERFORMNUD,DAD
-	media: autoselect (100baseTX full-duplex)
-	status: active
+    ether ac:de:48:00:11:22
+    inet6 fe80::aede:48ff:fe00:1122%en5 prefixlen 64 scopeid 0x8
+    nd6 options=201 PERFORMNUD,DAD
+    media: autoselect (100baseTX full-duplex)
+    status: active
 
 ap1: flags=8802 BROADCAST,SIMPLEX,MULTICAST mtu 1500
-	ether f2:18:98:41:74:42
-	media: autoselect
-	status: inactive
-
-  ...
+    ether f2:18:98:41:74:42
+    media: autoselect
+    status: inactive
+    ...
 </pre>
-<!-- End of Introduction -->
 
-If you want to view the configuration of all network interfaces, not just the ones currently active, you can use
-flag <code>a</code>.
+If you want to view the configuration of all network interfaces, not just the ones
+currently active, you can use flag <code>a</code>.
+
 {% highlight bash %}
-ifConfig -a
+ifconfig -a
 {% endhighlight %}
 
-If you want to view the configuration of a specific interface, you can specify the name of the interface
-you want to view after the command <i>IfConfig</i>:
-{% highlight bash %}
-  ifConfig ap1
-{% endhighlight %}
-This command will show only the configuration of ap1.
+If you want to view the configuration of a specific interface, you can specify
+the name of the interface you want to view after the command <i>ifconfig</i>:
 
-To enable an interface, you can use the command ifConfig with the name of the interface
-you want to enable, followed by the key word <code>up</code>.
-However, enabling or disabling a device, is a privilege reserved for the super user, therefore you also
-have to use the command <code>sudo</code>.
 {% highlight bash %}
-   sudo ifConfig ap1 up
+ifconfig ap1
 {% endhighlight %}
 
-To disable an interface, you can follow the same procedure, this time using the key word <code>down</code>.
+This command will show only the configuration of ap1.<br>
+
+To enable an interface, you can use the command ifconfig with the name of the interface
+you want to enable, followed by the key word <code>up</code>.<br>
+
+However, enabling or disabling a device, is a privilege reserved for the super user,
+therefore you also have to use the command <code>sudo</code>.
+
 {% highlight bash %}
-   sudo ifConfig ap1 down
+   sudo ifconfig ap1 up
+{% endhighlight %}
+
+To disable an interface, you can follow the same procedure, this time using
+the key word <code>down</code>.
+
+{% highlight bash %}
+   sudo ifconfig ap1 down
 {% endhighlight %}

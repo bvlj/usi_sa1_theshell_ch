@@ -9,70 +9,87 @@ previous-page: pages/scripts/special_variables.html
 next-page: pages/scripts/arrays.html
 ---
 
-There are some special operations that can be performed on <a href="variables.html">variables</a> and strings called parameter expansions.
+There are some special operations that can be performed on
+<a href="variables.html">variables</a> and strings called parameter expansions.
 The general syntax for all parameter expansions is this one:
+
 {% highlight bash %}
   ${CODE_HERE}
 {% endhighlight %}
-Depending on what you want to do with your variable, the code that goes inside the braces differs.<br>
-<br>
+
+Depending on what you want to do with your variable, the code
+that goes inside the braces differs.<br>
+
 {% highlight bash %}
   ${VARIABLE:-DEFAULT_VALUE}
 {% endhighlight %}
-If the variable VARIABLE exists and has a value (i.e. it is not null), this is equal to the value of VARIABLE.
+
+If the variable VARIABLE exists and has a value (i.e. it is not null), this is equal to
+the value of VARIABLE.
 Otherwise, it is equal to DEFAULT_VALUE.<br>
+
 Example: <code>echo "First name: ${firstname:-John}";</code><br>
-<br>
+
 {% highlight bash %}
   ${VARIABLE:=DEFAULT_VALUE}
 {% endhighlight %}
+
 If the variable VARIABLE exists and has a value, this is equal to the value of VARIABLE.
 Otherwise, it sets the variable to DEFAULT_VALUE and is equal to it.<br>
 Example: <code>echo "Last name: ${lastname:=Doe}";</code><br>
-<br>
+
 {% highlight bash %}
   ${VARIABLE:?ERR_VALUE}
 {% endhighlight %}
+
 If the variable VARIABLE exists and has a value, this is equal to the value of VARIABLE.
-Otherwise, it prints ERR_VALUE to STDERR and exits (meaning nothing else will be executed after this).<br>
+Otherwise, it prints ERR_VALUE to STDERR and exits (meaning nothing else will be executed
+after this).<br>
 Example: <code>currdate=${date:?Operation failed: date unknown};</code><br>
-<br>
+
 {% highlight bash %}
   ${VARIABLE:+VALUE}
 {% endhighlight %}
+
 If the variable VARIABLE exists and has a value, this is equal to VALUE.
 Otherwise, this has no effect.<br>
-Example: <code>echo -e "reading from address $read.${write:+\nWARNING: read and write set at the same time}";</code><br>
-<br>
+Example: <code>echo -e "reading from address $read.${write:+\nWARNING: read and write set
+at the same time}";</code><br>
+
 All of these can also be written without the colon, in which case their meaning changes to
 "If the variable VARIABLE exists at all (even if it is null), this is ..."<br>
-<br>
-<br>
+
 {% highlight bash %}
   ${VARIABLE: NUMBER}
 {% endhighlight %}
-This is equal to the substring of the value of VARIABLE, starting at the character with (0-based) index NUMBER <br>
+
+This is equal to the substring of the value of VARIABLE, starting at the character with
+(0-based) index NUMBER.<br>
 If NUMBER is negative, the substring starts NUMBER characters before the end of the string.<br>
 Example: <code>lastname=${fullname:$firstnamelength};</code><br>
-<br>
+
 {% highlight bash %}
   ${VARIABLE: FROM:LENGTH}
 {% endhighlight %}
-This is equal to the substring of the value of VARIABLE, starting at the character with (0-based) index FROM with length LENGTH<br>
+
+This is equal to the substring of the value of VARIABLE, starting at the character with (0-based)
+index FROM with length LENGTH<br>
 If FROM is negative, the substring starts FROM characters before the end of the string.<br>
 Example: <code>lastname=${middlename:$firstnamelength:$middlenamelength};</code><br>
 <!-- If/when somebody makes the page on arithmetic operations, mention that NUMBER can be an arithmetic operation as well
      and link it. -->
-<br>
 {% highlight bash %}
   ${#VARIABLE}
 {% endhighlight %}
+
 This is equal to the length of the value of VARIABLE<br>
 Example: <code>echo "your name has ${#name} characters";</code><br>
-<br>
+
 Paremeter expansions can also be nested, like this:
+
 {% highlight bash %}
   ${input:?${INVALID_INPUT_ERR_MSG:-An unknown error occurred}}
 {% endhighlight %}
-<br>
-Further reading: <a href="http://www.gnu.org/software/bash/manual/bashref.html#Shell-Parameter-Expansion">the bash reference manual</a>
+
+Further reading: <a href="http://www.gnu.org/software/bash/manual/bashref.html#Shell-Parameter-Expansion">
+the bash reference manual</a>

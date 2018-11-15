@@ -6,64 +6,35 @@ tags:
 author: Announ Marwan
 title: kill
 ---
+The <code>kill</code> command is used for terminating the
+running processes on your system.<br>
 
-<p>
-<h1>Kill Commands</h1>
-<br>
-<h2> Before all, what is a "kill command"!?</h2>
-<br><br> "kill" is a command used for terminating the
-<br>running processes on your system.
-<br>
-<br> In fact, using this commands you can easily kill all the processes that you want.
-<br><br><br>
-<h2>Why I have to use it? </h2>
-<br><br> Sometimes happens that you couldn't control an application, for example when
-<br>you want to exit from your browser when it seems freezing.
-<br><br> You have to know that "kill commands" can help you in do this.
+In fact, using this commands you can easily kill all the processes that you want.
+Sometimes happens that you couldn't control an application, for example when
+you want to exit from your browser when it seems freezing.
+You have to know that "kill commands" can help you in do this.<br>
 
-<br><br><br><br>Ok, good, I understand, but how can I use it?
+<h3>killall</h3>
 
-<br> First, you have to know that there are two type of kill commands.
+Will terminate all programs that match the name specified without
+additional arguments.
+You have to know also that "killall" sends SIGTERM, or signal number 15.
+If you want to specify a different signal you can use "-s".
 
 <pre>
-  -killall
-<br>-kill
+killall -s 9 [process name]
+killall -KILL [process name]
+killall -9 [process name]
 </pre>
 
-<br><br>  <h3> KILLALL   </h3>
+<h3>kill</h3>
 
-<br> Will terminate all programs that match the name specified without
-<br>additional arguments.
-<br><br> You have to know also that "killall" sends SIGTERM, or signal number 15.
-<br>If you want to specify a different signal you can use "-s".
-
-
-<br><br> <p> examples of using killall</p>
+Will terminate only one program.
+Without Without options, kill sends SIGTERM to the PID specified and asks the application
+or service to shut itself down.
 
 <pre>
-<br>-killall -s 9 [process name]
-<br>-killall -KILL [process name]
-<br>-killall -9 [process name]
-
+kill [PID]
+kill -s KILL [PID]
+kill -KILL [PID]
 </pre>
-
-<br><br>  <h4> KILL  </h4>
-
-<br> Will terminate only one program.
-<br> Without Without options, kill sends SIGTERM to the PID specified and asks the application
-<br>or service to shut itself down.
-
-<br><br><p> examples of using only kill</p>
-
-<pre>
-<br>-kill [PID]
-<br>-kill -s KILL [PID]
-<br>-kill -KILL [PID]
-
-</pre>
-
-<h4> Now, you can close all the programs with this commands, have a fun :)</h4>
-
-
-
-</p>

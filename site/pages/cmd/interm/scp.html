@@ -2,79 +2,43 @@
 layout: page
 category-title: Intermediate commands
 category-page: intermediate
-tags:
+tags: ssh copy file secure
 author: Announ Marwan
-title: kill
+title: scp
 ---
 
-<p>
+The <code>scp</code> command name stands for <i>Secure CoPy</i>.<br>
+As the name suggests it's similar to the <code>cp</code> command,
+with the main difference being that while <code>cp</code> is used to move files
+in a local machine, <code>scp</code> will also operate on the remote systems.<br>
 
-<h1>SCP</h1>
-<h2>What is SCP?</h2>
-I think that you are familiar with "cp command", so SCP stand for "secure copy".
-<br> You have to know that the only difference between "cp" and "scp" is that you use cp command into your
-<br> local machine and scp if one or both the location are on the remote system.
-
-<pre>
-
-cp /home/SA/course/images.jpg /home/SA/MY
-
-  </pre>
-
-As you can see from the example above we use cp, to copy images from folder course into folder "MY"
-<br>
-
-Now, we see the same example but using scp command
+The syntax is similar to the one of the <code>cp</code> command.
 
 <pre>
-
-scp /home/SA/course/images.jpg  marwan@myhost.com:/home/SA/MY
-
+scp ~/Documents/list.txt protocol://user@myhost.com:/home/user/Documents/list.txt
 </pre>
 
-Where marwan it's just an example(my real name..), you have to use you real host.
-<br> This operation require passsword before upload.
+Keep in mind that <code>protocol://user@myhost.com</code> should be changed accordingly to
+your use case and may require authentication on the remote server.<br>
+It's also possible to download files in a similar way.
 
 <pre>
-scp marwan@myhost.com:/home/SA/My/image1.jpg /home/SA/downloads
-
-
+scp protocol://user@myhost.com:/home/user/Documents/list.txt ~/Downloads/list.txt
 </pre>
 
-As you can see from the above example, with this command you can download image1.jpg from remote
-<br> directory to your local (in this case downloads folder)
-
-
+And it can also operate on the remote host only:
 <pre>
-
-scp marwan@myhost.com:/home/user/dir1/sa.txt marwan@myhost.com:/home/SA/course
-
-
+scp protocol://user@myhost.com:/home/user/Documents/list.txt protocol://user@myhost.com:/home/user/Download/shopping.txt
 </pre>
 
-In this example we move sa.txt from remote directory to another remote directory.
 
-
-<br><h3>Other example of using scp with options</h3>
-
-You have to know that you can use scp command with some options, such as -1, -2 and so on.
-
-<pre>
-<p>-1 to use scp with protocol 1 </p>
-<p>-2 to use scp with protocol 2 </p>
-<p>-3 to copy between 2 remote passing through local(like example above) </p>
-<p>-4 to use scp with IPv4 addresses </p>
-<p>-6 Guess..? to use scp with Ipv6 addresses </p>
-<p>-C to enable compression of the encrypted connection </p>
-<p>-c to encrypt data transfer (C and c is not the same options) </p>
-
-
-
-</pre>
-
-<p>Good, now you are able to copy and move files between remote system</p>
-
-
-
-
-</p>
+<h3>Flags</h3>
+<ul>
+    <li>-1 to use scp with protocol 1 </li>
+    <li>-2 to use scp with protocol 2 </li>
+    <li>-3 to copy between 2 remote passing through local(like example above) </li>
+    <li>-4 to use scp with IPv4 addresses </li>
+    <li>-6 o use scp with Ipv6 addresses </li>
+    <li>-C to enable compression of the encrypted connection </li>
+    <li>-c to encrypt data transfer (<i>C</i> and <i>c</i> are <u>not</u> the same flag)</li>
+</ul>

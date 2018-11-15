@@ -2,138 +2,137 @@
 layout: page
 category-title: Intermediate commands
 category-page: intermediate
-tags: 
+tags:
 author: Andrea Brites Marto
 title: 7z
 ---
-<p>
-	A .7z. file is an archive format that stands for 7-zip. By default, Mac OS X does not know how to handle these files, but that is not a big deal because you can download for free in App Store. The program supports 7z, ZIP, CAB, ARJ, BZIP2, TAR, CPIO, RPM and DEB.<br>
+A .7z. file is an archive format that stands for 7-zip. By default, Mac OS X does not
+know how to handle these files, but that is not a big deal because you can download for
+free in App Store. The program supports 7z, ZIP, CAB, ARJ, BZIP2, TAR, CPIO, RPM and DEB.<br>
 
-	So, first of all, you need to download Unarchiver in order to use this command.<br>
+So, first of all, you need to download Unarchiver in order to use this command.<br>
 
-	The basic syntax is:
-</p>
+The basic syntax is:
 
 <pre>
-	7z [adeltux] [-] [SWITCH] <code>&lt;ARCHIVE_NAME&gt; &lt;ARGUMENTS&gt;</code>
+7z [adeltux] [-] [SWITCH] <code>&lt;ARCHIVE_NAME&gt; &lt;ARGUMENTS&gt;</code>
 </pre>
 
 Here some useful options that we will use to explain some examples:
 
 <ul>
-	<li><i>a</i> Add</li>
-	<li><i>d</i> Delete</li>
-	<li><i>e</i> Extract</li>
-	<li><i>l</i> List</li>
-	<li><i>t</i> Test</li>
-	<li><i>u</i> Update</li>
-	<li><i>x</i> Extract with full paths</li>
+    <li><i>a</i> Add</li>
+    <li><i>d</i> Delete</li>
+    <li><i>e</i> Extract</li>
+    <li><i>l</i> List</li>
+    <li><i>t</i> Test</li>
+    <li><i>u</i> Update</li>
+    <li><i>x</i> Extract with full paths</li>
 </ul>
 
-The simplest way to use <code>7z</code> if we want to extracts all files from archive archive.zip to the current directory.
+The simplest way to use <code>7z</code> if we want to extracts all files
+from archive archive.zip to the current directory.
 
 <pre>
-	7z e archive.zip
+7z e archive.zip
 </pre>
 
 Well, now we talk about the switches.
 There are many type of switches, we will see the most common ones.
 
-<h1>-m (Set compression Method)</h1>
+<h3>-m (Set compression Method)<h3>
 
 <p>Specifies the compression method</p>
+
 <pre>
-	-m&lt;method_parameters&gt;
+-m&lt;method_parameters&gt;
 </pre>
 
 The format for this switch depends on the archive type which are:
 <ul>
-	<li>Zip</li>
-	<li>GZip</li>
-	<li>BZip2</li>
-	<li>7z</li>
-	<li>XZ</li>
-	<li>WIM</li>
+    <li>Zip</li>
+    <li>GZip</li>
+    <li>BZip2</li>
+    <li>7z</li>
+    <li>XZ</li>
+    <li>WIM</li>
 </ul>
 
-<h1>-r (Recurse subdirectories) switch</h1>
+<h3>-r (Recurse subdirectories) switch</h3>
 
 <p>Specifies the method of treating filenames or wildcards on the command line.</p>
 The syntax:
 
 <pre>
-	-r[- | 0]
+-r[- | 0]
 </pre>
 
 <table>
-	<tr>
-		<td> Switch </td>
-		<td> Description </td>
-	</tr>
-	<tr>
-		<td> -r </td>
-		<td> Enable recurse subdirectories </td>
-	</tr>
-	<tr>
-		<td> -r- </td>
-		<td> Disable recurse subdirectories. This is the default option. </td>
-	</tr>
-	<tr>
-		<td> -r0 </td>
-		<td> Enable recurse subdirectories only for wildcard names </td>
-	</tr>
+    <tr>
+        <td>Switch</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>-r</td>
+        <td>Enable recurse subdirectories</td>
+    </tr>
+    <tr>
+        <td>-r-</td>
+        <td>Disable recurse subdirectories. This is the default option.</td>
+    </tr>
+    <tr>
+        <td>-r0</td>
+        <td> Enable recurse subdirectories only for wildcard names </td>
+    </tr>
 </table>
 
 <p>
-	If we want to list all *.doc files that belong to the archived root directory in the <i>archive.zip</i> archive, we can do as follows:
+If we want to list all *.doc files that belong to the archived root directory in
+the <i>archive.zip</i> archive, we can do as follows:
 </p>
 
 <pre>
-	7z l archive.zip *.doc -r-
+7z l archive.zip *.doc -r-
 </pre>
 
-<h1>-p (Set password) switch</h1>
+<h3>-p (Set password) switch</h3>
 
 <p>Specifies a password</p>
 Here the syntax is very simple:
 
 <pre>
-	-p{password}
+-p{password}
 </pre>
 
-If we want to protect some files we can compress for example all *.txt files to archive.7z using a password as "cimbale".
+If we want to protect some files we can compress for example all *.txt files
+to archive.7z using a password as "cimbale".
 
 <pre>
-	7z a archive.7z -pcimbale
+7z a archive.7z -p cimbale
 </pre>
 
 Then if we want to extracts all files from archive.7z we need the password "cimbale".
 
 <pre>
-	7z x archive.7z -pcimbale
+7z x archive.7z -p cimbale
 </pre>
 
-<h1> -x (Exclude filenames) switch </h1>
+<h3>-x (Exclude filenames) switch </h3>
 
 <p>
-	Specifes which filenames or wildcards must be excluded from the operation.
+Specifes which filenames or wildcards must be excluded from the operation.
 </p>
+
 Syntax:
 
 <pre>
-	-x[&lt;recurse_type&gt;]&lt;file_ref&gt;
+-x[&lt;recurse_type&gt;]&lt;file_ref&gt;
 </pre>
 
 Sometimes we need to add files into an archive.7z, except one, this can be done as fllows:
 
 <pre>
-	7z a -tzip archive.7z *.txt -x!temp.*
+7z a -tzip archive.7z *.txt -x!temp.*
 </pre>
 
 <p>We described the most important swtiches and uses of this command, but there are more.</p>
-
-
-
-
-
-

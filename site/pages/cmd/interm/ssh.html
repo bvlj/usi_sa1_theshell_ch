@@ -2,91 +2,63 @@
 layout: page
 category-title: Intermediate commands
 category-page: intermediate
-tags:
+tags: remote connection host server file
 author: Announ Marwan
 title: ssh
 ---
 
-<p>
-<h1>SSH</h1>
+The <code>ssh</code> command is used to operate with a remote machine using
+the <i>ssh</i> protocol. It's commonly used for logging into a remote
+machine and execute commands from a terminal interface.
 
-<h2> What is "SSH"!?</h2>
-<br>Are you searching for a program for executing commands on a machine remotely or simply logging into a remote machine?
-<br>Are you searching a program that provide you secure encryption communications between two host?
-<br> I have the solution, SSH.
-<br> SSH connects and logs you into a specified hostname, where the user have only to prove his identity to the remote machine.
-<br> Briefly The ssh command provides a secure connection between two hosts over a insecure network.
 
-<h3> Example of using ssh</h3>
+<h3>Log into a server</h3>
 
--Logging to a remote server(to login in a remote server from local host)
-<pre>
-
-  localhost:[~]> ssh username@remote-server
-  username@remote-server password:
-  remote-server:[~]>
-
-  </pre>
-<br>
--Logging out from remote server(you can do easily "command+d")
+To log in a remote server you need an user account which is
+usually created by the server admin and a password.
 
 <pre>
-
-  remote-server:[~]>exit
-  logout
-  Connection to remote-server closed.
-  localhost:[~]>
-
-
-  </pre>
-
-<br>
--Running remote from local host
-
-<pre>
-
-  localhost:[~]> ssh user@remote-host "ls test"
-  online-backup.dat
-  oracle-storage.bat
-  unix-dedicated-server.txt
-
-  </pre>
-
-<br>
--Debugging ssh client(to debug and find the exact error without connection to the remote host)
-
-<pre>
-  ssh -v user@remote-host
- OpenSSH_4.3p2, OpenSSL 0.9.8e-fips-rhel5 01 Jul 2008
- debug1: Reading configuration data /etc/ssh/ssh_config
- debug1: Applying options for *
- debug1: Connecting to remote-host [172.22.200.140] port 22.
- debug1: Connection established.
- debug1: identity file /home/user/.ssh/identity type -1
- debug1: identity file /home/user/.ssh/id_rsa type -1
- debug1: identity file /home/user/.ssh/id_dsa type 2
- debug1: loaded 3 keys
- ..........
-
-  </pre>
-
-<br>
--Copying files between remote host and local
-
-<br>
-from remote
-<pre>
-
-scp user@remote-host:/usr/local/bin/add.sh
-  </pre>
-
-<br>
-from local
-
-<pre>
-scp filename user@remote-host:/var/tmp/
+localhost:[~]&gt; ssh username@remote-server
+remote-server:[~]&gt;
 </pre>
 
-<p>Then, you can now connect and use svn like a programmer</p>
+Once you're logged in, the local machine shell will be
+<i>replaced</i> by the remote server's one
 
-</p>
+<br>
+
+<h3>Log out of a server</h3>
+
+<ul>
+    <li>Press <code>⌘ + D</code></li>
+    <li>Run the command <code>logout</code></li>
+    <li>Run the command <code>exit</code></li>
+</ul>
+
+<h3>Run a command on a remote machine</h3>
+
+<pre>
+localhost:[~]:&gt; ssh user@remote-host "ls test"
+    online-backup.dat
+    online-storage
+    unix-dedicated-server.txt
+</pre>
+
+
+<h3>Debug the client</h3>
+
+Debugging the ssh client can be useful to resolve connection errors.
+
+<pre>
+localhost:[~]:&gt; ssh -v user@remote-host
+    OpenSSH_4.3p2, OpenSSL 0.9.8e-fips-rhel5 01 Jul 2008
+    debug1: Reading configuration data /etc/ssh/ssh_config
+    debug1: Applying options for *
+    debug1: Connecting to remote-host [172.22.200.140] port 22.
+    debug1: Connection established.
+    debug1: identity file /home/user/.ssh/identity type -1
+    debug1: identity file /home/user/.ssh/id_rsa type -1
+    debug1: identity file /home/user/.ssh/id_dsa type 2
+    debug1: loaded 3 keys
+    ...
+</pre>
