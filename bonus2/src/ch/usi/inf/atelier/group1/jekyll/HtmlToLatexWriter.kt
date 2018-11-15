@@ -71,6 +71,8 @@ class HtmlToLatexWriter(private var content: String) {
      * Replace <a> with LaTeX footNote url
      */
     fun changeLink() {
+        content = content.replace("{{ site.baseurl }}/", "www.theshell.ch/") // ""
+
         val pattern = Pattern.compile("<a href=\"(.*?)\"(.*?)>(.*?)</a>")
         val matcher = pattern.matcher(content)
 
@@ -98,10 +100,12 @@ class HtmlToLatexWriter(private var content: String) {
     }
 
     /**
-     * Replace <pre> with LaTeX verbatim
+     * Replace <pre> and {% highlight %} with LaTeX verbatim
      */
     fun changeMono() {
         content = content.replaceTag("<pre>", "</pre>", "\\begin{verbatim}", "\\end{verbatim}")
+                .replaceTag("{% highlight bash %}", "{% endhighlight %}",
+                        "\\begin{verbatim}", "\\end{verbatim}")
     }
 
     /**
