@@ -1,0 +1,80 @@
+---
+layout: page
+category-title: Intermediate commands
+category-page: intermediate
+tags:
+author: Announ Marwan
+title: kill
+---
+
+<p>
+
+<h1>SCP</h1>
+<h2>What is SCP?</h2>
+I think that you are familiar with "cp command", so SCP stand for "secure copy".
+<br> You have to know that the only difference between "cp" and "scp" is that you use cp command into your
+<br> local machine and scp if one or both the location are on the remote system.
+
+<pre>
+
+cp /home/SA/course/images.jpg /home/SA/MY
+
+  </pre>
+
+As you can see from the example above we use cp, to copy images from folder course into folder "MY"
+<br>
+
+Now, we see the same example but using scp command
+
+<pre>
+
+scp /home/SA/course/images.jpg  marwan@myhost.com:/home/SA/MY
+
+</pre>
+
+Where marwan it's just an example(my real name..), you have to use you real host.
+<br> This operation require passsword before upload.
+
+<pre>
+scp marwan@myhost.com:/home/SA/My/image1.jpg /home/SA/downloads
+
+
+</pre>
+
+As you can see from the above example, with this command you can download image1.jpg from remote
+<br> directory to your local (in this case downloads folder)
+
+
+<pre>
+
+scp marwan@myhost.com:/home/user/dir1/sa.txt marwan@myhost.com:/home/SA/course
+
+
+</pre>
+
+In this example we move sa.txt from remote directory to another remote directory.
+
+
+<br><h3>Other example of using scp with options</h3>
+
+You have to know that you can use scp command with some options, such as -1, -2 and so on.
+
+<pre>
+<p>-1 to use scp with protocol 1 </p>
+<p>-2 to use scp with protocol 2 </p>
+<p>-3 to copy between 2 remote passing through local(like example above) </p>
+<p>-4 to use scp with IPv4 addresses </p>
+<p>-6 Guess..? to use scp with Ipv6 addresses </p>
+<p>-C to enable compression of the encrypted connection </p>
+<p>-c to encrypt data transfer (C and c is not the same options) </p>
+
+
+
+</pre>
+
+<p>Good, now you are able to copy and move files between remote system</p>
+
+
+
+
+</p>
