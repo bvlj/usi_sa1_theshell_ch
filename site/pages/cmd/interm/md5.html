@@ -1,0 +1,33 @@
+---
+layout: page
+category-title: Intermediate commands
+category-page: intermediate
+tags: integrity checksum
+author: Joey Bevilacqua
+title: md5
+---
+
+The command <code>md5</code> calculates an unique string for each input given as
+argument using the <i>md5</i> algorithm.
+
+<pre>
+md5 [flags] [arg1] [arg2]
+</pre>
+
+Where [flags] are the (optional) md5 flags, read below for more info,
+and [arg1], [arg2] are the path for files or string (depending on the flags).
+
+Example: md5 sum of the string <i>Hello there</i>
+
+<pre>
+md5 -s "Hello there"
+    MD5 ("Hello there") = e8ea7a8d1e93e8764a84a0f3df4644de
+</pre>
+
+<h3>Flags</h3>
+
+<ul>q
+    <li><b>-s</b>: computes the md5 sum of a string instead of a file</li>
+    <li><b>-q</b>: prints the md5 sum without the file or string name</li>
+    <li><b>-r</b>: reverses the format of the output</li>
+</ul>
