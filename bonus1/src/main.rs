@@ -16,6 +16,7 @@ use std::process;
 use std::io::prelude::*;
 use regex::Regex;
 use walkdir::WalkDir;
+use std::path::Path;
 
 fn read_file(path: &str) -> io::Result<String> {
     let mut file = File::open(path)?;
@@ -37,6 +38,14 @@ fn find_urls(html: &str) -> Vec<String> {
     }
 
     results
+}
+
+fn path_exists(path: &str) -> bool {
+    Path::new(path).exists()
+}
+
+fn is_external_url(url: &str) -> bool {
+    url.starts_with("http://") || url.starts_with("https://") || url.starts_with("://")
 }
 
 fn is_external_url_working(url: &str) -> bool {
@@ -84,8 +93,24 @@ fn main() {
 
                         let urls: Vec<String> = find_urls(contents.as_str());
                         for url in urls {
-                            if !is_external_url_working(&url) {
-                                println!("{}: '{}' is a broken link.", path, url);
+                            if is_external_url(&url) {
+                                if !is_external_url_working(&url) {
+                                    println!("{}: '{}' is a broken link.", path, url);
+                                }
+                            } else {
+                                if url.starts_with("mailto:") || url.eq("#") || url.eq("{url}") {
+                                    continue;
+                                } else if url.starts_with("/") {
+                                    let lpath = format!("{}{}", dir, url);
+                                    if !path_exists(&lpath) {
+                                        println!("{}: '{}' is a broken link ({} does not exist).", path, url, lpath);
+                                    }
+                                } else {
+                                    let lpath = format!("{}/{}", en.path().parent().unwrap_or(Path::new("/")).to_str().unwrap(), url);
+                                    if !path_exists(&lpath) {
+                                        println!("{}: '{}' is a broken link ({} does not exist).", path, url, lpath);
+                                    }
+                                }
                             }
                         }
                     }
