@@ -1,0 +1,23 @@
+---
+layout: main
+---
+<article class="post">
+
+  <header class="post-header">
+    <h2 class="post-title NotoSansBold">{{ page.title }}</h2>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>
+<div class="box-arrows">
+	{% if page.previous-page %}
+		<a id="back" href="{{ site.baseurl }}/{{ page.previous-page }}"><i class="fas fa-angle-left"></i><span>Back</span></a>
+	{% endif%}
+
+	{% if page.next-page %}
+		<a id="next" href="{{ site.baseurl }}/{{ page.next-page }}" ><span>Next</span><i class="fas fa-angle-right"></i></a>
+	{% endif%}
+</div>

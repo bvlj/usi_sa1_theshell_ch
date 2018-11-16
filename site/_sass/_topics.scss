@@ -6,9 +6,10 @@
 .list-commands li {
    border-radius: 50px;
    transition:500ms;
+   margin-bottom:10px;
 
    a{
-    width: calc(100% - 2em - 20px);
+    width: calc(100% - 2em - 25px);
     text-decoration: none;
     font-size: 2.8vh;
     font-weight: bold;
@@ -18,10 +19,11 @@
 }
 
 .before-command {
+  cursor:pointer;
   background: #6a6;
   border-radius: 100%;
   padding: 4px 12px;
-  font-size: 2.8vh;
+  font-size: 25px;
   transition:500ms;
 }
 
