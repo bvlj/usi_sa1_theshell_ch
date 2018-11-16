@@ -60,6 +60,7 @@ class HtmlParser(private val singlePage: Boolean) {
             changeMono()
             changeParagraph()
             changeSection()
+            changeSpecials()
             changeSubSection()
             changeSubSubSection()
             changeTable()

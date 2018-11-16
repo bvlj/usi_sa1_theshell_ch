@@ -140,6 +140,15 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
     }
 
     /**
+     * Replace special html chars with LaTeX equivalents
+     */
+    fun changeSpecials() {
+        HTML_SPECIALS_FROM.forEachIndexed { index, s ->
+            content = content.replace(s, HTML_SPECIALS_TO[index])
+        }
+    }
+
+    /**
      * Replace <h2> with LaTeX \subsection
      */
     fun changeSubSection() {
@@ -292,5 +301,8 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
                 "\\documentclass[hidelinks,12pt,a4paper,numbers=enddot]{scrartcl}\n\n" +
                         "\\usepackage[margin=2cm]{geometry}\n" +
                         "\\usepackage{hyperref}"
+
+        private val HTML_SPECIALS_FROM = arrayOf("&amp;", "&lt;", "&gt;")
+        private val HTML_SPECIALS_TO = arrayOf("\\&", "\\textless ", "\\textgreater ")
     }
 }
