@@ -7,10 +7,9 @@ author: Fabiano Fenini
 title: fg
 previous-page: ""
 ---
-The <code>fg</code> command allows us to continue a stopped operation by running it in foreground.
-<br>
+The <code>fg</code> command allows us to continue a stopped operation by running it
+in foreground.<br>
 
-<br>
 The command name stands for <i>foreground</i>.<br><br>
 
 <h3>Usage</h3>
@@ -21,6 +20,17 @@ The default fg command syntax is:
 fg [%job_number]
 </pre>
 
-The parameter [%job_id] contains the job number you wish to run in foreground. If this is not indicated,
-the command will run the last stopped operation.  
-<br><br>
+The parameter [%job_id] contains the job number you wish to run in foreground.
+If this is not indicated, the command will run the last stopped operation.<br><br>
+
+<h3>Stop a working job</h3>
+
+To stop the execution of a command so that i can be later resumed with <code>fg</code>
+you need to press the <code>ctrl + Z</code> keys. The job number to be used with the
+<code>fg</code> command will be printed.
+
+<pre>
+top
+^Z
+[1]  + NNNN suspended  top
+</pre>
