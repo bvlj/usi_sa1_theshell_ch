@@ -6,65 +6,93 @@ author: Joy Albertini
 tags: server ping latency UNIX
 title: ping
 ---
-<p>The <code>ping</code>  command , is used to test connection between a local server/computer to a remote UNIX server.
-  The ping command sends ICMP Echo Request packets to the remote server for accessing it.
-  Each packet echoed back (via an ICMP Echo Response packet) is written to the shell output.<br></p>
-  Usage:
-  <ul>
-    <li> test remote server if working. </li>
-    <li> test network connectivity from your local machine to server </li>
-    <li> general network problems </li>
-  <ul>
-<br>
 
 <p>
-Example; Device-name:Current-position username$ ping IP address;  ping 192.168.3.2 <br>
-Device-name:Current-position username$ ping Server_name;  ping yahoo.com <br>
-The shell will output something like this: 64 bytes from 98.138.219.232: icmp_seq=0 ttl=49 time=144.781 ms for each packets that return (echoed back).
-Important to stop the ping command press control + c. </p>
+  The <code>ping</code> command, is used to test connection between a <b>local server/computer</b> to a <b>remote UNIX server</b>.
+  The ping command sends <b>ICMP Echo Request packets</b> to the remote server for accessing it.
+  Each <b>packet echoed back </b> (via an ICMP Echo Response packet) is written to the shell output.
+</p>
+
+<p>
+  Usage:
+
+<ul>
+  <li> test remote server if working. </li>
+  <li> test network connectivity from your local machine to server </li>
+  <li> general network problems </li>
+<ul>
+
+<p>Example:
+<ul>
+  <li> ping IP address = <code>ping 192.168.3.2</code></li>
+  <li> ping Server_name = <code>ping yahoo.com</code></li>
+<ul>
+ The shell will output something like this: <b>64 bytes from 98.138.219.232: icmp_seq=0 ttl=49 time=144.781 ms </b>for each packets that return (echoed back).
+To stop the ping command press <code>control + c</code> </p>
 
 <pre>
-  ping 192.168.3.2
+  ping [-flag] server
 </pre>
 
 <ul>
   <li><code>-c</code> send limited number of packets with ping -c (nr of packets) <br>
-  Example: ping -c 4 yahoo.com, the shell will display the first 4 packets returned, and then stop.</li>
+  Example: ping -c 4 yahoo.com, the shell will display the first 4 packets returned, and then stop. </li> <br>
+
   <li><code>-n</code> avoid dns lookup, avoid to lookup symbolic names for host addresses, so only numeric output <br>
-  Example: ping -n yahoo.com </li>
+  Example: ping -n yahoo.com </li> <br>
+
   <li><code>-a</code> get an audio warning, when the remote server comes online <br>
-  Example: ping -a yahoo.com, server comes online audio signal for every packets that returns</li>
-  <li><code>-b</code> Allow pinging a broadcast address (broadcast network, is a network with many devices on it).<br></li>
-  <li><code>-m</code> (mark) tag the packets going out </li>
+  Example: ping -a yahoo.com, server comes online audio signal for every packets that returns</li><br>
+
+  <li><code>-b</code> Allow pinging a broadcast address (broadcast network, is a network with many devices on it).<br></li> <br>
+
+  <li><code>-m</code> (mark) tag the packets going out </li> <br>
+
   <li><code>-f</code> (Flood ping) For every ECHO_REQUEST sent (.) is printed,
       for every ECHO_REPLY received, a backspace is printed.
-      With this command you can easily understand how many packets are being dropped.</li>
-  <li><code>-i</code> (interval) set the interval between seending each packet (defaultn 1 second); only super-user can set interval values less than 0.2 seconds <br>
-  Example: ping -i 5 yahoo.com; the pacjets will be send each 5 seconds instead of 1</li>
-  <li><code>-I</code> (interface-address) set souce adress to a specific interface adress, example the name of the device or IP. When pinging local adresses IPV6, is a needed flag
+      With this command you can easily understand how many packets are being dropped.</li> <br>
+
+  <li><code>-i</code> (interval) set the interval between seending each packet (defaultn 1 second); only super-user can set interval values
+    less than 0.2 seconds <br>
+  Example: ping -i 5 yahoo.com; the pacjets will be send each 5 seconds instead of 1</li> <br>
+
+  <li><code>-I</code> (interface-address) set souce adress to a specific interface adress,
+    example the name of the device or IP. When pinging local adresses IPV6, is a needed flag </li> <br>
+
   <li><code>-l</code> (preload) ping send packets but don't wait for reply.(you need sudo = amministrator persmissions) <br>
-  Example: Sudo ping -l 2 yahoo.com; it will send 2 packtes without waiting for the server reply.</li>
-  <li><code>-L</code> Remove loopback of multicast packets </li>
-  <li><code>-N</code> (Nioption) send ICMpv6 request, instead of Echo requests <ul><li> <code>ipv6</code> request Ipv6 adresses </li>
-                                                                               <li> <code>ipv4-all</code> request Ipv4 adresses </li>
-                                                                             </ul>
-                                                                             </li>
+  Example: Sudo ping -l 2 yahoo.com; it will send 2 packtes without waiting for the server reply.</li> <br>
+
+  <li><code>-L</code> Remove loopback of multicast packets </li> <br>
+
+  <li><code>-N</code> (Nioption) send ICMpv6 request, instead of Echo requests
+    <ul>
+      <li> <code>ipv6</code> request Ipv6 adresses </li>
+      <li> <code>ipv4-all</code> request Ipv4 adresses </li>
+    </ul>
+  </li> <br>
+
   <li><code>-p</code> (pattern) specify up to 16 number to fill out the packets you send <br>
-  Example: ping -p ff, al packet will be fill with ones, ff = 255 in hexadicimal, 11111111 in binary. </li>
+  Example: ping -p ff, al packet will be fill with ones, ff = 255 in hexadicimal, 11111111 in binary. </li> <br>
+
   <li><code>-D</code> print timestamp (unix time + microseconds) in each line<br>
-  Example: ping -D yahoo.com; the shell will output 64 bytes from 72.30.35.10: icmp_seq=1 ttl=51 time=137.882 ms. </li>
+  Example: ping -D yahoo.com; the shell will output 64 bytes from 72.30.35.10: icmp_seq=1 ttl=51 time=137.882 ms. </li> <br>
+
   <li><code>-q</code> (Quiet output) Nothing  displayed except the summary lines at the start and at the end.
   Example: ping -q yahoo.com, shell Output initially PING yahoo.com (72.30.35.10): 56 data bytes, and nothig else
-  until you stop the ping command, and the shell will display the stats. </li>
-  <li><code>-R<code> (Record route), displays the route buffer on the packets that include RECORD_ROUTE in the ECHO_REQUEST.</li>
-  <li><code>-r<code> bypass the normal routing in a directly-attached network </li>
-  <li><code>-s<code> (packetsize) Specifies the data bytes to send (default is 56 that  + 8 byte of ICMP = 64 ICMP data bytes) <br>
-  Example: ping -s 33 yahoo.com; send packets of 33 + 8 ICMP = 41 bytes to yahoo.com. </li>
-  <li><code>-t<code> set IP time-to-live (set how long execute ping in seconds) <br>
-  Example: ping -t 3: the shell will ping yahoo.com for 3 seconds, and then stops.</li>
-  <li><code>-U<code> print full user-to-user latency (legacy ping behaviour).</li>
-  <li><code>-v<code> output verbose on output </li>
-  <li><code>-V<code> Display verion of command </li>
-  <li><code>-w<code> (deadline) Timeout in seconds of ping command, regardless of how  many packets have been sent. </li>
-  <li><code>-W<code> (timeout), time waiting for a response from the server, if the server dosen't reply in the time set, the ping command will stop. </li>
+  until you stop the ping command, and the shell will display the stats. </li> <br>
+
+  <li><code>-R</code> (Record route), displays the route buffer on the packets that include RECORD_ROUTE in the ECHO_REQUEST.</li> <br>
+  <li><code>-r</code> bypass the normal routing in a directly-attached network </li> <br>
+
+  <li><code>-s</code> (packetsize) Specifies the data bytes to send (default is 56 that  + 8 byte of ICMP = 64 ICMP data bytes) <br>
+  Example: ping -s 33 yahoo.com; send packets of 33 + 8 ICMP = 41 bytes to yahoo.com. </li> <br>
+
+  <li><code>-t</code> set IP time-to-live (set how long execute ping in seconds) <br>
+  Example: ping -t 3: the shell will ping yahoo.com for 3 seconds, and then stops.</li> <br>
+
+  <li><code>-U</code> print full user-to-user latency (legacy ping behaviour).</li> <br>
+  <li><code>-v</code> output verbose on output </li> <br>
+  <li><code>-V</code> Display verion of command </li> <br>
+  <li><code>-w</code> (deadline) Timeout in seconds of ping command, regardless of how  many packets have been sent. </li> <br>
+  <li><code>-W</code> (timeout), time waiting for a response from the server, if the server dosen't reply in the time set, the ping command will stop. </li> <br>
 </ul>

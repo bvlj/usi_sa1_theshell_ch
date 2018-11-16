@@ -3,16 +3,19 @@ layout: page
 category-page: intermediate
 category-title: intermediate commands
 author: Joy Albertini
-tags: search tag man apropos
+tags: search tag apropos keyword
 title: apropos
 ---
 
 <p>The <code>apropos</code>
-Apropos is a command to search in the shell with a keyword, it will output all command related to the keyword <br>
-Device-name:Current-position username$ apropos keyword; example with the command <code>apropos archive</code>, the shell will output tar, zip ecc... </p>
+Apropos is a command to search command in the shell with a keyword, it will output all command related to the keyword <br>
+Example with the command <code>apropos archive</code>, the shell will output tar, zip ecc... </p>
 
 <pre>
- apropos archive
+apropos [-flag] keyword
 </pre>
 
-<!-- no flag -->
+<ul>
+  <li><code>-V</code> (version) print version of the comnmand<br></li>
+  <li><code>-h</code> Help message how to use apropos</li>
+</ul>
