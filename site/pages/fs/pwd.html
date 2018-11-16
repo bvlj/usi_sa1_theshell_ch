@@ -7,26 +7,30 @@ author: Mirko Ponzio
 title: pwd
 ---
 
+<!-- Co-authored with Joy Albertini -->
+
 The command <code>pwd</code>(abbreviation of print working directory, it returns the
-corrent directory) it is a command of the operation system Unix and Unix-like,
-and in general of the systems POSIX, that show on the standard output the
-absolute pathname on the corrent directory.<br>
-Since a command line interface cannot provide graphic pictures of the file
-system structure, it must have a different way of representing it.<br>
-Think of the file system tree as a maze, and you are standing in it. At any
-given moment, you are located in a single directory.<br>
-Inside that directory, you can see its files and the pathway to its parent
-directory and the pathways to the subdirectories of the directory in which you
-are standing.<br>
+corrent directory) it is a command, that show the absolute pathname on the corrent directory.<br>
 
 The working directory is the directory where you are standing in. So for
-knowing where you are, you must use the pwd command.<br><br>
+knowing where you are, you can use the pwd command.<br>
 
+<pre>
+cd /home/user
+pwd = /home/user
+</pre>
 
 <h3>Flags</h3>
-<ul>
-    <li> <b>-L</b>: Display the logical current working directory.</li>
-    <li> <b>-P</b>: Display the physical current working directory (all symbolic links resolved).</li>
-</ul>
 
-If no options are specified, the -L option is assumed.
+<ul>
+    <li><code>-P </code> Show the  working directory path without symbolic link (links to
+        folder).<br>
+        Example: <i>/home/symphoto</i> a symlink to <i>/home/photos</i> <code>pwd -P</code>
+        will display <i>/home/photos</i>.
+    </li>
+    <li><code>-L </code> Show the working directory logical path with symbolic link.<br>
+        Example: <i>/home/symphoto</i>, that redirect to <i>/home/photos</i>,
+        <code>pwd -L</code> will show <i>/home/symphoto</i>.
+    </li>
+    <li>Without any flag, -L is assumed, so the normal pwd is in reality <code>pwd -L</code>.</li>
+</ul>

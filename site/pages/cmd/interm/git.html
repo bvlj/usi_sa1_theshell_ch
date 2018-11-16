@@ -6,51 +6,44 @@ tags: versioning commit merge software source code
 author: Andrea Brites Marto
 title: git
 ---
-If you want to use <i>Git</i> on the shell you need to know how this command works (usually it is preinstalled on Mac and Linux).<br>
-The <i>git</i> command providesa set of high-level operations and full access to internals.
+If you want to use <i>Git</i> on the shell you need to know how this command works.<br>
+The <i>git</i> command providesa set of high-level operations and full access to internals.<br>
 
-Here is the basic syntax but sometimes you will may have some more complicated:
-</p>
-
-<pre>
-    git [flags] [path]
-</pre>
-
-First of all, you need to know if you have the right version of git with:
+Here is the basic syntax but commands may become some more complicated:
 
 <pre>
-    git --version
+git [flags] [path]
 </pre>
 
-Now that we know that we have the right version, we can move to the common <code>git</code> flags used.
-I will divide commands in different type of operation.<br>
+<h3>Start a working environment</h3>
 
-<h3>Start a working area</h3>
 <ul>
-    <li>clone: is used to clone a repository in a new directory.</li>
-    <li>init: this onw is used to create an empty Git repository or reinitialize an existing one.</li>
+    <li><b>clone</b>: is used to clone a repository in a new directory.</li>
+    <li><b>init</b>: this onw is used to create an empty Git repository or reinitialize
+        an existing one.
+    </li>
 </ul>
 
 <h3>Work on the current changes</h3>
 <ul>
-    <li>add: add a file contents to the index.</li>
-    <li>mv: move or renamea file, directory or a symlink (a symbolic link).</li>
-    <li>rm: remove files from the working tree and from the index.</li>
-    <li>format-patch id(commit): create a file patch</li>
-    <li>am: apply a patch file</li>
+    <li><b>add</b>: add a file contents to the index.</li>
+    <li><b>mv</b>: move or renamea file, directory or a symlink (a symbolic link).</li>
+    <li><b>rm</b>: remove files from the working tree and from the index.</li>
+    <li><b>format-patch id</b>: create a file patch</li>
+    <li><b>am</b>: apply a patch file</li>
 </ul>
 
 <h3>History and state</h3>
 <ul>
-    <li>log: show commit logs.</li>
-    <li>status: show the working tree status.</li>
+    <li><b>log</b>: show commit logs.</li>
+    <li><b>status</b>: show the working tree status.</li>
 </ul>
 
 <h3>Managing modification</h3>
 <ul>
-    <li>commit: record changes to the repository.</li>
-    <li>diff: show changes between commits.</li>
-    <li>merge: merge two or more development histories together.</li>
-    <li>pull: fetch from and update your local directory with the repository.</li>
-    <li>push: update the remote repository with your changes.</li>
+    <li><b>commit</b>: record changes to the repository.</li>
+    <li><b>diff</b>: show changes between commits.</li>
+    <li><b>merge</b>: merge two or more development histories together.</li>
+    <li><b>pull</b>: fetch from and update your local directory with the repository.</li>
+    <li><b>push</b>: update the remote repository with your changes.</li>
 </ul>

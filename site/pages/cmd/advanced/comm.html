@@ -6,7 +6,8 @@ category-title: Advanced commands
 tags: compare sorted files
 title: comm
 ---
-The <code>comm</code>  is a command that compares two sorted files line by line and writes the output: the lines that are in common and the lines that are unique. <br>
+The <code>comm</code> is a command that compares two sorted files
+line by line and writes the output: the lines that are in common and the lines that are unique.<br>
 
 Here we have two files named <code>example1.txt</code> and
 <code>example2.txt</code> that contain 5 elements, to test this command:<br>
@@ -30,28 +31,31 @@ Pizza
 {% endhighlight %}
 
 The syntax command is:
-<pre>comm [flag][file1] [file2]</pre>
+<pre>
+comm [flag][file1] [file2]
+</pre>
 
 <pre>
 comm example1.txt example2.txt
-Icecream
-    Chocolate
-Cake
-  Tomato
-    Candy
-Biscuit
-  Pizza
+    Icecream
+        Chocolate
+    Cake
+      Tomato
+        Candy
+    Biscuit
+      Pizza
 </pre>
 
-<p>The elements of the first file doesn't have the tab.</p>
-<p>The elements of the second file have one tab.</p>
-<p>The elements in common have two tabs.</p>
+<ul>
+    <li>The elements of the first file have less indentation.</li>
+    <li>The elements of the second file have some more indentation.</li>
+    <li>The elements in common have even more indentation than those of the second file.</li>
+</ul>
 
-<h2>Flags</h2>
+<h3>Flags</h3>
 
 <ul>
   <li> <b>-1</b>: supress column 1</li>
   <li> <b>-2</b>: supress column 2</li>
   <li> <b>-3</b>: supress column 3</li>
-
 </ul>

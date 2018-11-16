@@ -6,54 +6,49 @@ tags: command base echo cat grep
 author: Dario Rasic
 title: Script  Base Commands
 ---
-<br>
-    <!-- Echo command text -->
+<!-- Echo command text -->
 <h3>Echo</h3>
 <p>This command print as output its entire argument on the command-line.<br>
     It could be used with variables, like in the following example:<br>
 
 <pre>
-example:"this is an example"
-<br>
-<b>echo</b> $example<br>
-this is an example
+example="this is an example"
+
+echo $example
+    this is an example
 </pre>
-<br>
 
-
-    <!-- Cat command text -->
+<!-- Cat command text -->
 <h3>Cat</h3>
 
-This command prints the content of a certain file as an output on the command-line.<br>
+This command prints the content of a certain file as an output on the
+command-line.<br>
 
-As example, we could imagine a simple text file in pages named "Hello", which contains the line "Hello World".<br>
-      So, our command example will look like this:<br>
+As example, we could imagine a simple text file in nano named "Hello", which contains
+the line "Hello World".<br>
+So, our command example will look like this:<br>
+
 <pre>
-pages Hello
-<b>cat</b> Hello<br>
-  Hello World
+nano Hello
+cat Hello
+    Hello World
 </pre>
-<br>
 
 
-    <!-- Grep command text -->
+<!-- Grep command text -->
 <h3>Grep</h3>
 
-This one behaves very similarly to the previus one, but in this case it prints only the lines matching a certain pattern.<br>
-      In this we could imagine a certain text file "animals", which contains a list of animal-names.
+This one behaves very similarly to the previus one, but in this case it prints only
+the lines matching a certain pattern.<br>
+In this we could imagine a certain text file "animals", which contains a list of animal-names.
 
 If we want to select only the animals whose name begins with the letter "d", we will write this:<br>
+
 <pre>
-  grep d animals<br>
-  Deer<br>
-  Dog<br>
-  Dolphin<br>
-  ...
-
+grep "D" animals
+    Deer
+    Dragon
+    Dinosaur
+    Dog
+    Dolphin
 </pre>
-
-
-
-
-
-</p>
