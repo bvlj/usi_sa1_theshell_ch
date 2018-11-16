@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> SA group-1 </title>
+<link href ="style.css" rel ="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src = "main.js"></script>
+
+</head>
+
+
+<body>
+<h1>Are you ready for the quiz?</h1>
+
+
+<form id = "quiz" name = "quiz">
+
+
+<p class = "questions">Which of the two groups are better?</p>
+<input id = "textbox" type = "text" name = "question1">
+
+<p class = "questions">What is unix?</p>
+<input type = "radio" id = "mc" name = "question2" value = "A dog"> A dog<br>
+<input type = "radio" id = "mc" name = "question2" value = "A type of.."> A type of..<br>
+
+<p class = "questions">What is absolute path?</p>
+
+<input type = "radio" id = "mc" name = "question3" value = "A type of.."> A type of..<br>
+<input type = "radio" id = "mc" name = "question3" value = "A Dog"> A dog<br>
+
+
+<br><br><input id = "button" type = "button" value = "Finish?  Sure!?" onclick = "check();">
+
+
+</form>
+
+<div id = "after_submit">
+<p id = "number_correct"></p>
+<p id = "message"></p>
+<img id = "picture">
+</div>
+</html>
+
+</body>
