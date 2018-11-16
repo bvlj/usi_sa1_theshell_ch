@@ -11,7 +11,7 @@ layout: main
     {{ content }}
   	<ul class="list-commands">
     {% for item in site.pages %}
-    	{% if item.category-page == page.category-page and item.layout == "page" %}
+    	{% if item.category-page == page.category-page and item.layout == "page" or item.layout == "about"  %}
     		<li><span class="before-command">></span><a href="{{ item.url }}">{{ item.title }}<span class="blink"></span></a></li>
     	{% endif %}
     {% endfor %}

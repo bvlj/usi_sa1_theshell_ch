@@ -56,7 +56,9 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
      * Replace <br> with a LaTeX newline
      */
     fun changeBr() {
-        content = content.replaceTag("<br>", null, "\\\\", null)
+        content = content.replaceTag("<br><br>", null, "\\\\", null)
+                .replaceTag("<br>", null, "\\\\", null)
+                .replaceTag("</br></br>", null, "\\\\", null)
                 .replaceTag("</br>", null, "\\\\", null)
     }
 

@@ -83,17 +83,14 @@ function write(position){
 }
 
 var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-if (!isChrome) {
-    document.getElementById('foolChrome').remove();
-    var homeVideo = document.getElementById('videoHome');
+var homeVideo = document.getElementById('videoHome');
 
-    // Try and see if we can play with audio, otherwise mute the video
-    try {
-        homeVideo.play();
-    } catch (err) {
-        homeVideo.muted = true;
-        homeVideo.play();
-    }
+if (!isChrome) {
+    homeVideo.play();
+    document.getElementById('foolChrome').remove();
+
+    homeVideo.muted = true;
+    homeVideo.play();
 }
 
         </script>
