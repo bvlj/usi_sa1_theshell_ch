@@ -4,6 +4,7 @@
 .highlight, pre, main code {
   background: #bdbdbd;
   color: #212121;
+  border-radius: 2px;
 
   .highlighter-rouge & {
     background: #bdbdbd;
@@ -68,4 +69,11 @@
   .vg    { color: #008080 } // Name.Variable.Global
   .vi    { color: #008080 } // Name.Variable.Instance
   .il    { color: #099 } // Literal.Number.Integer.Long
+}
+
+main code {
+    background: #424242;
+    color: #f5f5f5;
+    padding-left: 2px;
+    padding-right: 2px;
 }
