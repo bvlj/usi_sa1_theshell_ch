@@ -1,0 +1,33 @@
+---
+layout: page
+author: Domenico Votta
+category-page: advanced
+category-title: Advanced commands
+tags: remove column
+title: colrm
+---
+The <code>colrm</code>  is a command that removes the column that you indicate <br>
+
+Here we have a file named <code>example.txt</code> that contains two lines to test this command:<br>
+
+<code>example.txt</code>
+{% highlight bash linenos %}
+123456789
+abcdefghi
+{% endhighlight %}
+
+The syntax command is:
+<pre> colrm [first] [last]</pre>
+
+<pre>
+colrm 4 < example.txt
+123
+abc
+</pre>
+<p>How you can see, if I don't indicate the last column, the command removes all the colums starting from 4 included. </p>
+<pre>
+colrm 2 4 < example.txt
+156789
+aefghi
+</pre>
+<p>Here, how you can see, the command has removed not all the columns, but only the colums that starting at 2 and ending at 4, included. </p>
