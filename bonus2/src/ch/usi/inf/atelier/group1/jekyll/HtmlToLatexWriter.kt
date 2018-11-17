@@ -302,7 +302,7 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
                         "\\usepackage[margin=2cm]{geometry}\n" +
                         "\\usepackage{hyperref}"
 
-        private val HTML_SPECIALS_FROM = arrayOf("&amp;", "&lt;", "&gt;")
-        private val HTML_SPECIALS_TO = arrayOf("\\&", "\\textless ", "\\textgreater ")
+        private val HTML_SPECIALS_FROM = arrayOf("&amp;", "&lt;", "&gt;", "&#39;")
+        private val HTML_SPECIALS_TO = arrayOf("\\&", "\\textless ", "\\textgreater ", "\'")
     }
 }
