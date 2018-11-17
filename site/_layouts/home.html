@@ -83,12 +83,11 @@ function write(position){
 }
 
 var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-var homeVideo = document.getElementById('videoHome');
 
-if (!isChrome) {
-    homeVideo.play();
+if (isChrome) {
     document.getElementById('foolChrome').remove();
 
+    var homeVideo = document.getElementById('videoHome');
     homeVideo.muted = true;
     homeVideo.play();
 }
