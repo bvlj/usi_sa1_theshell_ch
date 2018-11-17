@@ -7,62 +7,110 @@ author: Nicola Brunner
 title: tar
 ---
 
-<p>The <code>tar</code> command is used to create and manipulate streaming archive files, in
-  other words it is used to compress and extract files and directories. He can
-  extract from many file formats like: tar, pax, cpio, zio, jar, ar and ISO 9660
-  cdrom images and create tar, pax, cpio, ar, and shar archives.</p>
-<br>
+The <code>tar</code> command is used to create and manipulate streaming archive files, in
+other words it is used to compress and extract files and directories. He can
+extract from many file formats like: tar, pax, cpio, zio, jar, ar and ISO 9660
+cdrom images and create tar, pax, cpio, ar, and shar archives.<br><br>
 
 <h3>Usage:</h3>
 
-<p>There are different syntaxes for this command:</p>
-<pre>tar {-c} [options] [files | directories]</pre>
-<p>The first one is the default syntax. Where <code>{-c}</code> stays for the
-  creation of a new archive, <code>[options]<code> for the different flags that
-    we can use, <code>[files | directories]</code> for the files or directories
-    that we want to compress.<p>
-<pre>tar {-r | -u} -f archive-file [options] [files | directories]<br>
-tar {-t | -x} [options] [patterns]<br>
-tar [bundled-flags <args>] [<file> | <pattern> ...]</pre>
-<p>The last one shows a “bundled” option word provided for compatibility with
-  historical implementations.</p>
-<br>
+There are different syntaxes for this command:
+
+<pre>
+tar {-c} [options] [files | directories]
+</pre>
+
+The first one is the default syntax. Where <code>{-c}</code> stays for the
+creation of a new archive, <code>[options]</code> for the different flags that
+we can use, <code>[files | directories]</code> for the files or directories
+what we want to compress.
+
+<pre>
+tar {-r | -u} -f archive-file [options] [files | directories]
+tar {-t | -x} [options] [patterns]
+tar [bundled-flags args] [file | pattern ...]
+</pre>
+
+The last one shows a bundled option word provided for compatibility with
+historical implementations.<br><br>
 
 <h3>Flags:</h3>
 
-<p>This command has a large number of options, but you just need to remember a
-  few letters for the most important ones:</p>
+This command has a large number of options, but you just need to remember a
+few letters for the most important ones:
 
 <ul>
-  <li><code>-c</code> creates a new archive, that contains the specified items.</li>
-  <li><code>-r</code> is like <code>-c</code> but appends the new entries to the
-     archive, requires the <code>-f</code> option.</li>
-  <li><code>-u</code> is like <code>-r</code> but adds the new entries only if
-    the date is newer than the corresponding entry date of the file/directory to
-    the archive, requires the <code>-f</code> option.</li>
-  <li><code>-t</code> lists the archive contents to the terminal output.</li>
-  <li><code>-v</code> is used to display the progress of an archive creation in
-    the terminal.</li>
-  <li><code>-f</code> allows to specify the name of an archive.</li>
-  <li><code>-x</code> is used to extract files from an archive to the disk.</li>
-  <li><code>--exclude</code> does not compress specified files or directories.</li>
-  <li><code>--include</code> compresses specified file or directories. It's
-    important to know that <code>--exclude</code> take precedence over inclusions.
-    The <code>--include</code> option is useful when you want to filter archives</li>
+    <li><code>-c</code> creates a new archive, that contains the specified items.</li>
+    <li><code>-r</code> is like <code>-c</code> but appends the new entries to the
+        archive, requires the <code>-f</code> option.
+    </li>
+    <li><code>-u</code> is like <code>-r</code> but adds the new entries only if
+        the date is newer than the corresponding entry date of the file/directory to
+        the archive, requires the <code>-f</code> option.
+    </li>
+    <li><code>-t</code> lists the archive contents to the terminal output.</li>
+    <li><code>-v</code> is used to display the progress of an archive creation in
+        the terminal.
+    </li>
+    <li><code>-f</code> allows to specify the name of an archive.</li>
+    <li><code>-x</code> is used to extract files from an archive to the disk.</li>
+    <li><code>--exclude</code> does not compress specified files or directories.</li>
+    <li><code>--include</code> compresses specified file or directories. It's
+        important to know that <code>--exclude</code> take precedence over inclusions.
+        The <code>--include</code> option is useful when you want to filter archives.
+    </li>
 </ul>
 
-<p>If you don’t find here an option that you search, or you are interested to read
-more about this command, you can write in your terminal:<p>
-<pre>tar man</pre>
-<br>
+If you don't find here an option that you search, or you are interested to read
+more about this command, you can write in your terminal:
 
-<h3>Example:</h3>
-<pre>tar -cvf archive.zip makesmaller.jpg</pre>
-<p>In this case, we take the file <code>makesmaller.jpg</code> and compress it
-  to <code>archive.zip</code>. We use the options <code>-cvf</code>, <code>-c </code>
-  for creating a new archive, <code>-v</code> for displaying the progress of the
-  operation and <code>-f</code> for specifying the name of the archive.
+<pre>
+man tar
+</pre>
 
-<pre>tar -cvf archive.zip makesmaller.jpg alsome.txt</pre>
-<p>It’s the same case as before, but we wanted to add also <code>alsome.txt</code>
-  to <code>archive.zip</code>.
+<h3>Examples</h3>
+
+<pre>
+tar -cvf archive.zip makesmaller.jpg
+</pre>
+
+In this case, we take the file <code>makesmaller.jpg</code> and compress it
+to <code>archive.zip</code>. We use the options <code>-cvf</code>, <code>-c </code>
+for creating a new archive, <code>-v</code> for displaying the progress of the
+operation and <code>-f</code> for specifying the name of the archive.
+
+<pre>
+tar -cvf archive.zip makesmaller.jpg alsome.txt
+</pre>
+It's the same case as before, but we wanted to add also <code>alsome.txt</code>
+to <code>archive.zip</code>.
+
+<pre>
+tar -cvf archive.tar /home/Documents --exclude=/home/Documents/PrivatePictures --exclude=/home/Documents/notme.txt
+</pre>
+
+With this command we can create an archive named <code>archive.tar</code> of
+the <code>/home/Documents directory</code>, but we won't include the
+<code>PrivatePictures</code> directory and the file <code>notme.txt</code>,
+both are contained in <code>/home/Documents</code>.
+
+<pre>
+tar -cvf archive.tar /home/Music --exclude=*.mp4
+</pre>
+
+In this special case we exclude from the <code>archive.tar</code>all the
+files which ends in .mp4 and are contained in the directory <code>/home/Music</code>.
+
+<pre>
+tar -cvf archive.zip /home/Music --include=*.mp3
+</pre>
+
+In this case we include only the files from the directory <code>/home/Music</code>
+that ends in .mp3 to the <code>archive.zip</code>.
+
+<pre>
+tar -xvf archive.zip
+</pre>
+It's the same as the archive creation command we used above in the first
+example, except the <code>-x</code> option replaces the <code>-c</code> option.
+This specifies you want to extract an archive instead of creating one.
