@@ -14,7 +14,7 @@
           </div>
           <nav class="nav-menu">
             <div>Learn
-              <ul>
+              <ul style="background-color:#000;">
                 <li><a href="{{ site.baseurl }}/pages/topic/cmd/basic.html">Basic commands</a></li>
                 <li><a href="{{ site.baseurl }}/pages/topic/cmd/interm.html">Intermediate commands</a></li>
                 <li><a href="{{ site.baseurl }}/pages/topic/cmd/advanced.html">Advanced commands</a></li>
@@ -24,7 +24,7 @@
             </div>
             <code>|</code>
             <div>About
-              <ul>
+              <ul style="background-color:#000;">
                 <li><a href="{{ site.baseurl }}/pages/info/project.html">The project</a></li>
                 <li><a href="{{ site.baseurl }}/pages/info/people.html">The people</a></li>
                 <li><a href="{{ site.baseurl }}/pages/topic/about.html">More...</a></li>
@@ -88,7 +88,6 @@ if (isChrome) {
     document.getElementById('foolChrome').remove();
 
     var homeVideo = document.getElementById('videoHome');
-    homeVideo.muted = true;
     homeVideo.play();
 }
 
