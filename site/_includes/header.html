@@ -4,7 +4,8 @@
   </div>
   <div class="fill-space"></div>
   <div class="search-box">
-    <input type="text" id="search-bar"><label for="search-bar"><img src="/assets/style/search_icon.png"></label>
+    <input type="text" id="search-bar" onfocus="document.searching=true" onblur="document.searching=false">
+    <label for="search-bar"><img src="/assets/style/search_icon.png"></label>
     <ul id="search-results"></ul>
   </div>
   <nav class="nav-menu">
@@ -27,4 +28,3 @@
     </div>
   </nav>
 </div>
-

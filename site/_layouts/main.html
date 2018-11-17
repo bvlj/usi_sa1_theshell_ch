@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             '<li><a href="{url}"><h3>{title}</h3><h4>{category}</h4></a></li>',
         success: function(sr) {
             results.setAttribute("class", sr.length <= 1 ? "" : "show");
+            console.log(sr);
         }
     });
 
@@ -32,6 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener("keypress", function(event) {
+    if (document.searching) {
+        console.log("is Searching");
+        return
+    }
+
     switch (event.key) {
         case "w":
         case "k":
