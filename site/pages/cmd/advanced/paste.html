@@ -1,0 +1,35 @@
+---
+layout: page
+author: Agostino Monti
+category-page: advanced
+category-title: Advanced commands
+tags: filie coluns analize
+title: paste
+---
+
+The <code>paste</code> command is used to join files horizontally
+(parallel merging) by outputting lines consisting of the sequentially corresponding
+lines of each file specified, separated by tabs, to the standard output.<br>
+Once involved, <code>paste</code> will read all its file arguments. For each corresponding line,
+paste will append the contents of each file at that line to its output along with a tab.
+When it has completed its operation for the last file, <code>paste</code> will output a newline
+character and move on to the next line.
+
+<pre>
+paste [flags] [file1] [file2] ...
+</pre>
+
+<h3>Flags</h3>
+
+<ul>
+    <li><code>-d</code> delimiters, which specifies a list of delimiters to be used instead of tabs
+        for separating consecutive values on a single line. Each delimiter is used in turn;
+        when the list has been exhausted, paste begins again at the first delimiter.
+<pre>
+paste -d "|" file1.txt file2.txt
+paste -d "|," file1.txt file2.txt</pre>
+    </li>
+    <li><code>-s</code>, which causes paste to append the data in serial rather than in parallel;
+        that is, in a horizontal rather than vertical fashion.
+    </li>
+</ul>
