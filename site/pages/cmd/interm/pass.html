@@ -8,23 +8,28 @@ title: pass
 previous-page: pages/cmd/interm/neofetch.html
 next-page: pages/cmd/interm/passwd.html
 ---
+<p>
 The <code>pass</code> command, also known as <i>Password Store</i>, is an
 entirely offline password manager that uses <i>GPG</i> for encryption with
 the ability to sync the (entirely encrypted) passwords using <code>git</code>.
 <code>pass</code> works on <i>MacOS</i> (avaliable via
 <a href="https://brew.sh">Homebrew</a>), <i>Linux</i> and on
 <i>Android</i> (with a GUI app). Think of it as an entirely FLOSS
-alternative to services like <i>Keypass</i> or <i>Dashlane</i>.<br>
+alternative to services like <i>Keypass</i> or <i>Dashlane</i>.
+</p>
 
+<p>
 Excluding the initial setup (that requires the creation of a <i>GPG key</i>),
 <code>pass</code> is very easy and straightforward to use: instead of
 printing passwords to <i>stdout</i>, <code>pass</code> copies them in the
 system clipboard, erasing them after a certain number of seconds (usually
-<i>45</i>).<br>
+<i>45</i>).
+</p>
 
+<p>
 <code>pass</code> has many unofficial GUI clients and migration scripts from
 other password managers. For more information, check out
-<a href=https://www.passwordstore.org/#other">the official website</a>.
+<a href=https://www.passwordstore.org/">the official website</a>.
 </p>
 
 <h3>Setup</h3>
@@ -35,8 +40,10 @@ to some other useful sets of commands (such as how to migrate the password
 repository to another computer) is provided
 in this <a href="https://gist.github.com/flbuddymooreiv/a4f24da7e0c3552942ff">
 GitHub Gist</a> by <a href="https://github.com/flbuddymooreiv">
-<i>flbuddymooreiv</i></a>.<br>
+<i>flbuddymooreiv</i></a>.
+</p>
 
+<p>
 For more detailed explainations on the setup process or on any commands
 please check out the online version of the
 <a href="https://git.zx2c4.com/password-store/about/">man page</a>, which is
@@ -47,54 +54,71 @@ surprisingly more readable that most of the man pages for other utilities.
 
 <p>
 Common <code>pass</code> commands are shown below. For more information refer
-to the documentation linked above.<br>
+to the documentation linked above.
+</p>
 
+<p><b>
 Example: Initialize the password repository with a GPG key with id "0DEADBEEF"
+</b></p>
 
 <pre>
 pass init 0DEADBEEF
 </pre>
 
+<p><b>
 Example: Insert a password for <i>example.com</i> with username <i>bob</i> in
   the password repository interactively
+</b></p>
 
 <pre>
 pass insert example.com/bob
 </pre>
 
+<p>
 Please note that the password <i>name</i> here follows the most common
 naming convention in <code>pass</code>, which is
 <code>{website}/{username}</code>. Passwords can be stored in
 hierarchical structures (i.e. in nested folders), but the naming is up to the
-user.<br>
+user.
+</p>
 
+<p><b>
 Example: Generate a password for <i>zombo.com</i> of 16 characters and copy it in
 the clipboard
+</b></p>
 
 <pre>
 pass generate -c zombo.com/bob 16
 </pre>
 
+<p><b>
 Example: Retrieve the password for <i>google.com</i> and copy it in the system
 clipboard (<code>-c</code> flag)
+</b></p>
 
 <pre>
 pass -c google.com/bob@gmail.com
 </pre>
 
+<p><b>
 Example: Edit the password for <i>facebook.com</i> using the default editor
+</b></p>
 
 <pre>
 pass edit facebook.com/bob
 </pre>
 
+<p><b>
 Edit: Convert the password repository to a git repository for synchronization
+</b></p>
 
 <pre>
 pass git init
 </pre>
 
+<p>
 Every <code>git</code> command on the password repository must be given with
 the prefix <code>pass git</code> (e.g. <code>pass git push</code>). An
 automatic commit is performed whenever a password is created, edited or
 deleted.
+</p>
