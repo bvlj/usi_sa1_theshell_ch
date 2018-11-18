@@ -49,6 +49,9 @@ class HtmlParser(private val singlePage: Boolean) {
                 beginDocument()
             }
 
+            // Convert special chars
+            changeSpecialChars()
+
             // Convert html elements
             changeBold()
             changeBr()
@@ -60,14 +63,14 @@ class HtmlParser(private val singlePage: Boolean) {
             changeMono()
             changeParagraph()
             changeSection()
-            changeSpecials()
             changeSubSection()
             changeSubSubSection()
             changeTable()
             changeUnderline()
 
-            // Strip html comments
+            // Strip html comments and images
             stripComments()
+            stripImg()
 
             // Store the converted document
             commit()
@@ -100,10 +103,12 @@ class HtmlParser(private val singlePage: Boolean) {
             content.toString()
         }
 
+
         // No ned to save an empty document
         if (document.isEmpty()) {
             return
         }
+
 
         val outDir = File("out", if (singlePage) "" else File(outName).parent)
 

@@ -27,7 +27,8 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
     fun beginDocument() {
         insert("\\begin{document}", afterLine = true)
         insert("\\maketitle", afterLine = true)
-        insert("\\tableofcontents\\")
+        insert("\\tableofcontents", afterLine = true)
+        insert("\\newpage", afterLine = true)
     }
 
     /**
@@ -113,7 +114,7 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
      */
     fun changeMono() {
         content = content.replaceTag("<pre>", "</pre>", "\\begin{verbatim}", "\\end{verbatim}")
-                .replaceTag("{% highlight bash %}", "{% endhighlight %}",
+                .replaceTag("{\\% highlight bash \\%}", "{\\% endhighlight \\%}",
                         "\\begin{verbatim}", "\\end{verbatim}")
     }
 
@@ -142,9 +143,9 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
     /**
      * Replace special html chars with LaTeX equivalents
      */
-    fun changeSpecials() {
-        HTML_SPECIALS_FROM.forEachIndexed { index, s ->
-            content = content.replace(s, HTML_SPECIALS_TO[index])
+    fun changeSpecialChars() {
+        SPECIAL_CHARS_HTML.forEachIndexed { index, s ->
+            content = content.replace(s, SPECIAL_CHARS_LATEX[index])
         }
     }
 
@@ -257,6 +258,14 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
     }
 
     /**
+     * Remove the img tags
+     */
+    fun stripImg() {
+        content = content.replace(Regex("(?s)<img.*?>"), "")
+                .replace("</img>", "")
+    }
+
+    /**
      * Insert content into the document
      *
      * @param string the content being inserted
@@ -300,9 +309,18 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
         private const val HEADER =
                 "\\documentclass[hidelinks,12pt,a4paper,numbers=enddot]{scrartcl}\n\n" +
                         "\\usepackage[margin=2cm]{geometry}\n" +
-                        "\\usepackage{hyperref}"
+                        "\\usepackage{hyperref}\n" +
+                        "\\usepackage[utf8]{inputenc}"
 
-        private val HTML_SPECIALS_FROM = arrayOf("&amp;", "&lt;", "&gt;", "&#39;")
-        private val HTML_SPECIALS_TO = arrayOf("\\&", "\\textless ", "\\textgreater ", "\'")
+        private val SPECIAL_CHARS_HTML =
+                arrayOf("&amp;", "&lt;", "&gt;", "&#39;",
+                        "&#169;", "\\n", "[", "]",
+                        "\$", "_", "#", "%",
+                        "^")
+        private val SPECIAL_CHARS_LATEX =
+                arrayOf("\\&", "\\textless ", "\\textgreater ", "\'",
+                        "(c)", "\\\\n", "\\[", "\\]",
+                        "\\\$", "\\_",  "\\#", "\\%",
+                        "\\^")
     }
 }

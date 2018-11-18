@@ -11,7 +11,7 @@ object Log {
     /**
      * Log an exception as an error
      *
-     * @param message The log message
+     * @param exception The error exception
      * @param shouldThrow Whether the exception should be thrown
      */
     fun <T : Exception> e(exception: T, shouldThrow: Boolean) {

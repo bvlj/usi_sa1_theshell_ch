@@ -51,11 +51,11 @@ If our indices are all sequential and we just want to change the starting index,
   names=([12]="Luigi" "Mario" "Nate")
 {% endhighlight %}
 
-Which will create an array with <code>"Luigi"</code> at index 12,
-<code>"Mario"</code> at index 13 and <code>"Nate"</code> at index 14.<br>
+Which will create an array with <i>"Luigi"</i> at index 12,
+<i>"Mario"</i> at index 13 and <i>"Nate"</i> at index 14.<br>
 An indexed array's selector can also be negative, which will start counting from the end,
-so <code>${names[-1]}</code> means <code>"Nate"</code>, <code>${names[-3]</code> is
-<code>"Luigi"</code> and so on.<br>
+so <i>${names[-1]}</i> means <i>"Nate"</i>, <code>${names[-3]}</code> is
+<i>"Luigi"</i> and so on.<br>
 
 The other kind of array is an <i>associative</i> array.
 In an associative array, the values are not mapped to a number but to some other string.<br>
@@ -102,8 +102,7 @@ is equivalent to <code>"Mario" "Luigi"</code>, while
   ${#names[@]}
 {% endhighlight %}
 
-counts the number of elements in the array, in this case 3.<br>
+counts the number of elements in the array, in this case 3.<br><br>
 
-<br>
 Further reading: <a href="http://www.gnu.org/software/bash/manual/bashref.html#Arrays">
 the bash reference manual</a>
