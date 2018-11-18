@@ -16,7 +16,7 @@ import java.util.*
 
 class HtmlParser(private val singlePage: Boolean) {
     private val content = StringBuilder()
-    private var outName = "${SimpleDateFormat("yyyy-MM-dd_hh:mm").format(Date())}.html"
+    private var outName = "${SimpleDateFormat("yyyy-MM-dd_hh-mm").format(Date())}.html"
 
     /**
      * Parse a jekyll html file to a LaTex Document
