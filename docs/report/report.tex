@@ -1,0 +1,103 @@
+\documentclass[hidelinks,12pt,a4paper,numbers=enddot]{scrartcl}
+
+\usepackage[margin=2cm,bottom=3cm]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{lmodern}
+
+\title{THE SHELL: Final report}
+\author{Claudio Maggioni \and Joey Bevilacqua}
+
+% listings configuration
+\lstset{
+	basicstyle=\small\ttfamily,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	columns=fullflexible,
+	commentstyle=\color{gray},
+	keywordstyle=\bfseries\color{red},
+	escapeinside={\%*}{*)},
+  aboveskip=2em,
+  captionpos=b,
+  abovecaptionskip=1em,
+  belowcaptionskip=1em
+}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Team member activity}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllll}
+\textbf{Author} & \textbf{Lines} & \textbf{Commits} & \textbf{File stats} & \textbf{Distribution} \\ \hline
+bevilj  & 387 &   61 &  149 & 58.3 / 23.6 / 50.2  \\
+maggicl &  97 &   35 &   53 & 14.6 / 13.5 / 17.8  \\
+britea  &  72 &   31 &   25 & 10.8 / 12.0 / 8.4  \\
+terehm  &  20 &   25 &    9 &  3.0 / 9.7 / 3.0  \\
+omenem  &  15 &   11 &    6 &  2.3 / 4.2 / 2.0  \\
+devitg  &  14 &    7 &   10 &  2.1 / 2.7 / 3.4  \\
+annoum  &   8 &   24 &    5 &  1.2 / 9.3 / 1.7  \\
+rasicd  &   8 &   10 &    4 &  1.2 / 3.9 / 1.3  \\
+faracm  &   7 &    8 &    5 &  1.1 / 3.1 / 1.7  \\
+alberj  &   6 &    3 &    4 &  0.9 / 1.2 / 1.3  \\
+ponzim  &   6 &   10 &    3 &  0.9 / 3.9 / 1.0  \\
+luinia  &   6 &    6 &    6 &  0.9 / 2.3 / 2.0  \\
+vottad  &   5 &    5 &    5 &  0.8 / 1.9 / 1.7  \\
+brunnn  &   4 &    6 &    4 &  0.6 / 2.3 / 1.3  \\
+feninf  &   3 &    2 &    3 &  0.5 / 0.8 / 1.0  \\
+hijmam  &   2 &    2 &    2 &  0.3 / 0.8 / 0.7  \\
+lunghm  &   2 &    5 &    2 &  0.3 / 1.9 / 0.7  \\
+montiag &   1 &    1 &    1 &  0.2 / 0.4 / 0.3  \\
+marina  &   1 &    2 &    1 &  0.2 / 0.8 / 0.3  \\
+vivanr  &   0 &    5 &    0 &  0.0 / 1.9 / 0.0  \\
+\end{tabular}
+\end{table}
+
+This table shows team member activity using the tool \texttt{git-fame} (\url{https://github.com/casperdcl/git-fame})
+\footnote{yes, the repository was mirrored on Github because SVN does not have good stat tools}
+The \emph{Distribution} column shows the global percentages for the previous three columns. \\
+\textbf{NOTE}: This stats are not entirely accurate: some team members were not able to upload files with their SVN account, so the pages were uploaded by others.
+
+\subsection{Frontpage team}
+The frontpage team was able to deliver all its pages on time and with good content. Both the team members offered their
+help for doing extra pages for other teams.
+
+\subsection{Filesystem team}
+Some of the pages were coauthored with \texttt{team-cmd-basic} members since there was an initial overlap in the
+assignment of topics. In this team there were some difficulties with \textit{Jekyll}, but nonetheless they were able
+to deliver content.
+
+\subsection{Basic commands team}
+This team performed very well. All team members were active and good content creators. They delivered their pages on time
+and they offered their help for doing extra pages.
+
+\subsection{Intermediate commands team}
+\textit{Gabriele Giacomelli} was absent for the entire duration of the project. Other than that, the team worked well
+although there were some problems in getting familiar with the \emph{Jekyll} syntax. Due to the big quantity of pages to
+deliver and lack of team members, some help from other teams was needed.
+
+\subsection{Advanced commands team}
+\textit{Petro Lukach} was absent for the entire duration of the project. The team was able to deliver the content required,
+although some help from other teams was needed.
+
+\subsection{Scripting team}
+Both \textit{Marco Conterno}, the team leader, and \textit{Alexander Todorovic} were absent for the entire duration of 
+the project. \textit{Marco Tereh} became the \emph{ad interim} team leader. \textit{Matteo Omenetti} was assigned
+to this team too.
+
+\subsection{CSS team}
+The team delivered good content for the entire duration of the project. Other than helping other teams when needed, they
+were able to grasp the \textit{Jekyll} syntax and work flow very quickly.
+
+\subsection{Leading, bonus and documentation team}
+This meta team was composed by \textit{Claudio Maggioni} and \textit{Joey Bevilacqua}. This team did \textit{bonus-1} and
+\textit{bonus-2}, wrote all the documentation and reviewed the code and content.
+
+
+\end{document}
