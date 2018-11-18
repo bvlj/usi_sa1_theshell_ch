@@ -72,6 +72,8 @@ fn main() {
         process::exit(127);
     } else {
         let dir = &args[1];
+        let mut working = Vec::new();
+
         for entry in WalkDir::new(dir) {
             match entry {
                 Ok(en) => {
@@ -93,9 +95,15 @@ fn main() {
 
                         let urls: Vec<String> = find_urls(contents.as_str());
                         for url in urls {
-                            if is_external_url(&url) {
+                            if working.contains(&url) {
+                                continue;
+                            }
+
+                            if is_external_url(&url) && !working.contains(&url) {
                                 if !is_external_url_working(&url) {
                                     println!("{}: '{}' is a broken link.", path, url);
+                                } else {
+                                    working.push(url);
                                 }
                             } else {
                                 if url.starts_with("mailto:") || url.eq("#") || url.eq("{url}") {
@@ -104,9 +112,12 @@ fn main() {
                                     let lpath = format!("{}{}", dir, url);
                                     if !path_exists(&lpath) {
                                         println!("{}: '{}' is a broken link ({} does not exist).", path, url, lpath);
+                                    } else {
+                                        working.push(url);
                                     }
                                 } else {
-                                    let lpath = format!("{}/{}", en.path().parent().unwrap_or(Path::new("/")).to_str().unwrap(), url);
+                                    let lpath = format!("{}/{}", en.path().parent()
+                                                        .unwrap_or(Path::new("/")).to_str().unwrap(), url);
                                     if !path_exists(&lpath) {
                                         println!("{}: '{}' is a broken link ({} does not exist).", path, url, lpath);
                                     }
