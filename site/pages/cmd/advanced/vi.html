@@ -8,35 +8,46 @@ title: vi
 previous-page: pages/cmd/advanced/tr.html
 next-page: pages/cmd/advanced/wc.html
 ---
+<p>
 The default editor that comes with the UNIX operating system is called
 <code>vi</code> (visual editor).<br>
 
 The UNIX vi editor is a full screen editor and has two modes of operation:
+</p>
 
 <ol>
     <li>Command mode commands which cause action to be taken on the file</li>
     <li>Insert mode in which entered text is inserted into the file.</li>
 </ol>
 
+<p>
 In the command mode, every character typed is a command that does
 something to the text file being edited; a character typed in the
-command mode may even cause the vi editor to enter the insert mode.<br>
+command mode may even cause the vi editor to enter the insert mode.
+</p>
 
+<p>
 In the insert mode, every character typed is added to the text in the
-file; pressing the {Esc} (Escape) key turns off the Insert mode.<br>
+file; pressing the {Esc} (Escape) key turns off the Insert mode.
+</p>
 
+<p>
 While there are a number of vi commands, just a handful of these
 is usually sufficient for beginning vi users. To assist such users,
 this Web page contains a sampling of basic vi commands. The most
 basic and useful commands are marked with an asterisk (* or star)
 in the tables below. With practice, these commands should become
-automatic.<br>
+automatic.
+</p>
 
+<p>
 Both UNIX and vi are <b>case-sensitive</b>. Be sure not to use a
 capital letter in place of a lowercase letter; the
-results will not be what you expect.<br>
+results will not be what you expect.
+</p>
 
 <h3>How to start <code>vi</code></h3>
+<p>
 To use vi on a file, type in vi filename. If the file named
 filename exists, then the first page (or screen) of the file
 will be displayed; if the file does not exist, then an empty

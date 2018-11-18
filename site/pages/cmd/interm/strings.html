@@ -5,16 +5,19 @@ category-title: Intermediate commands
 tags: strings read binaries file
 author: Marco Farace
 title: strings
-previous-page: pages/cmd/interm//ssh.html
-next-page: pages/cmd/interm//sync.html
+previous-page: pages/cmd/interm/ssh.html
+next-page: pages/cmd/interm/sync.html
 ---
 
+<p>
 The strings command returns each string of printable characters (ASCII)
 in files. Its main uses are to determine the contents of and to extract text
 from binary files (i.e., non-text files). From the Shell manual: "find the
-printable strings in a object, or other binary, file".<br>
+printable strings in a object, or other binary, file".
+</p>
 
-Strings can be used to extract character information and string of a given lenght
+<p>
+Strings can be used to extract character information and string of a given length
 from text file(s). When used without any options, strings displays all strings
 that are at least four characters in length in the files whose names are
 supplied as arguments (i.e., input data). Strings that are on separate lines
@@ -22,13 +25,15 @@ in the input files are shown on separate lines on the screen, and an attempt
 is made to display all strings found on a single line in a file on a single
 line on the screen (although there may be a carryover to subsequent lines in
 the event that numerous strings are found on a single line). strings looks in
-all sections of the object files except the (__TEXT,__text) section.<br>
+all sections of the object files except the (__TEXT,__text) section.
+</p>
 
 <pre>
 strings [options] file_name(s)
 </pre>
 
-<h3> Flags <h3>
+<h3>Flags</h3>
+
 <ul>
     <li>-n: Specify the minimum string length, where the number argument is
         a positive decimal integer. The default is 4.</li>

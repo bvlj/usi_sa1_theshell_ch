@@ -8,25 +8,31 @@ title: more and less
 previous-page: pages/cmd/basic/5-open.html
 next-page: pages/cmd/basic/7-clear.html
 ---
+<p>
 Both commands show the content of one or more files and it’s possible to do a research with
 particular flags, but the “less” one allows us to go also backwards while reading the text
 of a file.<br>
 More is quite old, less is more recent and powerful.<br>
 
-General syntax for both is:<br>
+General syntax for both is:
+</p>
 
 <pre>
 less [flags] path/name-file.*
 more [flags] path/name-file.*
 </pre>
 
+<p>
 The command <code>less</code> provides some useful commands to navigate and modify the file content.
-Commands does not include flags, which are included under Options.<br><br>
+Commands does not include flags, which are included under <i>Options</i>.
+</p>
 
 <h3>Commands</h3>
 
+<p>
 Such commands must be used once the file has been displayed.
 They are not flags. For a single operation there can be multiple commands.
+</p>
 
 <ul>
     <li><code>ENTER  RETURN e  ^E  j  ^N  CR </code>:
@@ -51,13 +57,14 @@ They are not flags. For a single operation there can be multiple commands.
 
 <h3>Jumping</h3>
 
+<p>
 Such commands must be used once the file has been displayed.
 They are not. For a single operation there can be multiple commands. </p>
 
 <ul>
-    <li><code>  g  <  ESC-&lt;   </code>:
+    <li><code>  g  &lt;  ESC-&lt;   </code>:
         Go to line N, by default 1, if N is not specified.</li>
-    <li><code> G  >  ESC-&gt; </code>:
+    <li><code> G  &gt;  ESC-&gt; </code>:
         Go to line N, by default the last one , if N is not specified.</li>
     <li><code>  t </code>:
         Go to the (N-th) next tag. </li>
