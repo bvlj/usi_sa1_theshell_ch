@@ -1,0 +1,48 @@
+---
+layout: page
+category-page: fs
+category-title: FileSystem
+tags: link symbolic hard file shortcut
+author: Riccardo Antonio Vivanco
+title: ln
+---
+
+The <code>ln</code> command is used to create a link of a file or directory.
+A link is used to create multiple copies of a file in
+different places without using more storage than that needed to store a single copy
+of the given file.<br>
+The copies are instead a link that points to the original file. If the original is deleted,
+the copies will point to a non-existant file and become pointless.<br>
+The name of the command stands for <i>LiNk</i><br><br>
+
+There are 2 kinds of links: <b>hard</b> and <b>symbolic</b>.<br>
+
+In an hard link, the original is indistinguishable from the linked copy, and the changes
+made to the file are the same, regardless of whether the modified file is the
+original or the linked copy. Hard links are not used for directories.
+<code>ln</code> creates hard links by default<br>
+
+The symbolic link (symlink) instead contains the path to the original file and referencing the linked copy
+will make the referencer point to the original file instead.<br>
+
+<pre>
+ln [flags] [source1] [source2] ... [target_dir]
+ln [flags] [source] [target]
+link [source] [target]
+</pre>
+
+The <code>link</code> command can be used instead of <code>ln</code>, but flags and multiple
+source files won't be supported.<br>
+
+If multiple sources are supplied, the last parameter of the command must be a directory inside
+which the links will be created.
+
+<h3>Flags</h3>
+
+<ul>
+    <li><b>-F</b>: overwrites the [target] file / directory if it already exists.</li>
+    <li><b>-h</b>: if the [source] is a symlink, do not follow it</li>
+    <li><b>-f</b>: if the [target] already exists, unlink it before replacing it.</li>
+    <li><b>-i</b>: ask for confirmation in case the [target] file already exists.</li>
+    <li><b>-s</b>: creates a symbolic instead of hard link</li>
+</ul>
