@@ -1,0 +1,32 @@
+---
+layout: page
+category-page: intermediate
+category-title: Intermediate commands
+tags: sleep coffee kafee stand by buongiornissimo
+author: Joao Tomazoni
+title: caffeinate
+previous-page: pages/cmd/interm/bash.html
+next-page: pages/cmd/interm/cat.html
+---
+
+The <code>caffeinate</code> command prevents the computer to go into sleep mode,
+just as if you would set it to never sleep in the system preferences.
+Type <code>caffeinate -d</code> in your terminal and it will prevent your screen to sleep
+without changing the system preferences.</p>
+
+<pre>
+caffeinate -d
+</pre>
+
+You can also prevent your computer to go sleep while another process is taking place, but turn sleep
+mode on again when the process is over, for that you use the same code as above, and then type the
+arguments you want to run and prevent computer to go on sleep mode. For example, say you have a
+big file on your desktop that you want to md5, and you want to prevent your computer to enter
+the sleep mode:
+
+<pre>
+caffeinate -d ~/Desktop/bigfile
+</pre>
+
+Doing so, your computer is now prevent to enter on sleep mode while the md5 process is running,
+and automatically turn the sleep mode on again when the process is completed.
