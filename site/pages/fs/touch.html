@@ -2,49 +2,39 @@
 layout: page
 category-page: fs
 category-title: FileSystem
-tags: directory list create new file 
+tags: directory list create new file
 author: Mattia Hijman
 title: touch
 previous-page: pages/fs/rm.html
 ---
 
+The <code>touch</code> command updates the modification and access time of the a file.
+If the given file does not exists, it gets created.<br>
+
 <pre>
-touch [-A [-][[hh]mm]SS] [-acfhm] [-r file] [-t [[CC]YY]MMDDhhmm[.SS]]
-           file ...
+touch [flags] [file1] [file2] ...
 </pre>
 
+<h3>Flags</h3>
 
-The touch utility sets the modification and access times of files.  If any file does not exist, it is created with default permissions.<br>
-By default, touch changes both modification and access times.  The -a and -m flags may be used to select the access time or the modification time individually.  Selecting both is equivalent to the default.  By default, the timestamps are set to the current time.  The -t flag explicitly specifies a different time, and the -r flag specifies to set the times those of the specified file.
-The -A flag adjusts the values by a specified amount.<br>
-The following options are available:<br>
 <ul>
-  <li> <b>-A</b>
-
-Adjust the access and modification time stamps for the file by the specified value.  This flag is intended for use in modifying files with incorrectly set time stamps.
-
-             The -A flag implies the -c flag: if any file specified does not
-             exist, it will be silently ignored.</li>
-
-     <li> <b>-a</b>      Change the access time of the file.  The modification time of the
-             file is not changed unless the -m flag is also specified.</li>
-
-     <li> <b>-c</b>     Do not create the file if it does not exist.  The touch utility
-             does not treat this as an error.  No error messages are displayed
-             and the exit value is not affected.</li>
-
-     <li> <b>-f</b>      Attempt to force the update, even if the file permissions do not
-             currently permit it.</li>
-
-     <li> <b>-h</b>      If the file is a symbolic link, change the times of the link
-             itself rather than the file that the link points to.  Note that
-             -h implies -c and thus will not create any new files.</li>
-
-     <li> <b>-m</b>      Change the modification time of the file.  The access time of the
-             file is not changed unless the -a flag is also specified.</li>
-
-     <li> <b>-r</b>      Use the access and modifications times from the specified file
-             instead of the current time of day.</li>
-
-     <li> <b>-t</b>      Change the access and modification times to the specified time
-             instead of the current time of day.</li>
+    <li><b>-A</b>: adjust the access and modification timestamps for the file by the
+        specified value.
+    </li>
+    <li><b>-a</b>: Change the access time of the file. The modification time of the
+        file is not changed unless the -m flag is also specified.
+    </li>
+    <li><b>-c</b>: Do not create the file if it does not exist.</li>
+    <li><b>-f</b> Attempt to force the update, even if the file permissions do not
+        currently permit it.
+    </li>
+    <li><b>-h</b>: If the file is a symbolic link, change the times of the link
+        itself rather than the file that the link points to.
+    </li>
+     <li><b>-m</b>: Change the modification time of the file. The access time of the
+        file is not changed unless the -a flag is also specified.
+    </li>
+    <li><b>-t</b>: Change the access and modification times to the specified time
+        instead of the current time of day.
+    </li>
+</ul>
