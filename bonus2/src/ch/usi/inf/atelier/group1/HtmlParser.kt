@@ -92,9 +92,14 @@ class HtmlParser(private val singlePage: Boolean) {
     }
 
     fun save() {
+        val output = HtmlToLatexWriter(content.toString(), singlePage)
+
+        // Remove escapes from preformatted text
+        output.unEscapeCharsInPreformatted()
+
         val document = if (singlePage) {
             // End the singlePage'd document
-            HtmlToLatexWriter(content.toString(), true).run {
+            output.run {
                 commit()
                 endDocument()
                 toString()

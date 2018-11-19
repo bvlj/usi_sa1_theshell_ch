@@ -151,6 +151,21 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
         }
     }
 
+    fun unEscapeCharsInPreformatted() {
+        val pattern = Pattern.compile("(?:\\\\begin\\{verbatim}((?:.*\\r?\\n?)*?)\\\\end\\{verbatim})+")
+        val matcher = pattern.matcher(content)
+
+        while (matcher.find()) {
+            val found = matcher.group(0)
+            content = content.replace(found, found.replace("\\_", "_")
+                    .replace("\\\$", "\$")
+                    .replace("\\[", "[")
+                    .replace("\\]", "]")
+                    .replace("\\#", "#"))
+        }
+    }
+
+
     /**
      * Replace <h2> with LaTeX \subsection
      */
@@ -174,7 +189,7 @@ class HtmlToLatexWriter(private var content: String, private val singlePage: Boo
      * Replace <table> with LaTex tabular
      */
     fun changeTable() {
-        val pattern = Pattern.compile("(?:<table>((?:.*?\\r?\\n?)*)</table>)+")
+        val pattern = Pattern.compile("(?:<table>((?:.*\\r?\\n?)*?)</table>)+")
         val matcher = pattern.matcher(content)
 
         while (matcher.find()) {
