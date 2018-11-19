@@ -10,13 +10,13 @@ next-page: pages/scripts/2-special-variables.html
 ---
 <!-- Intro -->
 A variable is simply a string to which we assign a certain type of data,
-which could be a text, a number, a filename and other types of data.<br>
+which could be some text, a number, a filename or other types of data.<br>
 
 <!-- How to name a variable - text -->
 <h3>Naming a variable</h3>
 
 <!-- Explaination -->
-To name a variable in Unix we have to use only letters, numbers or
+To name a variable in Unix we can only use letters, numbers or
 the underscore character (_).<br>
 Other characters can't be used because they have a special meaning in Unix Shell.<br>
 
@@ -32,7 +32,7 @@ name_4
 <!-- How to define a variable - text -->
 <h3>Defining a variable</h3>
 
-To define a certain variable, we could use the following basecase:
+To define a certain variable, we use the following base case:
 
 <pre>
 variable_name=variable_value
@@ -58,7 +58,7 @@ echo $VAR_1
 <!-- How to delete a variable - text -->
 <h3>Deleting a variable</h3>
 
-Deleting a variable means that shell will remove a certain variable from the list of
+Deleting a variable means that the shell will remove a certain variable from the list of
 those that it tracks.<br>
 To delete a variable we use the following command:
 
@@ -75,7 +75,7 @@ unset VAR_1
 <!-- How to protect a variable - text -->
 <h3>Protecting variables</h3>
 
-To protect a certain variable, we can set them as read-only so that it can't be
+To protect a certain variable, we can set it as read-only so that it can't be
 changed or deleted.<br>
 So, if we try to change the value of VAR_1, the result will be the following:
 
@@ -86,7 +86,7 @@ VAR_1="Blueberry"
     VAR_1: This variable is read only.
 </pre>
 
-If we try to delete the variable, shell will give us the following value:
+If we try to delete the variable, the shell will give us the following error:
 
 <pre>
 VAR_1="Strawberry"

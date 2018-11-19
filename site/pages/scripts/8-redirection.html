@@ -9,7 +9,7 @@ previous-page: pages/scripts/7-if.html
 ---
 <h3>output as input</h3>
 <br>
-To redirect a certain output of the command-line we have to use the symbol "&gt;".<br>
+To redirect the output of a command we use the symbol "&gt;".<br>
 
 In this case, we will use a file named <i>hello.txt</i>, in which we want to insert
 a certain output ("Sun" in this case):<br>
@@ -40,10 +40,10 @@ cat hello.txt
 <!-- Input redirection text -->
 <h3>input as output</h3>
 <br>
-To redirect an input from a file for a command, the symbol "&lt;" is used.
+To redirect input from a file for a command, the symbol "&lt;" is used.
 
 <pre>
-echo $lt; $(cat hello.txt)
+echo &lt; $(cat hello.txt)
     Sun
     Moon
 </pre>
@@ -54,7 +54,7 @@ This is particularly useful when chaining commands.<br>
 <h3>Chaining (or piping)</h3>
 
 Chaining, also called Piping because it works with the pipe symbol "|", takes
-the output of a certain command-line and feeds it to another command in a direct way.
+the output of a certain command and feeds it to another command.
 <pre>
 cat hello.txt | grep Mo
 Moon
@@ -63,7 +63,7 @@ Moon
 <h3>A simple example</h3>
 
 Now let's say that we want to combine those commands in a more complex operation.
-Let's say we want to take some contents from a certain file and put it into another file.<br>
+Let's say we want to take the content of a certain file and put it into another file.<br>
 
 We want to sort the animals whose name begins with letter "d" from the file
 <i>animals.txt</i> and put it into <i>d_animals.txt</i>.<br>

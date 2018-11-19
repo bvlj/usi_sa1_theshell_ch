@@ -11,7 +11,7 @@ next-page: pages/scripts/8-redirection.html
 
 <!-- Introduction -->
 If statements allow us to make decisions in our Bash scripts. They allow us to
-whether run or not a piece of code based on a condition that we set. <br>
+decide whether or not to run a piece of code based on a condition that we set. <br>
 
 If statements take this form:
 {% highlight bash %}
@@ -39,7 +39,7 @@ In this first example we evaluate a variable <code>i</code> to 105.
 The <i> if statement </i> will print "You chose a big number"
 only if the number contained in our variable <code>i</code> is <b>G</b>reater or
 <b>E</b>qual to 200. <br>
-This is our case, therefore the output of this piece of code will be:
+This is the case, therefore the output of this piece of code will be:
 <pre>
   You chose a big number.
 </pre>
@@ -52,7 +52,7 @@ This is our case, therefore the output of this piece of code will be:
 Sometimes we want to perform a certain set of actions, if our condition evaluates to
 true and another set of actions if our condition evaluates to false. We can do this with
 the <i> if else </i> statement.
-<i> if else </i> sattements take this form:
+<i> if else </i> statements take this form:
 {% highlight bash %}
 if [condition]; then
     command1
@@ -78,10 +78,10 @@ else
 fi
 {% endhighlight %}
 
-In this example, that is just an extension of the previous example, we
+In this example, which is just an extension of the previous example, we
 evaluate a variable <code>i</code> to 50. If <code>i</code> is greater or equal to
-200, you print out "You chose a big number", otherwise,
-(if <code>i</code> is not greater or equal to 200), just like in this case, you print out
+200, we print out "You chose a big number", otherwise,
+(if <code>i</code> is not greater or equal to 200), just like in this case, we print out
 "You chose a small number".
 Therefore, the output of this piece of code is:
 
@@ -130,7 +130,7 @@ else
 fi
 {% endhighlight %}
 
-In this example, that is just an extension of the previous example, we evaluate a
+In this example, which is just an extension of the previous example, we evaluate a
 variable <code>i</code> to 150. If <code>i</code> is greater or equal to 200,
 you print out "You chose a big number", if <code>i</code> is equal to 150 you print out
 "You chose 150" otherwise you print out "You chose a small number".
