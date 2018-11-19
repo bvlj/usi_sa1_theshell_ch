@@ -1,38 +1,54 @@
 ---
 layout: page
 category-page: intermediate
-category-title: intermediate commands
+category-title: Intermediate commands
 author: Joy Albertini
-tags:directory user shell
+tags: directory user shell
 title: chsh
+previous-page: pages/cmd/interm/chroot.html
+next-page: pages/cmd/interm/curl.html
 ---
 
-<p>The <code>chsh</code>
-command cheanges user's login shell property:
+The <code>chsh</code> command can be used to change the following user's login shell properties:
+
 <ul>
-  <li>chenage Password of the user</li>
-  <li> shell local directory</li>
-  <li>Full name of the user</li>
-  <li>Office location</li>
-  <li>Office phone</li>
-  <li>home phone </li>
-<ul>  <br>
-Example:
-for cheanging password after the command chsh use passwd.</p>
+    <li>chenage Password of the user</li>
+    <li> shell local directory</li>
+    <li>Full name of the user</li>
+    <li>Office location</li>
+    <li>Office phone</li>
+    <li>home phone </li>
+</ul>
 
 <pre>
 chsh [-flag] user
 </pre>
 
+<h3>Flags</h3>
+
 <ul>
-  <li><code>-s</code> (shell)set shell as the login shell</li>
-  <li><code>-l</code> (listChanges the symbolic link and not the file or directory referred  by the symbolic link.</li>
-  <li><code>-R</code> changing the ownership for each file in a folder, if encounter symbolic link it will cheange the owenership of that symbolic link,
-     and the directoryfile referred in the symbolic link, but the directory is not further transversed. </li>
-  <li><code>-RH</code> changing the ownership for each file in a folder, if encounter symbolic link it will cheange the owenership of that symbolic link,
-     the directory/file referred in the symbolic link, and all the directory is further transversed.</li>
-  <li><code>-RL</code> <!-- don't understand the diffrence between -RH --> If the -R option is specified and a symbolic link referencing a file of type directory
-    is specified on the command line or encountered during the traversal of a file hierarchy, the chown command shall change the user ID (and group ID, if specified) of the directory referenced by the symbolic link and all files in the file hierarchy below it.</li>
-  <li><code>-RP</code> changing the ownership for each file in a folder, if encounter symbolic link it will cheange the owenership of that symbolic link, but will not chenage the
-     the directory/file referred in the symbolic link, and  the directory is not further transversed.</li>
+    <li><b>-s</b>: set shell as the login shell</li>
+    <li><b>-l</b>: change the symbolic link and not the file or directory referred
+        by the symbolic link.
+    </li>
+    <li><b>-R</b>: change the ownership for each file in a folder, if encounter symbolic link
+        it will change the owenership of that symbolic link,
+        and the directory/file referred in the symbolic link, but the directory
+        is not further transversed.
+    </li>
+    <li><b>-RH</b>: change the ownership for each file in a folder, if a symbolic link is
+        encountered, it will change the owenership of that symbolic link,
+        the directory/file referred in the symbolic link, and all the
+        directories are further transversed.
+    </li>
+    <li><b>-RL</b>: if a symbolic link referencing a file of type directory
+        is specified on the command line or encountered during the traversal of a file hierarchy,
+        the chown command will change the user ID (and group ID, if specified) of the directory
+        referenced by the symbolic link and all files in the file hierarchy below it.
+    </li>
+    <li><b>-RP</b>: changes the ownership for each file in a folder, if encounter symbolic link it
+        will change the owenership of that symbolic link, but will not change the
+        the directory/file referred in the symbolic link, and
+        the directory is not further transversed.
+    </li>
 </ul>
