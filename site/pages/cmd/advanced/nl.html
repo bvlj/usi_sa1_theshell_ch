@@ -8,7 +8,7 @@ title: nl
 previous-page: pages/cmd/advanced/head-tail.html
 next-page: pages/cmd/advanced/paste.html
 ---
-The <code>nl</code> is a command that permits to number the lines.
+<code>nl</code> is a command that allows you to number the lines.
 Through some flags you can decide how to filter this command.<br>
 
 We have a file named <code>example.txt</code> that contains 5 elements, to test this command:
@@ -21,7 +21,7 @@ Smartphone
 Videogame
 {% endhighlight %}
 
-The syntax command is:
+The syntax is:
 <pre> nl [flags][file] </pre>
 
 <pre>
@@ -33,12 +33,12 @@ nl example.txt
     5  Videogame
 </pre>
 
-How you can see the command has numbered the lines.
+As you can see, the command has numbered the lines.
 
 <h2>Flags</h2>
 
 <ul>
-    <li> <b>-b (regex)</b>: Specify the lines to be numered
+    <li> <b>-b (regex)</b>: Specify the lines to be numbered
 <pre>
 nl -b p^[cv] example.txt
     1  Car
