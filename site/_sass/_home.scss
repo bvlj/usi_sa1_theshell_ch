@@ -1,35 +1,64 @@
 .home-tiles {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     padding-top: 40px;
 }
 
 .home-tile {
-    display:block;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: .5em;
-    padding: 2rem;
-    background-color: #68BB6A;
     transition: all .2s ease-in-out;
+    padding: 2rem 0;
 }
 
 .home-tile:hover {
     text-align: center;
-    margin: .5em;
+    transform: scale(1.075);
+}
+
+.home-tile-green {
+    background-color: #68BB6A;
+    color: white;
+}
+
+.home-tile-green:hover {
     background-color: #388E3C;
-    transform: scale(1.1);
+    color: white;
+}
+
+.home-tile-white {
+    background-color: #f5f5f5;
+    color: #212121;
+}
+
+.home-tile-white:hover {
+    background-color: #d0d0d0;
+    color: #212121;
+}
+
+.home-tile-grey {
+    background-color: #333333;
+    color: white;
+}
+
+.home-tile-grey:hover {
+    background-color: #212121;
+    color: white;
 }
 
 .home-tile-title {
-    color: white;
     text-decoration: none;
+    flex: 0 0 calc(33.33%);
+    box-sizing: border-box;
 }
 
-.home-tile-title:hover {
-    color: white;
-    text-decoration: none;
+.home-tile-title-2 {
+    flex-basis: 66.66%;
+}
+
+.home-tile-title-3 {
+    flex-basis: 100%;
 }
 
 #videoHome {
@@ -40,12 +69,36 @@
     opacity:0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
 
-    .home-tiles {
-        grid-template-columns: auto;
+    .home-tile {
+        font-size: 1.25rem;
+    }
+
+    .home-tile-title {
+        flex-basis: 50%;
+    }
+
+    .home-tile-title-2 {
+        flex-basis: 100%;
+    }
+
+    .home-tile-title-3 {
+        flex-basis: 100%;
     }
 }
+
+@media screen and (max-width: 500px) {
+
+    .home-tile {
+        font-size: 1rem;
+    }
+
+    .home-tile-title {
+        flex-basis: 100%;
+    }
+}
+
 
 .NotoSansLight{
     font-family: NotoSansLight;
