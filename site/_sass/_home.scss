@@ -6,8 +6,9 @@
 
 .home-tile {
     text-align: center;
-    font-size: 1.5rem;
-    margin: .5em;
+    font-size: 3rem;
+    font-weight: bolder;
+    margin: .25em;
     transition: all .2s ease-in-out;
     padding: 2rem 0;
 }
@@ -51,6 +52,7 @@
     text-decoration: none;
     flex: 0 0 calc(33.33%);
     box-sizing: border-box;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .home-tile-title-2 {
@@ -69,10 +71,10 @@
     opacity:0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
 
     .home-tile {
-        font-size: 1.25rem;
+        font-size: 2.5rem;
     }
 
     .home-tile-title {
@@ -88,10 +90,10 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 
     .home-tile {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
     .home-tile-title {

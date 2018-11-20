@@ -127,9 +127,15 @@ header{
   }
 }
 
+@media screen and (max-width: 600px) {
+
+    .nav-menu {
+        display: none;
+    }
+}
+
 
 @keyframes cursor {
   from, to { border-color: transparent }
   20% { border-color: orange; }
 }
-
