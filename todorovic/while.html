@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="loops, while, unix, shell">
+  <meta name="author" content="Aleksandar Todorovic">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>while|loops</title>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="index_if.html">if</a>
+          <ul>
+            <li><a href="if.html"></a>if-fi</li>
+            <li><a href="if-else.html"></a>if-else</li>
+            <li><a href="elif.html"></a>if-elif</li>
+          </ul>
+        </li>
+        <li><a href="loops_index.html">Loops</a>
+          <ul>
+            <li class="current"><a href="while.html"></a>while</li>
+            <li><a href="for.html"></a>for</li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+  </header>
+  <div class="syntax">
+    <h2>syntax of While Loops</h2>
+      <P>#!/bin/sh <br>
+        while [ comand ] <br>
+        do <br>
+        statement to be exeuted if command is true <br>
+        done <br>
+    </P>
+
+    <h2>Exemple</h2>
+    #!/bin/sh <br>
+    INPUT_STRING=hello <br>
+    while [ "$INPUT_STRING"!="bye" ] <br>
+    do <br>
+      echo "please type something in (bye to quit) <br>
+      read INPUT_STRING <br>
+      echo "You typed: $INPUT_STRING" <br>
+    done <br>
+
+  <h3>Explanation</h3>
+  <P>In this exemple "echo" and read statement run will go forward until we type "bye" <br>
+      Normaly "while" command execute a code if this expression code is true, and stop only when is false or when say (type) stop.</P>
+
+  </div>
+  <footer>
+    <h4>Source</h4>
+      <ul>
+        <li>https://www.shellscript.sh/loops.html</li>
+        <li>https://www.autistici.org/loa/shodan/corsounix.pdf</li>
+        <li>https://www.guru4technoworld.wix.com</li>
+      </ul>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="for, loops, unix, shell">
+  <meta name="author" content="Aleksandar Todorovic">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>for|loops</title>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="index_if.html">if</a>
+          <ul>
+            <li><a href="if.html"></a>if-fi</li>
+            <li><a href="if-else.html"></a>if-else</li>
+            <li><a href="elif.html"></a>if-elif</li>
+          </ul>
+        </li>
+        <li><a href="loops_index.html">Loops</a>
+          <ul>
+            <li><a href="while.html"></a>while</li>
+            <li class="current"><a href="for.html"></a>for</li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+  </header>
+  <div class="syntax">
+    <h2>syntax of For Loops</h2>
+      <P>#!/bin/sh <br>
+        for i in 1...N  <br>
+          do <br>
+        Statement to be execudet for every word <br>
+        done <br>
+      </P>
+
+    <h2>Exemple</h2>
+    #!/bin/sh <br>
+    for i in 1 2 3 4 5 <br>
+    echo "looping...number $1" <br>
+    done <br>
+
+  <h3>Explanation</h3>
+  <P> The for loops iterate a throught a set of value, list of item until is finished. <br>
+      Practicaly this loop repeat a set of commands for each item of the list</P>
+
+  </div>
+  <footer>
+    <h4>Source</h4>
+      <ul>
+        <li>https://www.shellscript.sh/loops.html</li>
+        <li>https://www.autistici.org/loa/shodan/corsounix.pdf</li>
+        <li>https://www.guru4technoworld.wix.com</li>
+      </ul>
+  </footer>
+</body>
+</html>

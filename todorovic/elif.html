@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="if-elif, unix, shell">
+  <meta name="author" content="Aleksandar Todorovic">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>elif|if</title>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="index_if.html">if</a>
+          <ul>
+            <li><a href="if.html"></a>if-fi</li>
+            <li><a href="if-else.html"></a>if-else</li>
+            <li class="current"><a href="elif.html"></a>if-elif</li>
+          </ul>
+        </li>
+        <li><a href="loops_index.html">Loops</a>
+          <ul>
+            <li><a href="while.html"></a>while</li>
+            <li><a href="for.html"></a>for</li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+  </header>
+  <div class="syntax">
+    <h2>syntax of first case</h2>
+      <P>if [ expresion 1 ] <br>
+      then <br>
+      statement to be executed if expresion 1 is true <br>
+      elif [ expression 2 ] <br>
+      then <br>
+      statement to be executed if expresion 2 is true <br>
+      elif [ expression 3 ] <br>
+      then<br>
+      statement to be executed if expresion 3 is true <br>
+      else <br>
+      statement to be executed if  no expresion is true <br>
+      fi <br>
+    </P>
+    <div class="notice">
+      <h3>Explanation</h3>
+      <P> On can use this command (expression) if we want select one of many blocks of code to execute. <br>
+          It check one by one the expression and when is true it execute the statement and goes to next. <br>
+          But if the expressions are false then it enters into else block and execute the else statement
+        </ul>
+    </div>
+
+    <h2>Exemple</h2>
+    <P>#!/bin/sh <br>
+        var1=10 <br>
+        var2=10 <br>
+        if[ var1==1var2 ] <br>
+        then <br>
+        echo "var1 is equal var2" <br>
+        elif [ $var1 -gt $var2 ] <br>
+        then <br>
+        echo "var1 is greater than var2"<br>
+        elif  [ $var1 -lt $var2 ] <br>
+        then <br>
+        echo "var1 is not equal var2"<br>
+        else <br>
+        echo "none of the condition is ok"<br>
+        fi <br>
+  </div>
+  <footer>
+    <h4>Source</h4>
+      <ul>
+        <li>https://www.shellscript.sh/loops.html</li>
+        <li>https://www.autistici.org/loa/shodan/corsounix.pdf</li>
+        <li>https://www.guru4technoworld.wix.com</li>
+      </ul>
+  </footer>
+</body>
+</html>

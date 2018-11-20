@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="if-else, unix, shell">
+  <meta name="author" content="Aleksandar Todorovic">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>if-else|if</title>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="index_if.html">if</a>
+          <ul>
+            <li><a href="if.html"></a>if-fi</li>
+            <li class="current"><a href="if-else.html"></a>if-else</li>
+            <li><a href="elif.html"></a>if-elif</li>
+          </ul>
+        </li>
+        <li><a href="loops_index.html">Loops</a>
+          <ul>
+            <li><a href="while.html"></a>while</li>
+            <li><a href="for.html"></a>for</li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+  </header>
+  <div class="syntax">
+    <h2>syntax of if-else</h2>
+      <P>if [ expresion ] <br>
+      then <br>
+      statement to be executed if expresion is true <br>
+      else <br>
+      statement to be executed if expresion is false <br>
+      fi <br>
+    </P>
+  <div class="notice">
+    <h3>Explanation</h3>
+    <P> This espression run if the conditional is true, than it execute the statement 1. <br>
+       If the result of conditional expression is zero, it jump to "else part" and execute the statement 2. Finally after the execution of if/else, it resume with the consequent statement. </P>
+
+      </ul>
+  </div>
+    <h2>Exemple</h2>
+    <P>#!/bin/sh <br>
+        var1=10 <br>
+        var2=10
+        if[ var1==1var2 ] <br>
+        then <br>
+        echo "var1 is equal var2" <br>
+        else <br>
+        echo "var1 is not equal var2"<br>
+        fi
+  </div>
+  <footer>
+    <h4>Source</h4>
+      <ul>
+        <li>https://www.shellscript.sh/loops.html</li>
+        <li>https://www.autistici.org/loa/shodan/corsounix.pdf</li>
+        <li>https://www.guru4technoworld.wix.com</li>
+      </ul>
+  </footer>
+</body>
+</html>
