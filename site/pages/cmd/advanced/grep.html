@@ -8,10 +8,10 @@ title: grep
 previous-page: pages/cmd/advanced/emacs.html
 next-page: pages/cmd/advanced/head-tail.html
 ---
-The <code>grep</code>  is a command that permits to search occurences of a
-keyword or more in a file or more. Through some flags you can decide the search criteria.
+<code>grep</code> is a command that allows you to search occurrences of one or more
+keywords in one or more files. Through some flags you can decide on the search criteria.
 The command grep is case sensitive (robot is different from Robot), but we will see how
-to ignore it.<br>
+to ignore that.<br>
 
 Here we have two files named <code>example1.txt</code> and
 <code>example2.txt</code> that contain 5 elements, to test this command:
@@ -50,7 +50,7 @@ Your output will be this because grep found the keyword Robot in both files
 Here a list that contains the main flags of these command:
 
 <ul>
-    <li> <b>-i</b>: this flag ignore the case sensitive. Here we can write Robot or
+    <li> <b>-i</b>: this flag ignores case sensitivity. Here we can write Robot or
         robot that grep will find the correspondence.
 <pre>
 grep -i robot example1.txt example2.txt
@@ -59,7 +59,7 @@ grep -i robot example1.txt example2.txt
 </pre>
     </li>
 
-    <li> <b>-v</b>: this flag ignore the keyword from the search.
+    <li> <b>-v</b>: this flag ignores the keyword from the search.
 <pre>
 grep -i -v robot example1.txt example2.txt
     example1.txt:Car
@@ -86,6 +86,6 @@ grep -i -c robot example1.txt
 grep -i -h apple example1.txt example2.txt
     Apple
 </pre>
-    How you can see the output doesn't show tha file name <code>example2.txt</code>
+    How you can see the output doesn't show the file name <code>example2.txt</code>
     </li>
 </ul>
