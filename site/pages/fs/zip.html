@@ -1,0 +1,49 @@
+---
+layout: page
+category-page: fs
+category-title: FileSystem
+tags: compress file directory extract
+author: Joao Tomazoni
+title: zip
+previous-page: pages/fs/rm.html
+---
+
+<code>zip</code> is the command to package and compress files together as .zip extension.
+Simply type zip + name of the zip file + name of the files to be compressed as .zip.
+
+<pre>
+zip -r [target.zip] [source1] [source2]
+</pre>
+
+Say you want to compress a file named test.txt and an image named image.png together
+in one zip file named test.zip. This is what it should look like:
+
+<pre>
+zip -r test.zip text.txt image.png
+</pre>
+
+In this case it should return a test.zip file in your desktop with a directory inside
+containing the two files together.<br><br>
+
+<h3>Flags</h3>
+
+<ul>
+    <li><b>-e</b>: create zip files that require a password in order to be uncompressed.
+<pre>
+zip -e test.zip text.txt image.png
+    Enter password: (password required to unzip the file)
+</pre>
+    </li>
+    <li><b>-u</b>: update zip files and add new files inside the current zip file.
+<pre>
+zip -u test.zip newtext.txt
+</pre>
+        The newtext.txt file will be added to the current test.zip file.
+    </li>
+    <li><b>-d</b>: remove files inside the current zip file.
+<pre>
+zip -d test.zip newtext.txt
+</pre>
+        The newtext.txt file will be removed from the current test.zip file.
+    </li>
+</ul>

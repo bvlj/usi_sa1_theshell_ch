@@ -1,0 +1,47 @@
+---
+layout: page
+category-page: intermediate
+category-title: Intermediate commands
+tags: cow print say dragon lolcat
+author: Joao Tomazoni
+title: cowsay
+previous-page: pages/cmd/interm/chsh.html
+next-page: pages/cmd/interm/curl.html
+---
+
+<code>cowsay</code> is a entertainment command, however it's not guaranteed that your terminal is
+going to have this command available as default. It most likely won't, however you can download
+it yourself using a package manager like <a href="https://brew.sh">brew.sh</a>.<br>
+
+<pre>
+cowsay "Hello there"
+</pre>
+
+Very useful wouldn't you agree?
+You can also pipe commands like ls with cowsay, for example:
+
+<pre>
+ls | cowsay
+</pre>
+
+It returns the cow saying the list of files in the current directory.<br><br>
+
+<h3>Flags</h3>
+
+<b>-f</b> if you aren't satisfied with the cow, you have other possibilities of
+animals instead of cow. One example is the dragon which you can get by using "-f dragon",
+it will now draw a fantasy-like dragon.
+
+<pre>
+cowsay -f dragon "Burn World"
+</pre>
+
+There are more animal drawings for the cowsay command, just type cowsay -l in your terminal for
+the list of the animals you can use.<br><br>
+
+<h3>Suggestion: combine with <code>lolcat</code></h3>
+
+<code>lolcat</code> is another entertainment command that is also installed with the brew pack you
+installed previously for the <code>cowsay</code> command, and they work perfectly together.
+Adding lolcat at the end of the cowsay command and its quote will add random colours for the
+drawing.

@@ -1,0 +1,58 @@
+---
+layout: page
+category-page: intermediate
+category-title: Intermediate commands
+tags: super user admin execute root
+author: Joao Tomazoni
+title: sudo
+previous-page: pages/cmd/interm/strings.html
+next-page: pages/cmd/interm/sync.html
+---
+
+<code>sudo</code> stands for <i>Substitute User DO</i> or <i>SuperUser DO</i>.<br>
+It's a powerful command that you must handle with great care.
+If you are a member of the proper group and have permission to do sudo
+commands than you can execute commands as if you were the root user.
+
+Say you're an administrator in the users folder, and you would like to see a subfolder
+inside the home folder from another user named Nate, you may attempt to use the command:
+<code>ls -lr Nate</code>, but you will come by a whole bunch of permissions denied messages,
+this happens because even-though you're an administrator, you don't
+have the rights or permissions to get inside of Nate's home folder and look
+inside those subfolders.
+That's where the sudo command comes in:
+
+<pre>
+ls -lr Nate
+</pre>
+
+Returns denied access messages. To fix this, proceed to add sudo before the
+previously inserted command:
+
+<pre>
+sudo ls -lr Nate
+    Password: (type the local administrator password)
+</pre>
+
+Now, Instead of the denied messages now you actually get a listing of all those subfolders
+in Nate's home folder. So you can execute commands temporarily as if you were the root user,
+which can do absolutely anything on the system. It's is very powerful to troubleshooting
+or fixing problems.<br><br>
+
+<h3>Flags</h3>
+
+<b>-s</b>: If you're going to execute a lot of commands with sudo, you can go inside
+the root shell using the flag <code>-s</code>,
+so that you won't need to keep typing sudo over and over again.
+By typing whoami command after typing <code>sudo -s</code> should return you "root".
+This is what it look likes:</p>
+
+<pre>
+sudo -s
+Password: (type the local administrator password)
+whoami
+    root
+</pre>
+
+Remember, with great power comes great responsibility, be careful with sudo commands.<br>
+<img src="https://imgs.xkcd.com/comics/sandwich.png" alt="xkcd 146">
